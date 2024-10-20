@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd5s6rl5xqurj"]
 
 [ext_resource type="Script" path="res://scenes/counter.gd" id="1_rj476"]
-[ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="2_g1r4t"]
+[ext_resource type="Texture2D" uid="uid://cv170jtle0k5r" path="res://assets/art/gears/placeholder_gear.png" id="2_nrwtp"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rj476")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(538, 1006)
-scale = Vector2(5, 5)
-texture = ExtResource("2_g1r4t")
+position = Vector2(546, 1084)
+scale = Vector2(1.21852, 1.21852)
+texture = ExtResource("2_nrwtp")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -1.0
