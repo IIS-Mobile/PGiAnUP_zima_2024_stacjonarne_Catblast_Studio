@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var counter = get_node("Label")
+@onready var counter = get_node("UI/Labels/Label_resource1")
 @onready var icon = get_node("Icon")
 
 func _ready() -> void:
