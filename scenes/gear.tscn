@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcbj4s4uvld53"]
+[gd_scene load_steps=4 format=3 uid="uid://bcbj4s4uvld53"]
 
 [ext_resource type="Script" path="res://scenes/gear.gd" id="1_q1hg2"]
 [ext_resource type="Texture2D" uid="uid://cgwxhey1rcadd" path="res://assets/art/gears/placeholder_gear3.png" id="2_lfsoe"]
+[ext_resource type="AudioStream" uid="uid://d4cnxegiuvf44" path="res://assets/audio/tick.wav" id="3_dt0s6"]
 
 [node name="Gear" type="Node2D"]
 script = ExtResource("1_q1hg2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_lfsoe")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dt0s6")
