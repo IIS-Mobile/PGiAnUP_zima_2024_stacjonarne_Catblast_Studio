@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd5s6rl5xqurj"]
+[gd_scene load_steps=7 format=3 uid="uid://cd5s6rl5xqurj"]
 
 [ext_resource type="Script" path="res://scenes/counter.gd" id="1_rj476"]
 [ext_resource type="Texture2D" uid="uid://dpr4i201vh10d" path="res://assets/art/gears/placeholder_gear2.png" id="2_epybh"]
 [ext_resource type="Texture2D" uid="uid://bq470tchb8vjo" path="res://assets/art/ui/wood.jpg" id="3_od6pp"]
 [ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="4_1vuel"]
+[ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="5_1isqj"]
+[ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rj476")
@@ -36,6 +38,7 @@ anchors_preset = 0
 offset_top = 35.0
 offset_right = 40.0
 offset_bottom = 75.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource1" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -57,6 +60,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource2" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -78,6 +82,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource3" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -99,6 +104,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource4" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -120,6 +126,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource5" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -141,6 +148,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource6" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -163,6 +171,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource7" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -185,6 +194,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource8" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -207,6 +217,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource9" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -229,6 +240,7 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label_resource10" type="Label" parent="UI/Labels"]
 z_index = 9
@@ -251,3 +263,20 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="shopButton" type="TextureButton" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -196.0
+offset_right = -80.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_1isqj")
+texture_pressed = ExtResource("5_1isqj")
+script = ExtResource("6_d7ejv")
