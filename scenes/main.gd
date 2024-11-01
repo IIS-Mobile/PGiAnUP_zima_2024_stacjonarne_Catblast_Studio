@@ -1,15 +1,11 @@
 extends Node2D
-class_name main
 
-@onready var counter = get_node("UI/Labels/Label_resource1")
+@onready var counter = [get_node("UI/Labels/Label_resource1"),get_node("UI/Labels/Label_resource2"),get_node("UI/Labels/Label_resource3"),get_node("UI/Labels/Label_resource4")]
 
-func _ready() -> void:
-	counter.text = "0"
+func _on_gear_button_pressed() -> void:
+	$GearContainer.add_gear()
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		counter.text = str(int(counter.text)+1)
-		gear.speed = min(gear.speed + 0.1, 1.0)
-
-func _physics_process(_delta: float) -> void:
-	gear.speed = max(gear.speed * 0.99, 0)
+func _on_gear_container_rotation_completed(index: Variant) -> void:
+	#TODO: placeholder
+	var counter = counter[index / 4]
+	counter.text = str(int(counter.text) + 1)
