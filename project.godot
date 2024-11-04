@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GearClicker"
+config/name="Gear Grinder"
+config/version="0.1"
 run/main_scene="res://scenes/simple_counter.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
