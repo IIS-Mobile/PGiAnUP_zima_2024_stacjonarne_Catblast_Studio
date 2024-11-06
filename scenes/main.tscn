@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd5s6rl5xqurj"]
+[gd_scene load_steps=7 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Texture2D" uid="uid://bq470tchb8vjo" path="res://assets/art/ui/wood.jpg" id="3_xe51y"]
-[ext_resource type="PackedScene" uid="uid://bcbj4s4uvld53" path="res://scenes/gear.tscn" id="4_ki3je"]
 [ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="4_uhjoh"]
 [ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="5_1isqj"]
+[ext_resource type="PackedScene" uid="uid://cyjejqvy7vq4q" path="res://scenes/gear_container.tscn" id="6_8ut51"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
+
+[node name="GearContainer" parent="." instance=ExtResource("6_8ut51")]
+position = Vector2(1, 698)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -259,25 +262,6 @@ theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
 
-[node name="Gear" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(226, 732)
-
-[node name="Gear2" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(573, 730)
-
-[node name="Gear3" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(866, 735)
-
-[node name="Gear4" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(873, 1047)
-
-[node name="Gear5" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(569, 1052)
-
-[node name="Gear6" parent="." instance=ExtResource("4_ki3je")]
-position = Vector2(243, 1068)
-metadata/_edit_use_anchors_ = true
-
 [node name="shopButton" type="TextureButton" parent="UI"]
 anchors_preset = 3
 anchor_left = 1.0
@@ -293,3 +277,13 @@ grow_vertical = 0
 texture_normal = ExtResource("5_1isqj")
 texture_pressed = ExtResource("5_1isqj")
 script = ExtResource("6_d7ejv")
+
+[node name="gear_button" type="Button" parent="."]
+offset_left = 49.0
+offset_top = 471.0
+offset_right = 478.0
+offset_bottom = 680.0
+text = "Add a gear"
+
+[connection signal="rotation_completed" from="GearContainer" to="." method="_on_gear_container_rotation_completed"]
+[connection signal="pressed" from="gear_button" to="." method="_on_gear_button_pressed"]

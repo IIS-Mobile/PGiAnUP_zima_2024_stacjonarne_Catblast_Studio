@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/gear.gd" id="1_q1hg2"]
 [ext_resource type="Texture2D" uid="uid://cgwxhey1rcadd" path="res://assets/art/gears/placeholder_gear3.png" id="2_lfsoe"]
-[ext_resource type="AudioStream" uid="uid://d4cnxegiuvf44" path="res://assets/audio/tick.wav" id="3_dt0s6"]
+[ext_resource type="PackedScene" uid="uid://1svdgnyib5l1" path="res://scenes/resource_popup.tscn" id="3_m4of8"]
 
 [node name="Gear" type="Node2D"]
 script = ExtResource("1_q1hg2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_lfsoe")
 
-[node name="Sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_dt0s6")
+[node name="ResourcePopup" parent="." instance=ExtResource("3_m4of8")]
