@@ -11,11 +11,18 @@ static func create() -> Gear:
 	return gear
 
 func _ready() -> void:
+	$ResourcePopup.hide()
 	count += 1
 
 func _physics_process(_delta: float) -> void:
-	var deg = rotation_degrees + (speed * speed * 30.0 / (pow(2, index)))
+	var deg = $Sprite.rotation_degrees + (speed * speed * 30.0 / (pow(2, index)))
 	if deg >= 360:
 		deg -= 360
+		handle_resource_popup()
 		get_parent().emit_signal("rotation_completed", index)
-	rotation_degrees = deg
+	$Sprite.rotation_degrees = deg
+
+func handle_resource_popup():
+	$ResourcePopup.show()
+	$ResourcePopup.animation_player.stop()
+	$ResourcePopup.animation_player.play("popup")
