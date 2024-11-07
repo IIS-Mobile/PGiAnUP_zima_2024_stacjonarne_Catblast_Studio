@@ -1,289 +1,302 @@
-[gd_scene load_steps=7 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=14 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
-[ext_resource type="Texture2D" uid="uid://bq470tchb8vjo" path="res://assets/art/ui/wood.jpg" id="3_xe51y"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="3_0qc7x"]
+[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/Tin_T1.png" id="3_bdyte"]
+[ext_resource type="Texture2D" uid="uid://5h4d6r5aybx" path="res://assets/art/resources/2_copper/copper_T1.png" id="4_d84fd"]
 [ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="4_uhjoh"]
-[ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="5_1isqj"]
+[ext_resource type="Texture2D" uid="uid://bdfmmoyt6estb" path="res://assets/art/icon/gear_icon.png" id="5_7il7n"]
+[ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="5_f3sw0"]
+[ext_resource type="Texture2D" uid="uid://dchpv1fiui3et" path="res://assets/art/resources/3_brass/Brass_T1.png" id="5_gw5py"]
+[ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
 [ext_resource type="PackedScene" uid="uid://cyjejqvy7vq4q" path="res://scenes/gear_container.tscn" id="6_8ut51"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
+[ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
+[ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
 
-[node name="GearContainer" parent="." instance=ExtResource("6_8ut51")]
-position = Vector2(1, 698)
-
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="WoodenBar2" type="Sprite2D" parent="UI"]
-modulate = Color(0.678944, 0.678944, 0.678944, 1)
-z_index = 6
-position = Vector2(536, 181)
-scale = Vector2(0.570312, 0.643761)
-texture = ExtResource("3_xe51y")
-region_enabled = true
-region_rect = Rect2(0, 0, 1920, 553.025)
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GoldenBar2" type="Sprite2D" parent="UI"]
+[node name="ColorRect" type="ColorRect" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 246.15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+color = Color(0.529412, 0.352941, 0.258824, 1)
+
+[node name="gear_button" type="Button" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -41.5
+offset_right = 309.0
+offset_bottom = 41.5
+grow_vertical = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 60
+text = "Add a gear"
+
+[node name="Resource1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 34.15
+offset_right = -37.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource1"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource1"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("3_bdyte")
+
+[node name="Resource2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 99.15
+offset_right = -37.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource2"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource2"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("4_d84fd")
+
+[node name="Resource3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.15
+offset_right = -37.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/VBoxContainer/ColorRect/Resource3"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource3"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
+[node name="GoldenBarUp" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
-position = Vector2(539.5, 405)
-scale = Vector2(0.57, 0.57)
+custom_minimum_size = Vector2(0, 56.38)
+layout_mode = 2
+size_flags_horizontal = 7
 texture = ExtResource("4_uhjoh")
+expand_mode = 1
 
-[node name="Labels" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 35.0
-offset_right = 40.0
-offset_bottom = 75.0
-metadata/_edit_use_anchors_ = true
+[node name="HSplitContainer" type="HSplitContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label_resource1" type="Label" parent="UI/Labels"]
-z_index = 9
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/VBoxContainer/HSplitContainer/Panel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 80.0
-offset_right = 166.0
-offset_bottom = 205.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+grow_vertical = 2
+color = Color(0.529412, 0.352941, 0.258824, 1)
 
-[node name="Label_resource2" type="Label" parent="UI/Labels"]
-z_index = 9
+[node name="BottomEmblem" type="ColorRect" parent="UI/VBoxContainer/HSplitContainer/Panel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 280.0
-offset_right = 366.0
-offset_bottom = 205.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -68.0
+offset_right = 294.0
+offset_bottom = 4.0
+grow_vertical = 0
+color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label_resource3" type="Label" parent="UI/Labels"]
-z_index = 9
+[node name="TopEmblem" type="ColorRect" parent="UI/VBoxContainer/HSplitContainer/Panel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 480.0
-offset_right = 566.0
-offset_bottom = 205.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+offset_top = -11.0
+offset_right = 294.0
+offset_bottom = 64.0
+color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label_resource4" type="Label" parent="UI/Labels"]
-z_index = 9
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GearContainer" parent="UI/VBoxContainer/HSplitContainer/ScrollContainer" instance=ExtResource("6_8ut51")]
+
+[node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
+z_index = 7
+custom_minimum_size = Vector2(0, 56.38)
+layout_mode = 2
+size_flags_horizontal = 7
+texture = ExtResource("5_f3sw0")
+expand_mode = 1
+
+[node name="ColorRectDown" type="ColorRect" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 230.295)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+color = Color(0.529245, 0.35388, 0.257247, 1)
+
+[node name="HBoxButtonContainer" type="HBoxContainer" parent="UI/VBoxContainer/ColorRectDown"]
+custom_minimum_size = Vector2(0, -18.6)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 680.0
-offset_right = 766.0
-offset_bottom = 205.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource5" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 880.0
-offset_right = 966.0
-offset_bottom = 205.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource6" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 80.0
-offset_top = 141.0
-offset_right = 166.0
-offset_bottom = 346.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource7" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 280.0
-offset_top = 141.0
-offset_right = 366.0
-offset_bottom = 346.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource8" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 480.0
-offset_top = 141.0
-offset_right = 566.0
-offset_bottom = 346.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource9" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 680.0
-offset_top = 141.0
-offset_right = 766.0
-offset_bottom = 346.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_resource10" type="Label" parent="UI/Labels"]
-z_index = 9
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 880.0
-offset_top = 141.0
-offset_right = 966.0
-offset_bottom = 346.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 25
-theme_override_constants/shadow_outline_size = 20
-theme_override_font_sizes/font_size = 100
-text = "0"
-horizontal_alignment = 1
-
-[node name="shopButton" type="TextureButton" parent="UI"]
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -196.0
-offset_right = -80.0
-offset_bottom = -68.0
-grow_horizontal = 0
+offset_left = 34.0
+offset_top = -208.295
+offset_right = -31.0
+offset_bottom = -40.295
+grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("5_1isqj")
-texture_pressed = ExtResource("5_1isqj")
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Gear\'Button" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 30
+keep_pressed_outside = true
+text = "Gears"
+icon = ExtResource("5_7il7n")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 script = ExtResource("6_d7ejv")
 
-[node name="gear_button" type="Button" parent="."]
-offset_left = 49.0
-offset_top = 471.0
-offset_right = 478.0
-offset_bottom = 680.0
-text = "Add a gear"
+[node name="ShopButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 30
+keep_pressed_outside = true
+text = "Shop"
+icon = ExtResource("5_ippsu")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("6_d7ejv")
 
-[connection signal="rotation_completed" from="GearContainer" to="." method="_on_gear_container_rotation_completed"]
-[connection signal="pressed" from="gear_button" to="." method="_on_gear_button_pressed"]
+[node name="BuildingsButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 30
+keep_pressed_outside = true
+text = "Buildings"
+icon = ExtResource("8_3q7uw")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("6_d7ejv")
+
+[node name="SettingsButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 30
+keep_pressed_outside = true
+text = "Settings"
+icon = ExtResource("9_hpub3")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("6_d7ejv")
+
+[connection signal="pressed" from="UI/VBoxContainer/ColorRect/gear_button" to="." method="_on_gear_button_pressed"]
+[connection signal="rotation_completed" from="UI/VBoxContainer/HSplitContainer/ScrollContainer/GearContainer" to="." method="_on_gear_container_rotation_completed"]

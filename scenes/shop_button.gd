@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 # Function to handle the scene change
 func on_button_pressed():
