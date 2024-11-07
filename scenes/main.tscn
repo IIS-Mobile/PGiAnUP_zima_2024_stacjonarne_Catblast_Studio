@@ -211,9 +211,9 @@ color = Color(0.368627, 0.262745, 0.203922, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/VBoxContainer/HSplitContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="GearContainer" parent="UI/VBoxContainer/HSplitContainer/ScrollContainer" instance=ExtResource("6_8ut51")]
+layout_mode = 2
 
 [node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7

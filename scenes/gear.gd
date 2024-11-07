@@ -11,6 +11,8 @@ static func create() -> Gear:
 	return gear
 
 func _ready() -> void:
+	#TODO: react to runtime resizes?
+	scale *= (get_parent().size[0] * 0.30) / 512
 	$ResourcePopup.hide()
 	count += 1
 
