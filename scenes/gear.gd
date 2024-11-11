@@ -3,6 +3,7 @@ class_name Gear
 
 const scene = preload("res://scenes/gear.tscn")
 static var speed := 0.0
+static var buffer := 0.0
 static var count := 0
 @onready var index := count
 
