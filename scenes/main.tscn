@@ -326,4 +326,3 @@ expand_icon = true
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/IdleButton" to="." method="_on_idle_button_pressed"]
-[connection signal="rotation_completed" from="UI/VBoxContainer/HSplitContainer/ScrollContainer/GearContainer" to="." method="_on_gear_container_rotation_completed"]

@@ -1,51 +1,33 @@
 extends TextureButton
 
-signal rotation_completed(index:int)
-
-const SLOWDOWN_FACTOR = 0.005
-const IDLE_SPEED = 0.1
-var idle = true
-
+func _ready() -> void:
+	#TODO: is there a better way?
+	Global.connect("rotation_completed", _on_rotation_completed)
+	
 func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * self.size[0] as float) as int
 
 func add_gear() -> void:
-	# TODO: placeholder
-	if Gear.count >= 16:
+	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
-	var x_pos = Gear.count % 4
-	var y_pos = percent_to_pixels(18.5) + (Gear.count / 4) * percent_to_pixels(28)
-	if (Gear.count / 4) % 2:
-		x_pos = 3 - x_pos
-	#TODO: placeholder
-	if Gear.count != 15 and Gear.count % 4 == 3:
+	var x_pos = Global.count % Global.GEARS_PER_ROW
+	var y_pos = percent_to_pixels(18.5) + (Global.count / Global.GEARS_PER_ROW) * percent_to_pixels(28)
+	if (Global.count / Global.GEARS_PER_ROW) % 2:
+		x_pos = (Global.GEARS_PER_ROW - 1) - x_pos
+	if Global.count != (Global.MAX_GEARS - 1) and Global.count % Global.GEARS_PER_ROW == Global.GEARS_PER_ROW - 1:
 		y_pos += percent_to_pixels(4.5)
-	elif Gear.count != 0 and Gear.count % 4 ==0:
+	elif Global.count != 0 and Global.count % Global.GEARS_PER_ROW == 0:
 		y_pos -= percent_to_pixels(4.5)
 	gear.position = Vector2(percent_to_pixels(18.5) + x_pos * percent_to_pixels(21), y_pos)
-	gear.z_index = Gear.count % 2
+	gear.z_index = Global.count % 2
 	add_child(gear)
 
-func _physics_process(_delta: float) -> void:
-	if Gear.speed == 1.0:
-		if Gear.buffer > 0.0:
-			Gear.buffer = max(Gear.buffer - SLOWDOWN_FACTOR, 0.0)
-		else:
-			Gear.speed = max(Gear.speed - SLOWDOWN_FACTOR, 0.0)
-	else:
-		if Gear.buffer > 0.0:
-			Gear.buffer = max(Gear.buffer - SLOWDOWN_FACTOR, 0.0)
-			Gear.speed = min(Gear.speed + SLOWDOWN_FACTOR, 1.0)
-		else:
-			Gear.speed = max(Gear.speed - SLOWDOWN_FACTOR, 0.0)
-	if idle and Gear.speed < IDLE_SPEED:
-		Gear.buffer = min(Gear.buffer + SLOWDOWN_FACTOR, 1.0)
-
+#TODO: move somewhere else?
 func _on_rotation_completed(index: int) -> void:
 	if not index:
 		$Sound.play()
 
 func _on_pressed() -> void:
-	if Gear.count:
-		Gear.buffer = min(Gear.buffer + 0.1, 1.0)
+	if Global.count:
+		Global.buffer = min(Global.buffer + 0.1, 1.0)

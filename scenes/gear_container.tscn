@@ -15,4 +15,3 @@ script = ExtResource("1_ov4vb")
 stream = ExtResource("2_jx61m")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="rotation_completed" from="." to="." method="_on_rotation_completed"]
