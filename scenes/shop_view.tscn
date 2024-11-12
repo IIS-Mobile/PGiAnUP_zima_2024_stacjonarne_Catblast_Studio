@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabrjyf0hftbs"]
+
+[ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
+
+[node name="ShopView" type="PanelContainer"]
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.368627, 0.262745, 0.203922, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ProductBar" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+layout_mode = 2
