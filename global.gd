@@ -4,6 +4,7 @@ signal rotation_completed(index:int)
 
 const MAX_GEARS = 16
 const GEARS_PER_ROW = 4
+const TIERS_AMOUNT = GEARS_PER_ROW*2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1

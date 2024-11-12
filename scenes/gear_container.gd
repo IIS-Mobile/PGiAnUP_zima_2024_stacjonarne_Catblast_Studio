@@ -5,12 +5,15 @@ func _ready() -> void:
 	Global.connect("rotation_completed", _on_rotation_completed)
 	
 func percent_to_pixels(percent: float) -> int:
-	return (percent * 0.01 * self.size[0] as float) as int
+	return (percent * 0.01 * self.size[0] * 0.6) as int
+
 
 func add_gear() -> void:
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
+	gear.scale = Vector2(0.6, 0.6) #placeholder solution
+	
 	var x_pos = Global.count % Global.GEARS_PER_ROW
 	var y_pos = percent_to_pixels(18.5) + (Global.count / Global.GEARS_PER_ROW) * percent_to_pixels(28)
 	if (Global.count / Global.GEARS_PER_ROW) % 2:

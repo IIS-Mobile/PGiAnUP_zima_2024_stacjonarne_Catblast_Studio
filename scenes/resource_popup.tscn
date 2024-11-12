@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq8mg61kyc58c"]
 
 [ext_resource type="Script" path="res://scenes/resource_popup.gd" id="1_qkf70"]
-[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/Tin_T1.png" id="2_dxht0"]
+[ext_resource type="Texture2D" uid="uid://cm7rx7h1onhhr" path="res://assets/art/resources/hidden_resource.png" id="2_qtqaf"]
 
 [sub_resource type="Animation" id="Animation_16lk8"]
 length = 0.001
@@ -101,7 +101,7 @@ libraries = {
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(59, 39)
 scale = Vector2(0.157827, 0.157827)
-texture = ExtResource("2_dxht0")
+texture = ExtResource("2_qtqaf")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
