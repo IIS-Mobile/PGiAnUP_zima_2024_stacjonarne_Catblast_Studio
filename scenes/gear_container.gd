@@ -1,7 +1,6 @@
 extends TextureButton
 
 func _ready() -> void:
-	#TODO: is there a better way?
 	Global.connect("rotation_completed", _on_rotation_completed)
 	
 func percent_to_pixels(percent: float) -> int:
