@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1qqo5erp053i"]
+
+[ext_resource type="Texture2D" uid="uid://cm7rx7h1onhhr" path="res://assets/art/resources/hidden_resource.png" id="1_k0vv6"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
+
+[node name="ProductBar" type="ColorRect"]
+custom_minimum_size = Vector2(0, 222.08)
+size_flags_vertical = 4
+color = Color(0.300866, 0.211126, 0.161236, 1)
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 21.0
+offset_right = -543.0
+offset_bottom = 298.92
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.356, 0.356)
+texture = ExtResource("1_k0vv6")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 856.0
+offset_top = 40.0
+offset_right = -41.0
+offset_bottom = -41.08
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_b320b")
+text = "buy
+"
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 239.0
+offset_top = 76.0
+offset_right = -243.0
+offset_bottom = -27.08
+grow_horizontal = 2
+grow_vertical = 2
+text = "Description Description Description Description Description Description Description Description Description Description "
+autowrap_mode = 2
+clip_text = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 239.0
+offset_top = 22.0
+offset_right = -606.0
+offset_bottom = -157.08
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "TITLE"
+autowrap_mode = 2
+
+[node name="Title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 703.0
+offset_top = 22.0
+offset_right = -287.0
+offset_bottom = -157.08
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "PRICE
+"
+autowrap_mode = 2

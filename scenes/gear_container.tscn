@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyjejqvy7vq4q"]
 
-[ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="1_6stmf"]
+[ext_resource type="Texture2D" uid="uid://dxpklcy1egn2u" path="res://assets/art/ui/Background.png" id="1_den7j"]
 [ext_resource type="Script" path="res://scenes/gear_container.gd" id="1_ov4vb"]
 [ext_resource type="AudioStream" uid="uid://d4cnxegiuvf44" path="res://assets/audio/tick.wav" id="2_jx61m"]
 
 [node name="GearContainer" type="TextureButton"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("1_6stmf")
+texture_normal = ExtResource("1_den7j")
 stretch_mode = 1
 script = ExtResource("1_ov4vb")
 

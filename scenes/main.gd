@@ -7,7 +7,7 @@ func _ready() -> void:
 	Global.connect("rotation_completed", _on_gear_container_rotation_completed)
 	
 func _on_gear_button_pressed() -> void:
-	$UI/VBoxContainer/HSplitContainer/ScrollContainer/GearContainer.add_gear()
+	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
 func _on_gear_container_rotation_completed(index: int) -> void:
 	#TODO: placeholder

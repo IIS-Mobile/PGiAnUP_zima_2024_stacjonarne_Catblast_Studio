@@ -4,6 +4,7 @@ signal rotation_completed(index:int)
 
 const MAX_GEARS = 16
 const GEARS_PER_ROW = 4
+const TIERS_AMOUNT = GEARS_PER_ROW*2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
@@ -31,7 +32,7 @@ func _physics_process(_delta: float) -> void:
 	phase += speed * speed * ROTATION_ANGLE
 	phase = fmod(phase, 360.0 * pow(2, Global.MAX_GEARS - 1))
 	#TODO: should handle case when does not exist yet?
-	var container = get_node("/root/Node2D/UI/VBoxContainer/HSplitContainer/ScrollContainer/GearContainer")
+	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer")
 	for child in container.get_children():
 		if child is Gear:
 			var prev_deg = fmod(prev_phase / pow(2, child.index), 360.0)

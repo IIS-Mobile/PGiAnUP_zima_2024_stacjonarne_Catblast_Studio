@@ -2,7 +2,12 @@ extends Button
 
 # Function to handle the scene change
 func on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/shop.tscn")
+	var gears_view = get_parent().get_parent().get_parent().get_node("CurrentView/GearsView")
+	var shop_view = get_parent().get_parent().get_parent().get_node("CurrentView/ShopView")
+	
+	gears_view.visible = false	
+	shop_view.visible = true
+	
 
 
 func _ready():
