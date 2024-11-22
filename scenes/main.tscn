@@ -21,6 +21,214 @@ script = ExtResource("1_j8ibr")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="ColorRect2" type="Panel" parent="UI"]
+z_index = 10
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 257.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="ResourceTop1" type="ColorRect" parent="UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 34.0
+offset_right = -37.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/ColorRect2/ResourceTop1"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect2/ResourceTop1"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("3_bdyte")
+
+[node name="ResourceTop2" type="ColorRect" parent="UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 99.0
+offset_right = -37.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/ColorRect2/ResourceTop2"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect2/ResourceTop2"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("4_d84fd")
+
+[node name="ResourceTop3" type="ColorRect" parent="UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/ColorRect2/ResourceTop3"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect2/ResourceTop3"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
+[node name="ResourceTop4" type="ColorRect" parent="UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/ColorRect2/ResourceTop4"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect2/ResourceTop4"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
+[node name="ResourceTop5" type="ColorRect" parent="UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 229.0
+offset_right = -37.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/ColorRect2/ResourceTop5"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ColorRect2/ResourceTop5"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +284,7 @@ theme = ExtResource("3_0qc7x")
 theme_override_font_sizes/font_size = 60
 text = "Toggle idle"
 
-[node name="Resource1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,7 +297,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource1"]
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop1"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -111,12 +319,12 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource1"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop1"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_bdyte")
 
-[node name="Resource2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,7 +337,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource2"]
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -151,25 +359,25 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource2"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("4_d84fd")
 
-[node name="Resource3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 822.0
-offset_top = 164.15
+offset_top = 164.0
 offset_right = -37.0
-offset_bottom = -21.0
+offset_bottom = -22.15
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource1" type="Label" parent="UI/VBoxContainer/ColorRect/Resource3"]
+[node name="Label_resource1" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -191,7 +399,7 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource3"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("5_gw5py")
@@ -214,6 +422,7 @@ layout_mode = 2
 
 [node name="GearsView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_y268q")]
 layout_mode = 2
+dragger_visibility = 2
 
 [node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
