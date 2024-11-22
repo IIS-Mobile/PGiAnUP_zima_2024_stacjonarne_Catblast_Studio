@@ -8,10 +8,14 @@
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("1_den7j")
+ignore_texture_size = true
 stretch_mode = 1
 script = ExtResource("1_ov4vb")
+
+[node name="Gears" type="Node2D" parent="."]
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jx61m")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="resized" from="." to="." method="_on_resized"]

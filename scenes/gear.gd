@@ -10,8 +10,6 @@ static func create() -> Gear:
 	return gear
 
 func _ready() -> void:
-	#TODO: react to runtime resizes?, make generic
-	scale *= (get_parent().size[0] * 0.30) / 512
 	$ResourcePopup.hide()
 	Global.count += 1
 	handle_resource_indicator()
