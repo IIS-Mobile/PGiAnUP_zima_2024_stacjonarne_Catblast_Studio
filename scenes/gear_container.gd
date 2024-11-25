@@ -26,9 +26,11 @@ func add_gear() -> void:
 	add_child(gear)
 	update_gear_container_size()
 
+
 func update_gear_container_size() -> void:
 	var current_row_amount = 1 + Global.count / Global.GEARS_PER_ROW
 	custom_minimum_size.y = current_row_amount * percent_to_pixels(28.5);
+
 	
 #TODO: move somewhere else?
 func _on_rotation_completed(index: int) -> void:

@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
 
 [node name="ShopView" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="Background" type="ColorRect" parent="."]
@@ -15,4 +20,6 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="ProductBar" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
 layout_mode = 2
+size_flags_vertical = 0

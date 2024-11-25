@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=22 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="3_0qc7x"]
@@ -9,17 +9,474 @@
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="5_f3sw0"]
 [ext_resource type="Texture2D" uid="uid://dchpv1fiui3et" path="res://assets/art/resources/3_brass/Brass_T1.png" id="5_gw5py"]
 [ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
+[ext_resource type="Texture2D" uid="uid://bppuayn5gbw3k" path="res://assets/art/resources/5_iron/iron_T1.png" id="5_w2rrs"]
+[ext_resource type="Texture2D" uid="uid://bnqiuijb8copi" path="res://assets/art/resources/6_steel/steel_T1.png" id="6_3wbme"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
 [ext_resource type="PackedScene" uid="uid://cabrjyf0hftbs" path="res://scenes/shop_view.tscn" id="7_a42nd"]
+[ext_resource type="Texture2D" uid="uid://wvanv5uqouru" path="res://assets/art/resources/7_gold/gold_T1.png" id="7_di4dp"]
 [ext_resource type="PackedScene" uid="uid://i7xj23bnw0yn" path="res://scenes/gears_view.tscn" id="7_y268q"]
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
+[ext_resource type="Texture2D" uid="uid://dveh5fwniwv6y" path="res://assets/art/resources/8_lead/lead_T1.png" id="8_n2fmr"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
+[ext_resource type="Texture2D" uid="uid://c5w3ksf61wgw6" path="res://assets/art/resources/9_tungsten/tungsten_T1.png" id="9_xpv3n"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
+[ext_resource type="Texture2D" uid="uid://2fqfxr7psmme" path="res://assets/art/resources/10_electrum/electrum_T1.png" id="10_le0ks"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Tier Pop-up" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchor_right = 0.72
+anchor_bottom = 0.127
+offset_right = 3.39996
+offset_bottom = -11.84
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Tier Pop-up"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.378
+anchor_bottom = 1.0
+offset_right = -295.218
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.909804, 0.843137, 0.368627, 1)
+
+[node name="Resource Pop-up" type="Control" parent="UI"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 257.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.161
+offset_left = 783.0
+offset_bottom = 603.623
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.909804, 0.843137, 0.368627, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.161
+offset_left = 797.0
+offset_top = 13.0
+offset_right = -10.0
+offset_bottom = 586.623
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.529412, 0.352941, 0.258824, 1)
+
+[node name="Resource1" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 34.0
+offset_right = -37.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/Resource Pop-up/Resource1"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource1"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("3_bdyte")
+
+[node name="Resource2" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 99.0
+offset_right = -37.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource2" type="Label" parent="UI/Resource Pop-up/Resource2"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource2"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("4_d84fd")
+
+[node name="Resource3" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource3"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource3"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
+[node name="Resource4" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.0
+offset_right = -37.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource4"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource4"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_gw5py")
+
+[node name="Resource5" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 228.15
+offset_right = -37.0
+offset_bottom = 31.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource5"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource5"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("5_w2rrs")
+
+[node name="Resource6" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 292.15
+offset_right = -37.0
+offset_bottom = 95.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource6"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource6"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("6_3wbme")
+
+[node name="Resource7" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 356.15
+offset_right = -37.0
+offset_bottom = 159.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource7"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource7"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("7_di4dp")
+
+[node name="Resource8" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 420.15
+offset_right = -37.0
+offset_bottom = 223.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource8"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource8"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("8_n2fmr")
+
+[node name="Resource9" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 484.15
+offset_right = -37.0
+offset_bottom = 287.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource9"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource9"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("9_xpv3n")
+
+[node name="Resource10" type="ColorRect" parent="UI/Resource Pop-up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 548.15
+offset_right = -37.0
+offset_bottom = 351.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource1" type="Label" parent="UI/Resource Pop-up/Resource10"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Resource Pop-up/Resource10"]
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("10_le0ks")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 anchors_preset = 15
@@ -51,13 +508,13 @@ text = "Add a gear"
 
 [node name="BoostButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 347.0
-offset_top = -72.925
-offset_right = 804.0
-offset_bottom = 10.075
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 81.0
+offset_right = 777.0
+offset_bottom = -82.15
+
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_font_sizes/font_size = 50
@@ -77,7 +534,7 @@ theme = ExtResource("3_0qc7x")
 theme_override_font_sizes/font_size = 50
 text = "Toggle idle"
 
-[node name="Resource1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +547,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource1"]
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop1"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -112,12 +569,12 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource1"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop1"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_bdyte")
 
-[node name="Resource2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,7 +587,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/Resource2"]
+[node name="Label_resource2" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -152,25 +609,25 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource2"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("4_d84fd")
 
-[node name="Resource3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 822.0
-offset_top = 164.15
+offset_top = 164.0
 offset_right = -37.0
-offset_bottom = -21.0
+offset_bottom = -22.15
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
-[node name="Label_resource1" type="Label" parent="UI/VBoxContainer/ColorRect/Resource3"]
+[node name="Label_resource1" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
@@ -192,7 +649,7 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/Resource3"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("5_gw5py")
@@ -210,11 +667,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ShopView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_a42nd")]
-visible = false
 layout_mode = 2
 
 [node name="GearsView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_y268q")]
+visible = false
 layout_mode = 2
+dragger_visibility = 2
 
 [node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
