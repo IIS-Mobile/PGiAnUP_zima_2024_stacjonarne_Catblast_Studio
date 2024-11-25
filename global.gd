@@ -1,15 +1,19 @@
 extends Node
 
 signal rotation_completed(index:int)
+signal tap_performed()
+signal release_steam()
 
-const MAX_GEARS = 16
+const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW*2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
+const STEAM_LIMIT = 400
 
-var idle = true
+var taps_count = 0
+var idle = false
 var speed := 0.0
 var buffer := 0.0
 var count := 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drx674hkxwlis"
-path="res://.godot/imported/electrumgear_T3.png-9317f8f0391d8d10f7855d9f2616cc71.ctex"
+uid="uid://byckpqhprfxh1"
+path="res://.godot/imported/glasspane.png-7f2a989d79074edd7780e9c64d2e4d35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/gears/10_elecrum/electrumgear_T3.png"
-dest_files=["res://.godot/imported/electrumgear_T3.png-9317f8f0391d8d10f7855d9f2616cc71.ctex"]
+source_file="res://assets/art/ui/glasspane.png"
+dest_files=["res://.godot/imported/glasspane.png-7f2a989d79074edd7780e9c64d2e4d35.ctex"]
 
 [params]
 

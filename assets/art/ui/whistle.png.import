@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cave48exgeh7y"
-path="res://.godot/imported/electrumgear_T4.png-1afc1273ebc0cf05cfdfc72bcd0bd62c.ctex"
+uid="uid://bfaue2yv7d3op"
+path="res://.godot/imported/whistle.png-2c0075dea69fae69f417fbf110f7776b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/gears/10_elecrum/electrumgear_T4.png"
-dest_files=["res://.godot/imported/electrumgear_T4.png-1afc1273ebc0cf05cfdfc72bcd0bd62c.ctex"]
+source_file="res://assets/art/ui/whistle.png"
+dest_files=["res://.godot/imported/whistle.png-2c0075dea69fae69f417fbf110f7776b.ctex"]
 
 [params]
 
