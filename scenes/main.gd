@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var counter = [get_node("UI/VBoxContainer/ColorRect/Resource1/Label_resource2"),get_node("UI/VBoxContainer/ColorRect/Resource2/Label_resource2"),get_node("UI/VBoxContainer/ColorRect/Resource3/Label_resource1")]
+@onready var counter = [get_node("UI/VBoxContainer/ColorRect/ResourceTop1/Label_resource2"),get_node("UI/VBoxContainer/ColorRect/ResourceTop2/Label_resource2"),get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1")]
 
 func _ready() -> void:
 	Global.connect("rotation_completed", _on_gear_container_rotation_completed)

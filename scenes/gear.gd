@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Gear
 
 const scene = preload("res://scenes/gear.tscn")
