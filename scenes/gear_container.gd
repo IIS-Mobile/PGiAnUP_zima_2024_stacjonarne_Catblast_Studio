@@ -25,12 +25,11 @@ func add_gear() -> void:
 	gear.z_index = Global.count % 2
 	add_child(gear)
 	update_gear_container_size()
-	
+
 
 func update_gear_container_size() -> void:
 	var current_row_amount = 1 + Global.count / Global.GEARS_PER_ROW
 	custom_minimum_size.y = current_row_amount * percent_to_pixels(28.5);
-
 
 	
 #TODO: move somewhere else?
@@ -41,3 +40,4 @@ func _on_rotation_completed(index: int) -> void:
 func _on_pressed() -> void:
 	if Global.count:
 		Global.buffer = min(Global.buffer + 0.1, 1.0)
+		Global.tap_performed.emit()

@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=3 uid="uid://loqrm2srjm8e"]
+
+[ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
+[ext_resource type="Texture2D" uid="uid://bfaue2yv7d3op" path="res://assets/art/ui/whistle.png" id="2_tdpj8"]
+[ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="3_0f71r"]
+[ext_resource type="Texture2D" uid="uid://byckpqhprfxh1" path="res://assets/art/ui/glasspane.png" id="3_l1cx2"]
+[ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="4_fd6e0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmpix"]
+bg_color = Color(0.749412, 0.971792, 0.965841, 1)
+border_color = Color(0.482655, 0.865689, 0.95582, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_yvr33"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fmpix")
+
+[sub_resource type="Curve" id="Curve_wfnoe"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(1, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="SteamChamber" type="PanelContainer"]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.76289, 0.76289)
+script = ExtResource("1_xqrmc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/Container"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = 376.5
+offset_right = 95.5
+offset_bottom = 1503.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_yvr33")
+max_value = 400.0
+step = 1.0
+value = 150.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Whistle" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+position = Vector2(119.115, -161.375)
+scale = Vector2(0.807667, 0.722222)
+texture = ExtResource("2_tdpj8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Panel/Container/ProgressBar/Whistle"]
+show_behind_parent = true
+position = Vector2(6.88487, 7.04804)
+amount = 64
+lifetime = 0.5
+gravity = Vector2(980, -1200)
+initial_velocity_max = 148.35
+angular_velocity_min = -1.2
+angular_velocity_max = 269.01
+angular_velocity_curve = SubResource("Curve_wfnoe")
+radial_accel_max = 57.14
+scale_amount_min = 6.5
+scale_amount_max = 28.47
+
+[node name="Glasspane" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+self_modulate = Color(1, 1, 1, 0.223529)
+position = Vector2(121.34, 585.625)
+scale = Vector2(1.02336, 1.25463)
+texture = ExtResource("3_l1cx2")
+
+[node name="GoldenBar2" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+position = Vector2(10.0426, 588.625)
+rotation = -1.57079
+scale = Vector2(0.561863, 0.116039)
+texture = ExtResource("3_0f71r")
+
+[node name="GoldenBar4" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+position = Vector2(228.34, 587.625)
+rotation = 1.57081
+scale = Vector2(0.561863, 0.112532)
+texture = ExtResource("3_0f71r")
+
+[node name="GoldenBar3" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+position = Vector2(119.278, 1133.63)
+rotation = -3.14159
+scale = Vector2(0.124508, 0.203911)
+texture = ExtResource("4_fd6e0")
+
+[node name="GoldenBar1" type="Sprite2D" parent="Panel/Container/ProgressBar"]
+position = Vector2(118.951, 8.37501)
+scale = Vector2(0.124428, 0.456704)
+texture = ExtResource("4_fd6e0")

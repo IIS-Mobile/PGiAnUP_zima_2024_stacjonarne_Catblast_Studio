@@ -1,0 +1,33 @@
+extends Control
+
+var iterator = 0.01
+var index
+
+func _ready() -> void:
+	Global.connect("tap_performed", increment_taps)
+	Global.connect("release_steam", release_steam)
+	$Panel/Container/ProgressBar.max_value = Global.STEAM_LIMIT
+	index = 0
+	
+func _process(delta: float) -> void:
+	waving_steam(index)
+	if(index <= -0.1 or index >= 0.1):
+		iterator = -iterator
+	index += iterator
+
+func increment_taps():
+	if Global.taps_count < Global.STEAM_LIMIT:
+		Global.taps_count += 1
+		$Panel/Container/ProgressBar.value = Global.taps_count
+
+func waving_steam(index):
+	$Panel/Container/ProgressBar.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
+
+	
+func release_steam():
+	for i in range (Global.STEAM_LIMIT, 0, -1):
+		if i%2:
+			await get_tree().create_timer(0.0001).timeout
+		Global.taps_count = i
+		$Panel/Container/ProgressBar.value = Global.taps_count
+		

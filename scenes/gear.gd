@@ -55,3 +55,7 @@ func handle_resource_indicator():
 
 	gear_texture_node.texture = load(gearpic_path) 
 	res_texture_node.texture = load(respic_path) 
+
+
+func _on_resource_popup_visibility_changed() -> void:
+	pass # Replace with function body.
