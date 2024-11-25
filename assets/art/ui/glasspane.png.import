@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn37yfnctlbq1"
-path="res://.godot/imported/tungstentgear_T7.png-8356572709a22ba63ec98e74f66f9e2e.ctex"
+uid="uid://byckpqhprfxh1"
+path="res://.godot/imported/glasspane.png-7f2a989d79074edd7780e9c64d2e4d35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/gears/9_tungsten/tungstentgear_T7.png"
-dest_files=["res://.godot/imported/tungstentgear_T7.png-8356572709a22ba63ec98e74f66f9e2e.ctex"]
+source_file="res://assets/art/ui/glasspane.png"
+dest_files=["res://.godot/imported/glasspane.png-7f2a989d79074edd7780e9c64d2e4d35.ctex"]
 
 [params]
 

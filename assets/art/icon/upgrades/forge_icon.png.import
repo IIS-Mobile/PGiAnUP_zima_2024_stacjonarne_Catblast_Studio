@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyr6lm81i02gj"
-path="res://.godot/imported/bronze_T7.png-98620b1db583d4ec015718443f6908c0.ctex"
+uid="uid://7x02m4jy2ak3"
+path="res://.godot/imported/forge_icon.png-51b839229807601258d05c4735e4b79d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/resources/4_bronze/bronze_T7.png"
-dest_files=["res://.godot/imported/bronze_T7.png-98620b1db583d4ec015718443f6908c0.ctex"]
+source_file="res://assets/art/icon/upgrades/forge_icon.png"
+dest_files=["res://.godot/imported/forge_icon.png-51b839229807601258d05c4735e4b79d.ctex"]
 
 [params]
 

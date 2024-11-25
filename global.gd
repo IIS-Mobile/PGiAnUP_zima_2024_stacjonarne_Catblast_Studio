@@ -1,24 +1,56 @@
 extends Node
 
 signal rotation_completed(index:int)
+signal tap_performed()
+signal release_steam()
 
-const MAX_GEARS = 16
+const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW*2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
+const STEAM_LIMIT = 400
 
+var taps_count = 0
 var idle = true
 var phases := []
 var speed := 0.0
 var buffer := 0.0
 var count := 0
 
+
 func _ready() -> void:
 	# init phases if no save state available
 	phases.resize(MAX_GEARS)
 	phases.fill(0.0)
+
+var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
+var resources = {
+	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers
+	str(resource_names[1]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[2]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[3]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[4]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[5]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[6]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[7]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[8]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[9]) : [0, 0, 0, 0, 0, 0, 0, 0]
+}
+var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
+var current_top_resource = 0
+
+
+
+func gcd(a: float, b: float) -> float:
+	if(b == 0.0):
+		return a
+	return gcd(b, fmod(a, b))
+
+func lcm(a: float, b: float) -> float:
+	return (a / gcd(a, b)) * b
+
 
 func ratio_function(i: int) -> float:
 	#return 1.0 / pow(2.0, i)

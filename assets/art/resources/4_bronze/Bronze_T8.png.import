@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8dcypbgf8e3o"
-path="res://.godot/imported/Bronze_T8.png-9d4e155019b09e37288608329cc90268.ctex"
+path="res://.godot/imported/bronze_T8.png-bb145e53527959d73a1779490f6b6e82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/resources/4_bronze/Bronze_T8.png"
-dest_files=["res://.godot/imported/Bronze_T8.png-9d4e155019b09e37288608329cc90268.ctex"]
+source_file="res://assets/art/resources/4_bronze/bronze_T8.png"
+dest_files=["res://.godot/imported/bronze_T8.png-bb145e53527959d73a1779490f6b6e82.ctex"]
 
 [params]
 

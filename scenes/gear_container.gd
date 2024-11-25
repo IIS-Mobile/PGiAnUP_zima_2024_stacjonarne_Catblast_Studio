@@ -39,3 +39,6 @@ func _on_resized() -> void:
 	#TODO: find a better way to fix crashing
 	if container_height - get_parent().size.y > 1:
 		custom_minimum_size.y = container_height
+
+		Global.tap_performed.emit()
+

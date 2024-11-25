@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyr6lm81i02gj"
-path="res://.godot/imported/bronze_T7.png-98620b1db583d4ec015718443f6908c0.ctex"
+uid="uid://cguqo2brgcabd"
+path="res://.godot/imported/tungstengear_T5.png-771cf232bb5c61fec66212913cd08b24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/resources/4_bronze/bronze_T7.png"
-dest_files=["res://.godot/imported/bronze_T7.png-98620b1db583d4ec015718443f6908c0.ctex"]
+source_file="res://assets/art/gears/9_tungsten/tungstengear_T5.png"
+dest_files=["res://.godot/imported/tungstengear_T5.png-771cf232bb5c61fec66212913cd08b24.ctex"]
 
 [params]
 
