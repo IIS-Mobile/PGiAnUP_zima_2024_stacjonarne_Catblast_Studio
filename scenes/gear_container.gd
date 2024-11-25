@@ -2,17 +2,15 @@ extends TextureButton
 
 func _ready() -> void:
 	Global.connect("rotation_completed", _on_rotation_completed)
-	
-func percent_to_pixels(percent: float) -> int:
-	return (percent * 0.01 * self.size[0] * 0.6) as int
 
+#TODO: delete
+func percent_to_pixels(percent: float) -> int:
+	return (percent * 0.01 * 2000) as int
 
 func add_gear() -> void:
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
-	gear.scale = Vector2(0.6, 0.6) #placeholder solution
-	
 	var x_pos = Global.count % Global.GEARS_PER_ROW
 	var y_pos = percent_to_pixels(18.5) + (Global.count / Global.GEARS_PER_ROW) * percent_to_pixels(28)
 	if (Global.count / Global.GEARS_PER_ROW) % 2:
@@ -23,15 +21,9 @@ func add_gear() -> void:
 		y_pos -= percent_to_pixels(4.5)
 	gear.position = Vector2(percent_to_pixels(18.5) + x_pos * percent_to_pixels(21), y_pos)
 	gear.z_index = Global.count % 2
-	add_child(gear)
-	update_gear_container_size()
+	$Gears.add_child(gear)
+	_on_resized()
 
-
-func update_gear_container_size() -> void:
-	var current_row_amount = 1 + Global.count / Global.GEARS_PER_ROW
-	custom_minimum_size.y = current_row_amount * percent_to_pixels(28.5);
-
-	
 #TODO: move somewhere else?
 func _on_rotation_completed(index: int) -> void:
 	if not index:
@@ -40,4 +32,13 @@ func _on_rotation_completed(index: int) -> void:
 func _on_pressed() -> void:
 	if Global.count:
 		Global.buffer = min(Global.buffer + 0.1, 1.0)
+
+func _on_resized() -> void:
+	$Gears.scale = Vector2.ONE * (size.x as float / 2000.0)
+	var container_height = (((Global.count + (Global.GEARS_PER_ROW - 1)) / Global.GEARS_PER_ROW) * $Gears.scale.y * percent_to_pixels(28)) + $Gears.scale.y * percent_to_pixels(9)
+	#TODO: find a better way to fix crashing
+	if container_height - get_parent().size.y > 1:
+		custom_minimum_size.y = container_height
+
 		Global.tap_performed.emit()
+
