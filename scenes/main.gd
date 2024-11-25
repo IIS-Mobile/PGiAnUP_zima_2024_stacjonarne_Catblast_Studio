@@ -8,10 +8,9 @@ func _on_gear_button_pressed() -> void:
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
 func _on_gear_container_rotation_completed(index: int) -> void:
-	#TODO: placeholder
-	if index / Global.TIERS_AMOUNT != 3:
-		var resource_name = Global.resource_names[index / Global.TIERS_AMOUNT]
-		Global.resources[resource_name][0] += 1
+	var resource_name = Global.resource_names[index / Global.TIERS_AMOUNT]
+	var tier = index % Global.TIERS_AMOUNT
+	Global.resources[resource_name][tier] += 1
 
 
 func _on_boost_button_pressed() -> void:

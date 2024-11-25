@@ -49,7 +49,6 @@ func update_top_resource_labels():
 	for i in range(2, -1, -1):
 		if local_current_top_resource - i <= Global.current_top_resource:
 			var top_tier = Global.current_top_tiers[local_current_top_resource - i]
-			print(local_current_top_resource-i)
 			var resource_name = Global.resource_names[local_current_top_resource - i]
 			var tier1_value = Global.resources[resource_name][top_tier]
 			var label = top_resource_areas[i].get_node("Label_resource")
@@ -139,7 +138,6 @@ func _input(event):
 			if selected_resource_type <= Global.current_top_resource:
 				tier_pop_up.visible = true
 		if clicked_on_top_resource_rect:
-			if Global.current_top_resource >= 3:
 				resources_pop_up.visible = true
 		elif resources_pop_up_area.get_global_rect().has_point(event.global_position) || (tier_pop_up_area.get_global_rect().has_point(event.global_position) && tier_pop_up.visible):
 			pass
