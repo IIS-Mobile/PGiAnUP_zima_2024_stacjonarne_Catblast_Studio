@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvmrgxf2lqq57"
-path="res://.godot/imported/electrumgear_T8.png-805bfac09ce654e17227d67b3cb1b9f3.ctex"
+uid="uid://54sm2lr0fswc"
+path="res://.godot/imported/tungstengear_T8.png-401d9128abbaf8f1009371bbc73a63f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/gears/10_elecrum/electrumgear_T8.png"
-dest_files=["res://.godot/imported/electrumgear_T8.png-805bfac09ce654e17227d67b3cb1b9f3.ctex"]
+source_file="res://assets/art/gears/9_tungsten/tungstengear_T8.png"
+dest_files=["res://.godot/imported/tungstengear_T8.png-401d9128abbaf8f1009371bbc73a63f1.ctex"]
 
 [params]
 

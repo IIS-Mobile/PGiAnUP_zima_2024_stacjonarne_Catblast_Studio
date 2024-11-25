@@ -40,12 +40,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -41.5
-offset_right = 309.0
-offset_bottom = 41.5
+offset_left = 25.0
+offset_top = -72.925
+offset_right = 334.0
+offset_bottom = 10.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "Add a gear"
 
 [node name="BoostButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
@@ -53,13 +54,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 320.0
-offset_top = -41.925
-offset_right = 777.0
-offset_bottom = 41.075
+offset_left = 347.0
+offset_top = -72.925
+offset_right = 804.0
+offset_bottom = 10.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "Boost  for 5 sec."
 
 [node name="IdleButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
@@ -67,13 +68,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = 41.075
-offset_right = 459.0
-offset_bottom = 124.075
+offset_left = 166.0
+offset_top = 18.075
+offset_right = 623.0
+offset_bottom = 101.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "Toggle idle"
 
 [node name="Resource1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]

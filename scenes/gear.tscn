@@ -12,3 +12,5 @@ texture = ExtResource("2_lfsoe")
 
 [node name="ResourcePopup" parent="." instance=ExtResource("3_m4of8")]
 scale = Vector2(2, 2)
+
+[connection signal="visibility_changed" from="ResourcePopup" to="." method="_on_resource_popup_visibility_changed"]

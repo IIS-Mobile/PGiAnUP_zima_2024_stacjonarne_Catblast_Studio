@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bchsqv66vnndr"
-path="res://.godot/imported/tungstentgear_T2.png-02e5b5ccf98be5eecec38f3386a16244.ctex"
+path="res://.godot/imported/tungstengear_T2.png-6c5fe0437555efb69aa6a3d8f6c1d8ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/gears/9_tungsten/tungstentgear_T2.png"
-dest_files=["res://.godot/imported/tungstentgear_T2.png-02e5b5ccf98be5eecec38f3386a16244.ctex"]
+source_file="res://assets/art/gears/9_tungsten/tungstengear_T2.png"
+dest_files=["res://.godot/imported/tungstengear_T2.png-6c5fe0437555efb69aa6a3d8f6c1d8ba.ctex"]
 
 [params]
 
