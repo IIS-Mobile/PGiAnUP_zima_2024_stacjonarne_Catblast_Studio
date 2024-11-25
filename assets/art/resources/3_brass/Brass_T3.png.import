@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d7o3sglsfsth"
-path="res://.godot/imported/Brass_T3.png-8b376f6740fc731d861bfbb4c033a0d2.ctex"
+path="res://.godot/imported/brass_T3.png-ec99d304dcd0b65db4ffacf363f30e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/resources/3_brass/Brass_T3.png"
-dest_files=["res://.godot/imported/Brass_T3.png-8b376f6740fc731d861bfbb4c033a0d2.ctex"]
+source_file="res://assets/art/resources/3_brass/brass_T3.png"
+dest_files=["res://.godot/imported/brass_T3.png-ec99d304dcd0b65db4ffacf363f30e25.ctex"]
 
 [params]
 

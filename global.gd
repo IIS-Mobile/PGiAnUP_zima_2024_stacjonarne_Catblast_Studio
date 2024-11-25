@@ -22,6 +22,24 @@ var prev_phase := 0.0
 #TODO: can be hardcored/comptime once a ratio function is choosen
 var gears_lcm = range(0, MAX_GEARS).map(func(i): return 1.0 / ratio_function(i)).reduce(lcm)
 
+var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
+var resources = {
+	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers
+	str(resource_names[1]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[2]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[3]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[4]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[5]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[6]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[7]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[8]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[9]) : [0, 0, 0, 0, 0, 0, 0, 0]
+}
+var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
+var current_top_resource = 0
+
+
+
 func gcd(a: float, b: float) -> float:
 	if(b == 0.0):
 		return a

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://css3qkmlgpdfp" path="res://assets/art/icon/upgrades/addgear_icon.png" id="1_5cntd"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
-[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/Tin_T1.png" id="2_bhkcu"]
+[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/tin_T1.png" id="2_bhkcu"]
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="3_gxjrw"]
 
 [node name="ProductBar" type="Panel"]

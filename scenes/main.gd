@@ -1,19 +1,5 @@
 extends Node2D
 
-@onready var counter = [
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop1/Label_resource2"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop2/Label_resource2"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	get_node("UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource1"),
-	]
 
 func _ready() -> void:
 	Global.connect("rotation_completed", _on_gear_container_rotation_completed)
@@ -22,10 +8,9 @@ func _on_gear_button_pressed() -> void:
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
 func _on_gear_container_rotation_completed(index: int) -> void:
-	#TODO: placeholder
-	if index / Global.TIERS_AMOUNT != 3:
-		var counter = counter[index / Global.TIERS_AMOUNT]
-		counter.text = str(int(counter.text) + 1)
+	var resource_name = Global.resource_names[index / Global.TIERS_AMOUNT]
+	var tier = index % Global.TIERS_AMOUNT
+	Global.resources[resource_name][tier] += 1
 
 
 func _on_boost_button_pressed() -> void:
