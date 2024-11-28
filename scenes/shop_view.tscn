@@ -23,3 +23,25 @@ theme_override_constants/separation = 15
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 0
+price = -1.0
+resource = "tin"
+special_currency_price = -1.0
+item_type = -1
+
+[node name="ProductBar2" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+price = -1.0
+resource = "tin"
+special_currency_price = -1.0
+item_type = -1
+
+[node name="ProductBar3" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+price = -1.0
+resource = "tin"
+special_currency_price = -1.0
+item_type = -1

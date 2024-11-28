@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://da2twjw0p16g5"]
+[gd_scene load_steps=5 format=3 uid="uid://da2twjw0p16g5"]
 
 [ext_resource type="PackedScene" uid="uid://cyjejqvy7vq4q" path="res://scenes/gear_container.tscn" id="1_ct8w3"]
 [ext_resource type="PackedScene" uid="uid://loqrm2srjm8e" path="res://scenes/steam_chamber.tscn" id="1_dfyvd"]
+[ext_resource type="Script" path="res://scenes/scroll_container.gd" id="2_lfvxk"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_r8xow"]
 
 [node name="GearsView" type="HSplitContainer"]
 offset_right = 290.0
@@ -52,6 +54,9 @@ color = Color(0.368627, 0.262745, 0.203922, 1)
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 0
+theme = ExtResource("2_r8xow")
+script = ExtResource("2_lfvxk")
 
 [node name="GearContainer" parent="ScrollContainer" instance=ExtResource("1_ct8w3")]
 layout_mode = 2
