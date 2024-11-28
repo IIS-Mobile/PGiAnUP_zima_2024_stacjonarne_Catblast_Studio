@@ -178,3 +178,10 @@ texture = ExtResource("4_fd6e0")
 position = Vector2(331.537, 1304.22)
 scale = Vector2(0.616985, 0.419952)
 texture = ExtResource("6_fcbwt")
+
+[node name="GaugeHand" type="Sprite2D" parent="Panel/Container/SteamGauge"]
+position = Vector2(0.0706894, 0)
+rotation = 0.785398
+scale = Vector2(0.121846, 0.155358)
+texture = ExtResource("4_fd6e0")
+offset = Vector2(1000, 0)

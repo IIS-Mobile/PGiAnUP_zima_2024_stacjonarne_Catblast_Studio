@@ -1,7 +1,7 @@
 extends Control
 
 var iterator = 0.01
-var index
+var index = 0
 
 func _ready() -> void:
 	Global.connect("release_steam", release_steam)
@@ -9,7 +9,6 @@ func _ready() -> void:
 	$Panel/Container/ProgressBar.max_value = Global.STEAM_LIMIT
 	$Panel/Container/ProgressBar2.max_value = 1
 	$Panel/Container/Whistle/CPUParticles2D.emitting = false
-	index = 0
 	
 func _process(delta: float) -> void:
 	$Panel/Container/ProgressBar2.value = Global.buffer
@@ -19,14 +18,14 @@ func _process(delta: float) -> void:
 	index += iterator
 
 func increment_taps():
-	if Global.taps_count < Global.STEAM_LIMIT and Global.idle == false:
+	if Global.taps_count < Global.STEAM_LIMIT:
 		Global.taps_count += 1
 		$Panel/Container/ProgressBar.value = Global.taps_count
-		
+
 func waving_steam(index):
 	$Panel/Container/ProgressBar.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
 	$Panel/Container/ProgressBar2.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
-	
+
 func release_steam():
 	for i in range (Global.STEAM_LIMIT, 0, -1):
 		if i%2:
