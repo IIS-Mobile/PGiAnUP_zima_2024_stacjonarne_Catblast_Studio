@@ -1,35 +1,36 @@
-extends Node2D
+extends TextureButton
 
-signal rotation_completed(index)
+func _ready() -> void:
+	#TODO: is there a better way?
+	Global.connect("rotation_completed", _on_rotation_completed)
+	
+func percent_to_pixels(percent: float) -> int:
+	return (percent * 0.01 * self.size[0] * 0.6) as int
 
-var gears = 0
 
 func add_gear() -> void:
-	# TODO: placeholder
-	if gears >= 16:
-		pass
+	if Global.count >= Global.MAX_GEARS:
+		return
 	var gear = Gear.create()
-	var x_pos = gears % 4
-	var y_pos = 192 + (gears / 4) * 348
-	if (gears / 4) % 2:
-		x_pos = 3 - x_pos
-	#TODO: placeholder
-	if gears != 15 and gears % 4 == 3:
-		y_pos += 58
-	elif gears != 0 and gears % 4 ==0:
-		y_pos -= 58
-	gear.position = Vector2(192 + x_pos * 232, y_pos)
-	gear.z_index = gears % 2
-	gears += 1
+	gear.scale = Vector2(0.6, 0.6) #placeholder solution
+	
+	var x_pos = Global.count % Global.GEARS_PER_ROW
+	var y_pos = percent_to_pixels(18.5) + (Global.count / Global.GEARS_PER_ROW) * percent_to_pixels(28)
+	if (Global.count / Global.GEARS_PER_ROW) % 2:
+		x_pos = (Global.GEARS_PER_ROW - 1) - x_pos
+	if Global.count != (Global.MAX_GEARS - 1) and Global.count % Global.GEARS_PER_ROW == Global.GEARS_PER_ROW - 1:
+		y_pos += percent_to_pixels(4.5)
+	elif Global.count != 0 and Global.count % Global.GEARS_PER_ROW == 0:
+		y_pos -= percent_to_pixels(4.5)
+	gear.position = Vector2(percent_to_pixels(18.5) + x_pos * percent_to_pixels(21), y_pos)
+	gear.z_index = Global.count % 2
 	add_child(gear)
 
-func _physics_process(_delta: float) -> void:
-	Gear.speed = max(Gear.speed * 0.99, 0)
-
-func _on_texture_button_pressed() -> void:
-	if gears:
-		Gear.speed = min(Gear.speed + 0.1, 1.0)
-
-func _on_rotation_completed(index: Variant) -> void:
+#TODO: move somewhere else?
+func _on_rotation_completed(index: int) -> void:
 	if not index:
 		$Sound.play()
+
+func _on_pressed() -> void:
+	if Global.count:
+		Global.buffer = min(Global.buffer + 0.1, 1.0)
