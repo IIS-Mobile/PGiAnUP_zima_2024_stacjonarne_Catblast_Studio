@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1qqo5erp053i"]
+[gd_scene load_steps=6 format=3 uid="uid://b1qqo5erp053i"]
 
+[ext_resource type="Script" path="res://scenes/shop_item.gd" id="1_3i66l"]
 [ext_resource type="Texture2D" uid="uid://css3qkmlgpdfp" path="res://assets/art/icon/upgrades/addgear_icon.png" id="1_5cntd"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
-[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/tin_T1.png" id="2_bhkcu"]
+[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/Tin_T1.png" id="2_bhkcu"]
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="3_gxjrw"]
 
 [node name="ProductBar" type="Panel"]
 self_modulate = Color(0.282353, 0.176471, 0.117647, 0.698039)
-custom_minimum_size = Vector2(1100, 222.08)
-anchors_preset = -1
-anchor_left = -0.056
-anchor_right = 1.056
-offset_left = 60.48
-offset_right = -60.48
+custom_minimum_size = Vector2(0, 222.08)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 4
+script = ExtResource("1_3i66l")
+price = 7.0
+resource = "copper"
+tier = 1
+special_currency_price = 1.0
+item_type = 0
 
 [node name="Panel" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -52,18 +58,18 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "12"
 
-[node name="Resource icon" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ResourceIcon" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_bhkcu")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Price2" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="PremiumPrice" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "or 1"
 
-[node name="Resource icon2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="PremiumResourceIcon" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_gxjrw")
 expand_mode = 3

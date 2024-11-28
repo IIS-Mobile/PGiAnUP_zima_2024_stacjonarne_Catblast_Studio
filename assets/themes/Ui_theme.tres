@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bj5ti8cjyws43"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://bj5ti8cjyws43"]
 
 [ext_resource type="Texture2D" uid="uid://c8464072q3ron" path="res://assets/art/ui/ten.png" id="1_cehnv"]
 
@@ -17,6 +17,26 @@ texture = ExtResource("1_cehnv")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ir71y"]
 texture = ExtResource("1_cehnv")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m80v8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4jel5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awtrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrfgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8dgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1xdw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xtd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dxqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1d2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3o8rh"]
+
 [resource]
 Button/constants/h_separation = 20
 Button/font_sizes/font_size = 15
@@ -25,3 +45,13 @@ Button/styles/focus = SubResource("StyleBoxTexture_jvylk")
 Button/styles/hover = SubResource("StyleBoxTexture_fs3by")
 Button/styles/normal = SubResource("StyleBoxTexture_mlgol")
 Button/styles/pressed = SubResource("StyleBoxTexture_ir71y")
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_m80v8")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_4jel5")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_awtrx")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_qrfgj")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_n8dgo")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_y1xdw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_0xtd2")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_7dxqv")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_p1d2y")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_3o8rh")
