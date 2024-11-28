@@ -3,6 +3,9 @@ extends Node
 signal rotation_completed(index:int)
 signal tap_performed()
 signal release_steam()
+signal begin_idling(idling_time)
+
+# gauge hand rotation: -225deg to 45deg
 
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
@@ -11,19 +14,26 @@ const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
 const STEAM_LIMIT = 400
+const IDLING_TIME = 30 # in seconds 
 
 var taps_count = 0
-var idle = true
+var idle = false
 var phases := []
 var speed := 0.0
 var buffer := 0.0
 var count := 0
 
+var idle_timer : Timer
 
 func _ready() -> void:
 	# init phases if no save state available
 	phases.resize(MAX_GEARS)
 	phases.fill(0.0)
+	connect("begin_idling", handle_idling)
+	idle_timer = Timer.new()
+	idle_timer.one_shot = true
+	add_child(idle_timer)
+
 
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
@@ -77,3 +87,9 @@ func _physics_process(_delta: float) -> void:
 			if prev_phase > phases[child.index]:
 				child.handle_resource_popup()
 				emit_signal("rotation_completed", child.index)
+
+func handle_idling(idling_time):
+	Global.idle = true
+	await get_tree().create_timer(idling_time).timeout
+	print("NO CIEKAWE CZY FAKTYCZNIE TYLE MINIE (jak cos to mija bo sprawdzalem)")
+	Global.idle = false

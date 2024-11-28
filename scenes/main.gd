@@ -19,8 +19,7 @@ func _on_boost_button_pressed() -> void:
 
 func _on_idle_button_pressed() -> void:
 	if Global.taps_count >= Global.STEAM_LIMIT:
-		Global.idle = not Global.idle
-		#Global.taps_count = 0
 		Global.release_steam.emit()
+		Global.begin_idling.emit(Global.IDLING_TIME)
 	else:
 		print("NIEEEE NIE MOZESZ JESZCZE IDLOWAC MUSISZ NAPOMPOWAC PARY DO KOMORY")

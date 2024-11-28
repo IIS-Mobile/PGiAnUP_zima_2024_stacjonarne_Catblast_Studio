@@ -31,6 +31,7 @@ func _on_rotation_completed(index: int) -> void:
 
 func _on_pressed() -> void:
 	if Global.count:
+		Global.tap_performed.emit()
 		Global.buffer = min(Global.buffer + 0.1, 1.0)
 
 func _on_resized() -> void:
@@ -39,6 +40,3 @@ func _on_resized() -> void:
 	#TODO: find a better way to fix crashing
 	if container_height - get_parent().size.y > 1:
 		custom_minimum_size.y = container_height
-
-		Global.tap_performed.emit()
-
