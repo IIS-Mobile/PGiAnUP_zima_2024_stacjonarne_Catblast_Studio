@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://8eame88l2f60"]
+
+[ext_resource type="Script" path="res://scenes/global_timer.gd" id="1_usl6w"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_usl6w")
+
+[node name="IdleTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

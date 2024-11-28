@@ -121,6 +121,7 @@ scale = Vector2(0.124428, 0.456704)
 texture = ExtResource("4_fd6e0")
 
 [node name="ProgressBar2" type="ProgressBar" parent="Panel/Container"]
+layout_mode = 0
 offset_left = 180.317
 offset_top = 114.426
 offset_right = 410.317
@@ -181,7 +182,7 @@ texture = ExtResource("6_fcbwt")
 
 [node name="GaugeHand" type="Sprite2D" parent="Panel/Container/SteamGauge"]
 position = Vector2(0.0706894, 0)
-rotation = 0.785398
+rotation = -3.92699
 scale = Vector2(0.121846, 0.155358)
 texture = ExtResource("4_fd6e0")
 offset = Vector2(1000, 0)
