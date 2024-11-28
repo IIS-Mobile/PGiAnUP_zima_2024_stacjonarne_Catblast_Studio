@@ -13,7 +13,7 @@ const IDLE_SPEED = 0.1
 const STEAM_LIMIT = 400
 
 var taps_count = 0
-var idle = true
+var idle = false
 var phases := []
 var speed := 0.0
 var buffer := 0.0
