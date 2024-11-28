@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2xbq6bohj3hs"
-path="res://.godot/imported/bronze_T4.png-4bb9423c1d7d3b960dbd1f150da7495b.ctex"
+uid="uid://cs1eo5hh6f6t5"
+path="res://.godot/imported/tin_T6.png-5e740210098ee7d26acaf4e3a48e2058.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/resources/4_bronze/bronze_T4.png"
-dest_files=["res://.godot/imported/bronze_T4.png-4bb9423c1d7d3b960dbd1f150da7495b.ctex"]
+source_file="res://assets/art/resources/1_tin/tin_T6.png"
+dest_files=["res://.godot/imported/tin_T6.png-5e740210098ee7d26acaf4e3a48e2058.ctex"]
 
 [params]
 

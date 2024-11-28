@@ -9,7 +9,7 @@ signal begin_idling(idling_time)
 
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
-const TIERS_AMOUNT = GEARS_PER_ROW*2
+const TIERS_AMOUNT = GEARS_PER_ROW * 2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
@@ -19,6 +19,7 @@ const IDLING_TIME = 30 # in seconds
 var taps_count = 0
 var idle = false
 var phases := []
+var speed_multiplier := 1.0
 var speed := 0.0
 var buffer := 0.0
 var count := 0
@@ -51,20 +52,10 @@ var resources = {
 var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
 var current_top_resource = 0
 
-
-
-func gcd(a: float, b: float) -> float:
-	if(b == 0.0):
-		return a
-	return gcd(b, fmod(a, b))
-
-func lcm(a: float, b: float) -> float:
-	return (a / gcd(a, b)) * b
-
-
+# function takes gear index and returns a fraction of base speed
 func ratio_function(i: int) -> float:
 	#return 1.0 / pow(2.0, i)
-	return 0.5 / (1.2 * i + 1.0)
+	return 1.0 / (i + 1)
 
 func _physics_process(_delta: float) -> void:
 	if not count:
@@ -76,16 +67,18 @@ func _physics_process(_delta: float) -> void:
 		speed = max(speed - SLOWDOWN_FACTOR, 0.0)
 	if idle and speed < IDLE_SPEED:
 		buffer = min(buffer + SLOWDOWN_FACTOR, IDLE_SPEED)
-	var phase_inc = speed * speed * ROTATION_ANGLE
+	var phase_inc = speed_multiplier * speed * speed * ROTATION_ANGLE
 	#TODO: should handle case when does not exist yet?
 	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Gears")
 	for child in container.get_children():
 		if child is Gear:
-			var prev_phase = phases[child.index]
-			phases[child.index] = fmod(phases[child.index] + phase_inc * ratio_function(child.index), 360.0)
+			var rots = (phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0)) / 360.0 as int
+			phases[child.index] = fmod(phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0), 360.0)
 			child.get_node("Sprite").rotation_degrees = phases[child.index]
-			if prev_phase > phases[child.index]:
+			#TODO: display +rots instead of +1 rots times
+			for _r in range(0, rots):
 				child.handle_resource_popup()
+				#not sure if they are not stacking (replace signal with function?)
 				emit_signal("rotation_completed", child.index)
 
 func handle_idling(idling_time):
