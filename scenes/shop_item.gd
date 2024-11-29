@@ -32,7 +32,7 @@ extends Panel
 var resource_name_table = [resource1,resource2,resource3]
 var tier_table = [tier1,tier2,tier3]
 
-@onready var texture_rect = $Panel/TextureRect 
+@onready var texture_rect = $Panel/HBoxContainer4/TextureRect
 
 @onready var price_label_table = [
 	$Panel/VBoxContainer3/Price1,

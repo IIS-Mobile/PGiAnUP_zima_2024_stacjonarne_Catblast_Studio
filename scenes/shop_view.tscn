@@ -54,6 +54,4 @@ title = "Melting I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
 resource1 = "copper"
-price2 = 100.0
-tier2 = 8
 premium_price = 100.0
