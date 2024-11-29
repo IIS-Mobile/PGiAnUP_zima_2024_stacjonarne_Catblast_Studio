@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Gear
 
 const scene = preload("res://scenes/gear.tscn")
@@ -10,8 +10,6 @@ static func create() -> Gear:
 	return gear
 
 func _ready() -> void:
-	#TODO: react to runtime resizes?, make generic
-	scale *= (get_parent().size[0] * 0.30) / 512
 	$ResourcePopup.hide()
 	Global.count += 1
 	handle_resource_indicator()
@@ -53,5 +51,14 @@ func handle_resource_indicator():
 	var gearpic_path = "res://assets/art/gears/%d_%s/%sgear_T%s.png" % [tier_index + 1,selected_material["name"], selected_material["name"], resource_tier]
 	var respic_path = "res://assets/art/resources/%d_%s/%s_T%s.png" % [tier_index + 1,selected_material["name"], selected_material["name"], resource_tier]
 
+	if(int(resource_tier)-1 > Global.current_top_tiers[selected_material["multiplier"]]):
+		Global.current_top_tiers[selected_material["multiplier"]] = int(resource_tier)-1
+
+	Global.current_top_resource = selected_material["multiplier"];
+
 	gear_texture_node.texture = load(gearpic_path) 
 	res_texture_node.texture = load(respic_path) 
+
+
+func _on_resource_popup_visibility_changed() -> void:
+	pass # Replace with function body.

@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://loqrm2srjm8e"]
+
+[ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_i4s0t"]
+[ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="3_0f71r"]
+[ext_resource type="Texture2D" uid="uid://byckpqhprfxh1" path="res://assets/art/ui/glasspane.png" id="3_l1cx2"]
+[ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="4_fd6e0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmpix"]
+bg_color = Color(0.749412, 0.971792, 0.965841, 1)
+border_color = Color(0.482655, 0.865689, 0.95582, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_yvr33"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fmpix")
+
+[node name="SteamChamber" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -842.0
+offset_bottom = -773.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqrmc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 89.0
+offset_right = 126.0
+offset_bottom = 172.0
+theme = ExtResource("2_i4s0t")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 60
+text = "def"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 238.0
+offset_bottom = 1129.0
+theme = SubResource("Theme_yvr33")
+max_value = 400.0
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Glasspane" type="Sprite2D" parent="ProgressBar"]
+self_modulate = Color(1, 1, 1, 0.223529)
+position = Vector2(128.5, 560)
+scale = Vector2(1.02336, 1.25463)
+texture = ExtResource("3_l1cx2")
+
+[node name="GoldenBar2" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(10, 557)
+rotation = -1.57079
+scale = Vector2(0.561863, 0.112717)
+texture = ExtResource("3_0f71r")
+
+[node name="GoldenBar4" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(228, 556)
+rotation = -4.71238
+scale = Vector2(0.561863, 0.112532)
+texture = ExtResource("3_0f71r")
+
+[node name="GoldenBar3" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(119.063, 1102)
+rotation = -3.14159
+scale = Vector2(0.124378, 0.203911)
+texture = ExtResource("4_fd6e0")
+
+[node name="GoldenBar1" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(119.063, 0)
+scale = Vector2(0.124023, 0.203911)
+texture = ExtResource("4_fd6e0")

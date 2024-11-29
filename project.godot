@@ -19,6 +19,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 Global="*res://global.gd"
+GlobalTimer="*res://scenes/global_timer.tscn"
 
 [display]
 

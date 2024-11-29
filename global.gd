@@ -1,20 +1,59 @@
 extends Node
 
 signal rotation_completed(index:int)
+signal tap_performed()
+signal release_steam()
+signal begin_idling(idling_time)
 
-const MAX_GEARS = 16
+# gauge hand rotation: -225deg to 45deg
+
+const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
-const TIERS_AMOUNT = GEARS_PER_ROW*2
+const TIERS_AMOUNT = GEARS_PER_ROW * 2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
+const STEAM_LIMIT = 400.0
 
-var idle = true
-var speed := 0.0
+var taps_count = 0.0
+var idle = false
+var phases := []
+var speed_multiplier := 1.0
+var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
 var buffer := 0.0
 var count := 0
-var phase := 0.0
-var prev_phase := 0.0
+
+var idle_timer : Timer
+
+func _ready() -> void:
+	# init phases if no save state available
+	phases.resize(MAX_GEARS)
+	phases.fill(0.0)
+	idle_timer = Timer.new()
+	idle_timer.one_shot = true
+	add_child(idle_timer)
+
+
+var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
+var resources = {
+	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers
+	str(resource_names[1]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[2]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[3]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[4]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[5]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[6]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[7]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[8]) : [0, 0, 0, 0, 0, 0, 0, 0],
+	str(resource_names[9]) : [0, 0, 0, 0, 0, 0, 0, 0]
+}
+var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
+var current_top_resource = 0
+
+# function takes gear index and returns a fraction of base speed
+func ratio_function(i: int) -> float:
+	#return 1.0 / pow(2.0, i)
+	return 1.0 / (i + 1)
 
 func _physics_process(_delta: float) -> void:
 	if not count:
@@ -25,19 +64,17 @@ func _physics_process(_delta: float) -> void:
 	else:
 		speed = max(speed - SLOWDOWN_FACTOR, 0.0)
 	if idle and speed < IDLE_SPEED:
-		#TODO: relate max to IDLE_SPEED
-		buffer = min(buffer + SLOWDOWN_FACTOR, 1.0)
-	prev_phase = phase
-	#TODO: optimize out the angles
-	phase += speed * speed * ROTATION_ANGLE
-	phase = fmod(phase, 360.0 * pow(2, Global.MAX_GEARS - 1))
+		buffer = min(buffer + SLOWDOWN_FACTOR, IDLE_SPEED)
+	var phase_inc = speed_multiplier * speed * speed * ROTATION_ANGLE
 	#TODO: should handle case when does not exist yet?
-	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer")
+	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Gears")
 	for child in container.get_children():
 		if child is Gear:
-			var prev_deg = fmod(prev_phase / pow(2, child.index), 360.0)
-			var deg = fmod(phase / pow(2, child.index), 360.0)
-			child.get_node("Sprite").rotation_degrees = deg
-			if deg < prev_deg:
+			var rots = (phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0)) / 360.0 as int
+			phases[child.index] = fmod(phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0), 360.0)
+			child.get_node("Sprite").rotation_degrees = phases[child.index]
+			#TODO: display +rots instead of +1 rots times
+			for _r in range(0, rots):
 				child.handle_resource_popup()
+				#not sure if they are not stacking (replace signal with function?)
 				emit_signal("rotation_completed", child.index)

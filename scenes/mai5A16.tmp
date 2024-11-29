@@ -1,19 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=24 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="3_0qc7x"]
-[ext_resource type="Texture2D" uid="uid://cm7rx7h1onhhr" path="res://assets/art/resources/hidden_resource.png" id="3_xmlx4"]
+[ext_resource type="Texture2D" uid="uid://dvk7v1rqei08c" path="res://assets/art/resources/1_tin/Tin_T1.png" id="3_bdyte"]
+[ext_resource type="Texture2D" uid="uid://5h4d6r5aybx" path="res://assets/art/resources/2_copper/copper_T1.png" id="4_d84fd"]
 [ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="4_uhjoh"]
 [ext_resource type="Texture2D" uid="uid://bdfmmoyt6estb" path="res://assets/art/icon/gear_icon.png" id="5_7il7n"]
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="5_f3sw0"]
+[ext_resource type="Texture2D" uid="uid://dchpv1fiui3et" path="res://assets/art/resources/3_brass/Brass_T1.png" id="5_gw5py"]
 [ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
+[ext_resource type="Texture2D" uid="uid://bppuayn5gbw3k" path="res://assets/art/resources/5_iron/iron_T1.png" id="5_w2rrs"]
+[ext_resource type="Texture2D" uid="uid://bnqiuijb8copi" path="res://assets/art/resources/6_steel/steel_T1.png" id="6_3wbme"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
+[ext_resource type="Texture2D" uid="uid://cijys7qa2g2ru" path="res://assets/art/resources/4_bronze/Bronze_T1.png" id="6_kvyy5"]
 [ext_resource type="PackedScene" uid="uid://cabrjyf0hftbs" path="res://scenes/shop_view.tscn" id="7_a42nd"]
-[ext_resource type="PackedScene" uid="uid://da2twjw0p16g5" path="res://scenes/gears_view.tscn" id="7_y268q"]
+[ext_resource type="Texture2D" uid="uid://wvanv5uqouru" path="res://assets/art/resources/7_gold/gold_T1.png" id="7_di4dp"]
+[ext_resource type="PackedScene" uid="uid://i7xj23bnw0yn" path="res://scenes/gears_view.tscn" id="7_y268q"]
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
+[ext_resource type="Texture2D" uid="uid://dveh5fwniwv6y" path="res://assets/art/resources/8_lead/lead_T1.png" id="8_n2fmr"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
+[ext_resource type="Texture2D" uid="uid://c5w3ksf61wgw6" path="res://assets/art/resources/9_tungsten/tungsten_T1.png" id="9_xpv3n"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
+[ext_resource type="Texture2D" uid="uid://2fqfxr7psmme" path="res://assets/art/resources/10_electrum/electrum_T1.png" id="10_le0ks"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
@@ -96,7 +105,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier0"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier1" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -137,7 +146,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier1"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier2" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -178,7 +187,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier2"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier3" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -219,7 +228,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier3"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier4" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -260,7 +269,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier4"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier5" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -301,7 +310,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier5"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier6" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -342,7 +351,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier6"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Tier7" type="ColorRect" parent="UI/TierPopUp"]
 z_index = 2
@@ -383,7 +392,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/TierPopUp/Tier7"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="ResourcePopUp" type="Control" parent="UI"]
 z_index = 10
@@ -455,7 +464,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource0"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="Resource1" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 2
@@ -494,7 +503,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource1"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("4_d84fd")
 
 [node name="Resource2" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 2
@@ -533,7 +542,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource2"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("5_gw5py")
 
 [node name="Resource3" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 2
@@ -572,7 +581,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource3"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("6_kvyy5")
 
 [node name="Resource4" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 1
@@ -612,7 +621,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource4"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("5_w2rrs")
 
 [node name="Resource5" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 1
@@ -652,7 +661,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource5"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("6_3wbme")
 
 [node name="Resource6" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 1
@@ -692,7 +701,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource6"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("7_di4dp")
 
 [node name="Resource7" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 1
@@ -732,7 +741,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource7"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("8_n2fmr")
 
 [node name="Resource8" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 1
@@ -772,7 +781,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource8"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("9_xpv3n")
 
 [node name="Resource9" type="ColorRect" parent="UI/ResourcePopUp"]
 layout_mode = 2
@@ -811,7 +820,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/ResourcePopUp/Resource9"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("10_le0ks")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 anchors_preset = 15
@@ -868,7 +877,7 @@ theme = ExtResource("3_0qc7x")
 theme_override_font_sizes/font_size = 50
 text = "Toggle idle"
 
-[node name="ResourceTop0" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+[node name="ResourceTop1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -877,46 +886,6 @@ offset_left = 822.0
 offset_top = 34.15
 offset_right = -37.0
 offset_bottom = -151.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.384792, 0.247918, 0.17197, 1)
-
-[node name="Label_resource" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop0"]
-z_index = 9
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.995611
-anchor_bottom = 1.0
-offset_left = 77.0
-offset_top = -1.0
-offset_right = -0.030014
-offset_bottom = 1.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 45
-text = "0"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop0"]
-position = Vector2(33.5, 33.65)
-scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
-
-[node name="ResourceTop1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 822.0
-offset_top = 99.15
-offset_right = -37.0
-offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -946,7 +915,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop1"]
 position = Vector2(33.5, 33.65)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("3_bdyte")
 
 [node name="ResourceTop2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
@@ -954,9 +923,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 822.0
-offset_top = 164.0
+offset_top = 99.15
 offset_right = -37.0
-offset_bottom = -22.15
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -984,9 +953,49 @@ text = "0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
+position = Vector2(33.5, 33.65)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("4_d84fd")
+
+[node name="ResourceTop3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 822.0
+offset_top = 164.0
+offset_right = -37.0
+offset_bottom = -22.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("3_xmlx4")
+texture = ExtResource("5_gw5py")
 
 [node name="GoldenBarUp" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
@@ -1001,11 +1010,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ShopView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_a42nd")]
-visible = false
 layout_mode = 2
 
 [node name="GearsView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_y268q")]
+visible = false
 layout_mode = 2
+dragger_visibility = 2
 
 [node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7

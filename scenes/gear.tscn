@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cgwxhey1rcadd" path="res://assets/art/gears/placeholder_gear3.png" id="2_lfsoe"]
 [ext_resource type="PackedScene" uid="uid://cq8mg61kyc58c" path="res://scenes/resource_popup.tscn" id="3_m4of8"]
 
-[node name="Gear" type="Node2D"]
+[node name="Gear" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_q1hg2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_lfsoe")
 
 [node name="ResourcePopup" parent="." instance=ExtResource("3_m4of8")]
-scale = Vector2(2, 2)
