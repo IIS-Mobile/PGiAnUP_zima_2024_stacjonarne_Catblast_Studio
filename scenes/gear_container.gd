@@ -1,8 +1,5 @@
 extends TextureButton
 
-func _ready() -> void:
-	Global.connect("rotation_completed", _on_rotation_completed)
-
 #TODO: delete
 func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
@@ -23,11 +20,6 @@ func add_gear() -> void:
 	gear.z_index = Global.count % 2
 	$Gears.add_child(gear)
 	_on_resized()
-
-#TODO: move somewhere else?
-func _on_rotation_completed(index: int) -> void:
-	if not index:
-		$Sound.play()
 
 func _on_pressed() -> void:
 	if Global.count:

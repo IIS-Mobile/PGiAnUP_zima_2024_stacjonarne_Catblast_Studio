@@ -1,6 +1,5 @@
 extends Node
 
-signal rotation_completed(index:int)
 signal tap_performed()
 signal release_steam()
 signal begin_idling(idling_time)
@@ -57,6 +56,20 @@ func ratio_function(i: int) -> float:
 	#return 1.0 / pow(2.0, i)
 	return 1.0 / (i + 1)
 
+#TODO: account for how long actually we can idle, numbers can get quite large, investigate accuracy
+func calc_idle_resources(secs: float):
+	var ticks = (secs * Engine.physics_ticks_per_second) as int
+	var phase_inc = speed_multiplier * IDLE_SPEED * IDLE_SPEED * ROTATION_ANGLE
+	for gear in range(0, count):
+		var rots = (phases[gear] + phase_inc * ticks * min(ratio_function(gear), 1.0)) / 360.0 as int
+		phases[gear] = fmod(phases[gear] + phase_inc * ticks * min(ratio_function(gear), 1.0), 360.0)
+		handle_rotation(gear, rots)
+
+func handle_rotation(index: int, rots: int):
+	var resource_name = resource_names[index / TIERS_AMOUNT]
+	var tier = index % TIERS_AMOUNT
+	resources[resource_name][tier] += rots
+
 func _physics_process(_delta: float) -> void:
 	if not count:
 		return
@@ -75,11 +88,13 @@ func _physics_process(_delta: float) -> void:
 			var rots = (phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0)) / 360.0 as int
 			phases[child.index] = fmod(phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0), 360.0)
 			child.get_node("Sprite").rotation_degrees = phases[child.index]
-			#TODO: display +rots instead of +1 rots times
-			for _r in range(0, rots):
+			if rots > 0:
+				handle_rotation(child.index, rots)
+				#TODO: display +rots instead of +1
 				child.handle_resource_popup()
-				#not sure if they are not stacking (replace signal with function?)
-				emit_signal("rotation_completed", child.index)
+				if child.index == 0:
+					get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Sound").play()
+
 
 func handle_idling(idling_time):
 	Global.idle = true
