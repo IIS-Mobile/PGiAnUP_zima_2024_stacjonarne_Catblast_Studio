@@ -19,7 +19,7 @@ var taps_count = 0.0
 var idle = false
 var phases := []
 var speed_multiplier := 1.0
-var speed := 0.0
+var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
 var buffer := 0.0
 var count := 0
 
