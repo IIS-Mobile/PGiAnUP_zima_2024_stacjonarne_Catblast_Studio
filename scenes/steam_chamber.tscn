@@ -61,6 +61,12 @@ rotation = 1.57079
 scale = Vector2(0.134127, 0.294733)
 texture = ExtResource("4_fd6e0")
 
+[node name="WhistleShadow" type="Sprite2D" parent="Panel/Container"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(115.236, -126.876)
+scale = Vector2(0.799183, 0.530243)
+texture = ExtResource("2_tdpj8")
+
 [node name="Whistle" type="Sprite2D" parent="Panel/Container"]
 position = Vector2(119.064, -128.153)
 scale = Vector2(0.807667, 0.532645)
@@ -105,6 +111,7 @@ position = Vector2(10.0426, 588.625)
 rotation = -1.57079
 scale = Vector2(0.561863, 0.116039)
 texture = ExtResource("3_0f71r")
+flip_v = true
 
 [node name="GoldenBar4" type="Sprite2D" parent="Panel/Container/ProgressBar"]
 position = Vector2(228.34, 587.625)
