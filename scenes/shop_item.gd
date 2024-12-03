@@ -66,7 +66,7 @@ func set_free():
 	
 	
 func hide_premium():
-	$Panel/MarginContainer/Button/HBoxContainer3/PremiumPrice.visible = false
+	$Panel/MarginContainer/Button/HBoxContainer2/PremiumPrice.visible = false
 	$Panel/HBoxContainer/Label.visible = false
 	$Panel/MarginContainer/Button/HBoxContainer2/PremiumResourceIcon.visible = false
 	
@@ -115,7 +115,7 @@ func set_labels():
 	if(premium_price <= 0):
 		hide_premium()
 	else:
-		var premium_resource_label = $Panel/MarginContainer/Button/HBoxContainer3/PremiumPrice
+		var premium_resource_label = $Panel/MarginContainer/Button/HBoxContainer2/PremiumPrice
 		premium_resource_label.text = str(premium_price)
 
 	if(price1 <= 0):

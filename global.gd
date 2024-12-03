@@ -92,8 +92,8 @@ func _physics_process(_delta: float) -> void:
 				child.handle_resource_popup()
 				if child.index == 0:
 					get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Sound").play()
-          #not sure if they are not stacking (replace signal with function?)
-				  emit_signal("rotation_completed", child.index)
+		  #not sure if they are not stacking (replace signal with function?)
+					emit_signal("rotation_completed", child.index)
 
 
 func handle_idling(idling_time):
