@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://loqrm2srjm8e"]
+[gd_scene load_steps=11 format=3 uid="uid://loqrm2srjm8e"]
 
 [ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
 [ext_resource type="Texture2D" uid="uid://bfaue2yv7d3op" path="res://assets/art/ui/whistle.png" id="2_tdpj8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://byckpqhprfxh1" path="res://assets/art/ui/glasspane.png" id="3_l1cx2"]
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="4_fd6e0"]
 [ext_resource type="Texture2D" uid="uid://bl2dhl487d5el" path="res://assets/art/ui/steam_gauge2.png" id="6_fcbwt"]
+[ext_resource type="Texture2D" uid="uid://covhfluqnllif" path="res://assets/art/ui/gauge_hand.png" id="7_8udgl"]
 
 [sub_resource type="Curve" id="Curve_wfnoe"]
 min_value = -360.0
@@ -38,14 +39,16 @@ layout_mode = 2
 
 [node name="Container" type="Control" parent="Panel"]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -228.172
-offset_top = 260.352
-offset_right = 3.82837
-offset_bottom = 1029.35
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -579.042
+offset_bottom = 189.956
 grow_horizontal = 0
+grow_vertical = 0
 
 [node name="GaugeConnector1" type="Sprite2D" parent="Panel/Container"]
 position = Vector2(296.125, 938.424)
@@ -57,6 +60,12 @@ position = Vector2(329.892, 1080.95)
 rotation = 1.57079
 scale = Vector2(0.134127, 0.294733)
 texture = ExtResource("4_fd6e0")
+
+[node name="WhistleShadow" type="Sprite2D" parent="Panel/Container"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(115.236, -126.876)
+scale = Vector2(0.799183, 0.530243)
+texture = ExtResource("2_tdpj8")
 
 [node name="Whistle" type="Sprite2D" parent="Panel/Container"]
 position = Vector2(119.064, -128.153)
@@ -102,6 +111,7 @@ position = Vector2(10.0426, 588.625)
 rotation = -1.57079
 scale = Vector2(0.561863, 0.116039)
 texture = ExtResource("3_0f71r")
+flip_v = true
 
 [node name="GoldenBar4" type="Sprite2D" parent="Panel/Container/ProgressBar"]
 position = Vector2(228.34, 587.625)
@@ -121,6 +131,7 @@ scale = Vector2(0.124428, 0.456704)
 texture = ExtResource("4_fd6e0")
 
 [node name="ProgressBar2" type="ProgressBar" parent="Panel/Container"]
+layout_mode = 0
 offset_left = 180.317
 offset_top = 114.426
 offset_right = 410.317
@@ -139,12 +150,6 @@ self_modulate = Color(1, 1, 1, 0.223529)
 position = Vector2(121.34, 585.625)
 scale = Vector2(1.02336, 1.25463)
 texture = ExtResource("3_l1cx2")
-
-[node name="GoldenBar6" type="Sprite2D" parent="Panel/Container/ProgressBar2"]
-position = Vector2(167.556, -356.191)
-rotation = 1.57079
-scale = Vector2(0.344756, 0.266648)
-texture = ExtResource("4_fd6e0")
 
 [node name="GoldenBar2" type="Sprite2D" parent="Panel/Container/ProgressBar2"]
 position = Vector2(10.0426, 588.625)
@@ -180,8 +185,8 @@ scale = Vector2(0.616985, 0.419952)
 texture = ExtResource("6_fcbwt")
 
 [node name="GaugeHand" type="Sprite2D" parent="Panel/Container/SteamGauge"]
-position = Vector2(0.0706894, 0)
-rotation = 0.785398
-scale = Vector2(0.121846, 0.155358)
-texture = ExtResource("4_fd6e0")
-offset = Vector2(1000, 0)
+position = Vector2(0.00063324, -0.0205972)
+rotation = -2.35619
+scale = Vector2(0.676819, 0.862968)
+texture = ExtResource("7_8udgl")
+offset = Vector2(0, -110)

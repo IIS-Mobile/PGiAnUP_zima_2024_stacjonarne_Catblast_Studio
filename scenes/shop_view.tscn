@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=5 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
+[ext_resource type="Texture2D" uid="uid://css3qkmlgpdfp" path="res://assets/art/icon/upgrades/addgear_icon.png" id="2_vfeyj"]
+[ext_resource type="Texture2D" uid="uid://cifmwrtytkdug" path="res://assets/art/icon/upgrades/lsc_icon.png" id="3_sdxot"]
+[ext_resource type="Texture2D" uid="uid://xv2pvoqlonlv" path="res://assets/art/icon/upgrades/melting_icon.png" id="4_fc76t"]
 
 [node name="ShopView" type="PanelContainer"]
 anchors_preset = 15
@@ -23,3 +26,32 @@ theme_override_constants/separation = 15
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 0
+image = ExtResource("2_vfeyj")
+title = "Add a gear"
+description = "Adds a gear."
+
+[node name="ProductBar2" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("3_sdxot")
+title = "Larger steam chamber"
+description = "Increases the idling time."
+price1 = 1000.0
+tier1 = 3
+price2 = 100.0
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="ProductBar3" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("4_fc76t")
+title = "Melting I"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "copper"
+premium_price = 100.0
