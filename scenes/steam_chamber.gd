@@ -4,7 +4,7 @@ var iterator = 0.01
 var index = 0
 
 const MAX_GAUGE_ANGLE: float = 135.0
-var MIN_GAUGE_ANGLE: float = -135.0
+const MIN_GAUGE_ANGLE: float = -135.0
 
 func _ready() -> void:
 	Global.connect("release_steam", release_steam)

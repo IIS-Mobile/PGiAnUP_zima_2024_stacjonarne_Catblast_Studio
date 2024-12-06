@@ -4,7 +4,7 @@ signal tap_performed()
 signal release_steam()
 signal begin_idling(idling_time)
 
-# gauge hand rotation: -225deg to 45deg
+# gauge hand rotation: -135deg to 135deg
 
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
