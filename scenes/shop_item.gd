@@ -32,91 +32,82 @@ extends Panel
 var resource_name_table = [resource1,resource2,resource3]
 var tier_table = [tier1,tier2,tier3]
 
-@onready var texture_rect = $Panel/HBoxContainer4/TextureRect
+@onready var TEXTURE_RECT = $Panel/HBoxContainer4/TextureRect
+#@onready var OR_STRING = $Panel/HBoxContainer/Label
+
+@onready var PRICE_TAG1 = $Panel/VBoxContainer3/Price1
+@onready var PRICE_TAG2 = $Panel/VBoxContainer3/Price2
+@onready var PRICE_TAG3 = $Panel/VBoxContainer3/Price3
+@onready var PREMIUM_PRICE_TAG = $Panel/MarginContainer/Button/HBoxContainer2/PremiumPrice
+
+@onready var RESOURCE_ICON1 = $Panel/VBoxContainer2/ResourceIcon1
+@onready var RESOURCE_ICON2 = $Panel/VBoxContainer2/ResourceIcon2
+@onready var RESOURCE_ICON3 = $Panel/VBoxContainer2/ResourceIcon3
+@onready var PREMIUM_RESOURCE_ICON = $Panel/MarginContainer/Button/HBoxContainer2/PremiumResourceIcon
+
+@onready var TITLE_LABEL = $Panel/VBoxContainer/Title
+@onready var DESCRIPTION_LABEL = $Panel/VBoxContainer/Description
 
 @onready var price_label_table = [
-	$Panel/VBoxContainer3/Price1,
-	$Panel/VBoxContainer3/Price2,
-	$Panel/VBoxContainer3/Price3
+	PRICE_TAG1,
+	PRICE_TAG2,
+	PRICE_TAG3
 ]
-@onready var resource_pic_table = [$Panel/VBoxContainer2/ResourceIcon1, 
-$Panel/VBoxContainer2/ResourceIcon2, 
-$Panel/VBoxContainer2/ResourceIcon3
+@onready var resource_pic_table = [
+	RESOURCE_ICON1, 
+	RESOURCE_ICON2, 
+	RESOURCE_ICON3
 ]
 
 func _ready():
 	set_labels()
 	set_image()
-	pass
 
 func _process(delta):
 	pass
 	
 func set_image():
-	texture_rect.texture = image
-
+	TEXTURE_RECT.texture = image
 
 func set_free():
 	price_label_table[0].text = "FREE"
-	$Panel/VBoxContainer2/ResourceIcon1.visible = false
-	$Panel/VBoxContainer3/Price2.visible = false
-	$Panel/VBoxContainer2/ResourceIcon2.visible = false
-	$Panel/VBoxContainer3/Price3.visible = false
-	$Panel/VBoxContainer2/ResourceIcon3.visible = false
+	RESOURCE_ICON1.visible = false
+	PRICE_TAG2.visible = false
+	RESOURCE_ICON2.visible = false
+	PRICE_TAG3.visible = false
+	RESOURCE_ICON3.visible = false
 	
 	
 func hide_premium():
-	$Panel/MarginContainer/Button/HBoxContainer2/PremiumPrice.visible = false
-	$Panel/HBoxContainer/Label.visible = false
-	$Panel/MarginContainer/Button/HBoxContainer2/PremiumResourceIcon.visible = false
+	PREMIUM_PRICE_TAG.visible = false
+	#OR_STRING.visible = false
+	PREMIUM_RESOURCE_ICON.visible = false
 	
 func hide_resource(index):
 	if(index == 1):
 		return
 	price_label_table[index-1].visible = false
-	resource_pic_table[index-1].visible = false	
+	resource_pic_table[index-1].visible = false
 
 func set_price(index, price, resource, tier):
-	print(resource)
-	var resource_index: int = -1
-	
-	if price <=0:
+	if price <= 0:
 		hide_resource(index)
 	
-	var is_resource_name_correct = true
+	var resource_index = Global.resource_names.find(resource)
+	var resource_pic_path = "res://assets/art/resources/" + str(resource_index+1) + "_" + str(resource) + "/" + str(resource) + "_T" + str(tier) +  ".png"
+	var resource_pic = resource_pic_table[index-1]
+	resource_pic.texture = load(resource_pic_path)
 
-	
-	if Global.resource_names.has(resource):
-		is_resource_name_correct = true
-		resource_index = Global.resource_names.find(resource)
-	else:
-		hide_resource(index)
-		is_resource_name_correct = false
-		resource_index = -1 
-
-	if(tier < 0 || tier > Global.TIERS_AMOUNT):
-		hide_resource(index)
-
-	if(is_resource_name_correct):
-		var resource_pic_path = "res://assets/art/resources/" + str(resource_index+1) + "_" + str(resource) + "/" + str(resource) + "_T" + str(tier) +  ".png"
-		var resource_pic = resource_pic_table[index-1]
-		resource_pic.texture = load(resource_pic_path)
-		
 	var price_label = price_label_table[index-1]
 	price_label.text = str(price)
 
 func set_labels():
-	var title_label = $Panel/VBoxContainer/Title
-	var description_label = $Panel/VBoxContainer/Description
-	
-	title_label.text = title;
-	description_label.text = description;
-	
+	TITLE_LABEL.text = title
+	DESCRIPTION_LABEL.text = description
 	if(premium_price <= 0):
 		hide_premium()
 	else:
-		var premium_resource_label = $Panel/MarginContainer/Button/HBoxContainer2/PremiumPrice
-		premium_resource_label.text = str(premium_price)
+		PREMIUM_PRICE_TAG.text = str(premium_price)
 
 	if(price1 <= 0):
 		set_free()
