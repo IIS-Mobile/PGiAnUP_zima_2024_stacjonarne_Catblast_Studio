@@ -85,14 +85,17 @@ func _physics_process(_delta: float) -> void:
 		if child is Gear:
 			var rots = (phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0)) / 360.0 as int
 			phases[child.index] = fmod(phases[child.index] + phase_inc * min(ratio_function(child.index), 1.0), 360.0)
-			child.get_node("Sprite").rotation_degrees = phases[child.index]
+			if child.index % 2 == 0:
+				child.get_node("Sprite").rotation_degrees = phases[child.index]
+			else:
+				child.get_node("Sprite").rotation_degrees = -phases[child.index]
 			if rots > 0:
 				handle_rotation(child.index, rots)
 				#TODO: display +rots instead of +1
 				child.handle_resource_popup()
 				if child.index == 0:
-					get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Sound").play()
-		  #not sure if they are not stacking (replace signal with function?)
+					$"/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Sound".play()
+		  			#not sure if they are not stacking (replace signal with function?)
 					emit_signal("rotation_completed", child.index)
 
 
