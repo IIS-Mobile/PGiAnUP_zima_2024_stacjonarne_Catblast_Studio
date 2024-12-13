@@ -125,6 +125,7 @@ func _input(event):
 			for top_resource_area in top_resource_areas:
 				if top_resource_area.get_global_rect().has_point(event.global_position):
 					clicked_on_top_resource_rect = true
+					$"/root/Node2D/UISound".play()
 					break
 		else:
 			for resource_area in resource_areas:
@@ -132,6 +133,7 @@ func _input(event):
 					clicked_on_resource_rect = true
 					var node_name = resource_area.name 
 					selected_resource_type = int(node_name.substr(node_name.length() - 1, 1))
+					$"/root/Node2D/UISound".play()
 					break
 				
 		if clicked_on_resource_rect:
@@ -141,7 +143,7 @@ func _input(event):
 				resources_pop_up.visible = true
 		elif resources_pop_up_area.get_global_rect().has_point(event.global_position) || (tier_pop_up_area.get_global_rect().has_point(event.global_position) && tier_pop_up.visible):
 			pass
-			
-		else:
+		elif resources_pop_up.visible or tier_pop_up.visible:
+			$"/root/Node2D/UISound".play()
 			resources_pop_up.visible = false
 			tier_pop_up.visible = false

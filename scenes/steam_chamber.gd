@@ -33,6 +33,8 @@ func waving_steam():
 	$Panel/Container/ProgressBar2.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
 
 func release_steam():
+	$WhistleSound.play()
+	#TODO: replace with fixed length animation to match sound
 	for i in range (Global.STEAM_LIMIT, 0, -1):
 		if i%2:
 			await get_tree().create_timer(0.0001).timeout

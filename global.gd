@@ -94,7 +94,7 @@ func _physics_process(_delta: float) -> void:
 				#TODO: display +rots instead of +1
 				child.handle_resource_popup()
 				if child.index == 0:
-					$"/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Sound".play()
+					$"/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/SpinSound".play()
 		  			#not sure if they are not stacking (replace signal with function?)
 					emit_signal("rotation_completed", child.index)
 
