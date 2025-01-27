@@ -32,7 +32,7 @@ func _ready() -> void:
 	idle_timer.one_shot = true
 	add_child(idle_timer)
 
-
+var premium_resource = 0;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
 	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers
@@ -46,8 +46,53 @@ var resources = {
 	str(resource_names[8]) : [0, 0, 0, 0, 0, 0, 0, 0],
 	str(resource_names[9]) : [0, 0, 0, 0, 0, 0, 0, 0]
 }
+
 var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
+
 var current_top_resource = 0
+
+var upgrade_names = ["grease", "overclock", "lsc", "melting", "barter", "tin_forge", "copper_forge", "brass_forge", "bronze_forge", "iron_forge", "steel_forge", "gold_forge", "lead_forge", "tungsten_forge", "electrum_forhe"]
+
+var max_upgrade_values = {
+	str(upgrade_names[0]) : 11,
+	str(upgrade_names[1]) : 11,
+	str(upgrade_names[2]) : 10,
+	str(upgrade_names[3]) : resource_names.size(),
+	str(upgrade_names[4]) : resource_names.size() -1,
+	
+	#forge type upgrades
+	str(upgrade_names[5]) : 1,
+	str(upgrade_names[6]) : 1,
+	str(upgrade_names[7]) : 1,
+	str(upgrade_names[8]) : 1,
+	str(upgrade_names[9]) : 1,
+	str(upgrade_names[10]) : 1,
+	str(upgrade_names[11]) : 1,
+	str(upgrade_names[12]) : 1,
+	str(upgrade_names[13]) : 1,
+	str(upgrade_names[14]) : 1
+}
+
+var upgrades = {
+	str(upgrade_names[0]) : 0, #0 means not buyed, 1 means level 1 etc.
+	str(upgrade_names[1]) : 0,
+	str(upgrade_names[2]) : 0,
+	str(upgrade_names[3]) : 0,
+	str(upgrade_names[4]) : 0,
+	
+		#forge type upgrades
+	str(upgrade_names[5]) : 0,
+	str(upgrade_names[6]) : 0,
+	str(upgrade_names[7]) : 0,
+	str(upgrade_names[8]) : 0,
+	str(upgrade_names[9]) : 0,
+	str(upgrade_names[10]) : 0,
+	str(upgrade_names[11]) : 0,
+	str(upgrade_names[12]) : 0,
+	str(upgrade_names[13]) : 0,
+	str(upgrade_names[14]) : 0
+}
+
 
 # function takes gear index and returns a fraction of base speed
 func ratio_function(i: int) -> float:
