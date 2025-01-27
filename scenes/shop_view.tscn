@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=6 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
-[ext_resource type="Texture2D" uid="uid://css3qkmlgpdfp" path="res://assets/art/icon/upgrades/addgear_icon.png" id="2_vfeyj"]
+[ext_resource type="Script" path="res://scenes/shopping_manager.gd" id="1_xnsdw"]
+[ext_resource type="Texture2D" uid="uid://dlq8v4av5m1ls" path="res://assets/art/icon/upgrades/grease_icon.png" id="3_6ia52"]
 [ext_resource type="Texture2D" uid="uid://cifmwrtytkdug" path="res://assets/art/icon/upgrades/lsc_icon.png" id="3_sdxot"]
 [ext_resource type="Texture2D" uid="uid://xv2pvoqlonlv" path="res://assets/art/icon/upgrades/melting_icon.png" id="4_fc76t"]
 
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+script = ExtResource("1_xnsdw")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
@@ -22,45 +24,47 @@ color = Color(0.368627, 0.262745, 0.203922, 1)
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="ProductBar" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+[node name="ProductBar1" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
+custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 0
-image = ExtResource("2_vfeyj")
-title = "Add a Gear"
-description = "adds an extra gear to your panel"
-item_type = 0
+image = ExtResource("3_6ia52")
+title = "Grease I"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
 
 [node name="ProductBar2" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
+custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("3_sdxot")
-title = "Larger Steam Chamber"
-description = "Para buch"
-price1 = 7.0
-resource1 = "copper"
-tier1 = 1
-price2 = 4.0
-resource2 = "copper"
-tier2 = 1
-price3 = 1.0
-resource3 = "brass"
-tier3 = 1
-premium_price = 1.0
+title = "Steam chamber I"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
 
 [node name="ProductBar3" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
+custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("4_fc76t")
-title = "Melting"
-description = "melt melt melt"
-price1 = 7.0
+title = "Melting I"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
 resource1 = "electrum"
-tier1 = 1
-resource2 = "copper"
-tier2 = 1
-resource3 = "brass"
-tier3 = 1
-premium_price = 4.0
+tier1 = 8
+premium_price = 100.0

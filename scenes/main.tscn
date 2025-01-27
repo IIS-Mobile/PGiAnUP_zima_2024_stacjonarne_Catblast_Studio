@@ -22,6 +22,7 @@ script = ExtResource("1_j8ibr")
 script = ExtResource("2_4hckv")
 
 [node name="TierPopUp" type="Control" parent="UI"]
+visible = false
 z_index = 6
 layout_mode = 3
 anchor_right = 0.72
@@ -859,14 +860,28 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 166.0
-offset_top = 18.075
-offset_right = 623.0
-offset_bottom = 101.075
+offset_left = 31.0
+offset_top = 24.925
+offset_right = 337.0
+offset_bottom = 107.925
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_font_sizes/font_size = 50
 text = "Toggle idle"
+
+[node name="TestIdleButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 356.0
+offset_top = 25.075
+offset_right = 720.0
+offset_bottom = 108.075
+grow_vertical = 2
+theme = ExtResource("3_0qc7x")
+theme_override_font_sizes/font_size = 50
+text = "8h idle test"
 
 [node name="ResourceTop0" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
@@ -1097,3 +1112,4 @@ offset_bottom = 40.0
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/IdleButton" to="." method="_on_idle_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/ColorRect/TestIdleButton" to="." method="_on_test_idle_button_pressed"]
