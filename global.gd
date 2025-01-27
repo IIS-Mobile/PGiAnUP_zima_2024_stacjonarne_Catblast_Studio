@@ -93,6 +93,9 @@ var upgrades = { #current state of upgrades
 	str(upgrade_names[14]) : 0
 }
 
+var  is_melting_on = false;
+var  is_barter_on = false;
+
 
 # function takes gear index and returns a fraction of base speed
 func ratio_function(i: int) -> float:
