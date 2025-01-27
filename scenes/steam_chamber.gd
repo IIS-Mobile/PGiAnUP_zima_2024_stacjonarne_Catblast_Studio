@@ -27,6 +27,7 @@ func increment_taps():
 	if Global.taps_count < Global.STEAM_LIMIT:
 		Global.taps_count += 1
 		$Panel/Container/ProgressBar.value = Global.taps_count
+		Global.current_steam_chamber_value = $Panel/Container/ProgressBar.value
 
 func waving_steam():
 	$Panel/Container/ProgressBar.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
@@ -39,6 +40,8 @@ func release_steam():
 			#handle_gauge(Global.taps_count, Global.STEAM_LIMIT)
 		Global.taps_count = i
 		$Panel/Container/ProgressBar.value = Global.taps_count
+		Global.current_steam_chamber_value = $Panel/Container/ProgressBar.value
+		
 		$Panel/Container/Whistle/CPUParticles2D.emitting = true
 		handle_gauge(Global.STEAM_LIMIT - Global.taps_count, Global.STEAM_LIMIT)
 	$Panel/Container/Whistle/CPUParticles2D.emitting = false
@@ -48,3 +51,4 @@ func handle_gauge(remaining_time, total_time):
 	var progress = remaining_time / total_time
 	var angle = lerp(MIN_GAUGE_ANGLE, MAX_GAUGE_ANGLE, progress)
 	$Panel/Container/SteamGauge/GaugeHand.rotation_degrees = angle
+	Global.current_steam_chamber_value = $Panel/Container/SteamGauge/GaugeHand.rotation_degrees

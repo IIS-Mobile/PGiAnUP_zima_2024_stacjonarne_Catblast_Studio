@@ -14,6 +14,9 @@ const ROTATION_ANGLE = 30
 const IDLE_SPEED = 0.1
 const STEAM_LIMIT = 400.0
 
+var current_steam_chamber_value = 0
+var current_steam_gauge_value = 0
+
 var taps_count = 0.0
 var idle = false
 var phases := []
