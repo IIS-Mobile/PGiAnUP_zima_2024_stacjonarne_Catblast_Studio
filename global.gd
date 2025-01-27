@@ -73,7 +73,7 @@ var max_upgrade_values = {
 	str(upgrade_names[14]) : 1
 }
 
-var upgrades = {
+var upgrades = { #current state of upgrades
 	str(upgrade_names[0]) : 0, #0 means not buyed, 1 means level 1 etc.
 	str(upgrade_names[1]) : 0,
 	str(upgrade_names[2]) : 0,
