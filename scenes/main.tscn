@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
+[ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
@@ -1115,6 +1116,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="UISound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_p0dfd")
+volume_db = -10.0
 
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]

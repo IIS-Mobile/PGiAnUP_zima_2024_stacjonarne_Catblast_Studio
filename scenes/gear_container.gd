@@ -4,6 +4,7 @@ extends TextureButton
 func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
 
+#TODO: turn into "refresh" function
 func add_gear() -> void:
 	if Global.count >= Global.MAX_GEARS:
 		return
@@ -19,6 +20,7 @@ func add_gear() -> void:
 	gear.position = Vector2(percent_to_pixels(18.5) + x_pos * percent_to_pixels(21), y_pos)
 	gear.z_index = Global.count % 2
 	$Gears.add_child(gear)
+	$PlaceSound.play()
 	_on_resized()
 
 func _on_pressed() -> void:

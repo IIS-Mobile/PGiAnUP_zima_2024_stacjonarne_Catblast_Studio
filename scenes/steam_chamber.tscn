@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://loqrm2srjm8e"]
+[gd_scene load_steps=12 format=3 uid="uid://loqrm2srjm8e"]
 
 [ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
 [ext_resource type="Texture2D" uid="uid://bfaue2yv7d3op" path="res://assets/art/ui/whistle.png" id="2_tdpj8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="4_fd6e0"]
 [ext_resource type="Texture2D" uid="uid://bl2dhl487d5el" path="res://assets/art/ui/steam_gauge2.png" id="6_fcbwt"]
 [ext_resource type="Texture2D" uid="uid://covhfluqnllif" path="res://assets/art/ui/gauge_hand.png" id="7_8udgl"]
+[ext_resource type="AudioStream" uid="uid://j8kq5ar3x7dt" path="res://assets/audio/whistle.wav" id="8_6816p"]
 
 [sub_resource type="Curve" id="Curve_wfnoe"]
 min_value = -360.0
@@ -190,3 +191,7 @@ rotation = -2.35619
 scale = Vector2(0.676819, 0.862968)
 texture = ExtResource("7_8udgl")
 offset = Vector2(0, -110)
+
+[node name="WhistleSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6816p")
+volume_db = -10.0

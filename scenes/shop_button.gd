@@ -2,6 +2,7 @@ extends Button
 
 # Function to handle the scene change
 func on_button_pressed():
+	$"/root/Node2D/UISound".play()
 	var gears_view = get_parent().get_parent().get_parent().get_node("CurrentView/GearsView")
 	var shop_view = get_parent().get_parent().get_parent().get_node("CurrentView/ShopView")
 	
