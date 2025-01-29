@@ -34,17 +34,19 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -68.0
-offset_right = 294.0
-offset_bottom = 4.0
+offset_left = -37.0
+offset_top = -15.0
+offset_right = 2329.0
+offset_bottom = 76.0
 grow_vertical = 0
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
 [node name="TopEmblem" type="ColorRect" parent="Panel"]
 layout_mode = 1
-offset_top = -11.0
-offset_right = 294.0
-offset_bottom = 64.0
+offset_left = -5.0
+offset_top = -66.0
+offset_right = 2385.0
+offset_bottom = 7.0
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]

@@ -15,5 +15,5 @@ func _on_idle_timer_timeout():
 	Global.idle = false
 
 func get_remaining_idle_time():
-	if  IdleTimer:
+	if IdleTimer:
 		return IdleTimer.time_left

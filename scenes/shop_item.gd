@@ -1,10 +1,22 @@
 extends Panel
 
+#|================================
+#| Grease 1-11:			ID  0-10 |
+#| Overclock 1-11: 		ID 11-21 |
+#| LSC 1-10:			ID 22-31 |
+#| Melting 1-10:		ID 32-41 |
+#| Barter 1-9:			ID 42-50 |
+#| Forges:				ID 51-60 |
+#|================================
+
+@export_category("ID")
+@export var id: int
+
 @export_category("Image")
 @export var image: Texture 
 
 @export_category("Title and Category")
-@export var title: String
+@export_multiline var title: String
 @export_multiline var description: String
 
 @export_category("Cost 1")
@@ -115,3 +127,17 @@ func set_labels():
 		set_price(1, price1, resource1, tier1)
 		set_price(2, price2, resource2, tier2)
 		set_price(3, price3, resource3, tier3)
+
+func _on_buy_button_pressed() -> void:
+	Global.buy_button_clicked.emit(id)
+	print("emitting id: ", id)
+
+
+#|================================
+#| Grease 1-11:			ID  0-10 |
+#| Overclock 1-11: 		ID 11-21 |
+#| LSC 1-10:			ID 22-31 |
+#| Melting 1-10:		ID 32-41 |
+#| Barter 1-9:			ID 42-50 |
+#| Forges:				ID 51-60 |
+#|================================

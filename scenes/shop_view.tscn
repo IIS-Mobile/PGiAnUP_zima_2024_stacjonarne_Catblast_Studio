@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=20 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
 [ext_resource type="Script" path="res://scenes/shopping_manager.gd" id="1_xnsdw"]
+[ext_resource type="Script" path="res://scenes/scroll_container.gd" id="2_0m0ju"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_iv5vg"]
 [ext_resource type="Texture2D" uid="uid://dlq8v4av5m1ls" path="res://assets/art/icon/upgrades/grease_icon.png" id="3_6ia52"]
 [ext_resource type="Texture2D" uid="uid://cifmwrtytkdug" path="res://assets/art/icon/upgrades/lsc_icon.png" id="3_sdxot"]
 [ext_resource type="Texture2D" uid="uid://xv2pvoqlonlv" path="res://assets/art/icon/upgrades/melting_icon.png" id="4_fc76t"]
+[ext_resource type="Texture2D" uid="uid://c3fd88p5muc3l" path="res://assets/art/icon/upgrades/overclock_icon.png" id="6_bchbm"]
+[ext_resource type="Texture2D" uid="uid://4fo3puwty1ue" path="res://assets/art/icon/upgrades/barter_icon.png" id="9_l1iwg"]
+[ext_resource type="Texture2D" uid="uid://bquf4itcsl36h" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_tin.png" id="10_k82gu"]
+[ext_resource type="Texture2D" uid="uid://cjky445sqdh0k" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_copper.png" id="11_ytw8p"]
+[ext_resource type="Texture2D" uid="uid://dyvr2gcsh1ajf" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_brass.png" id="12_6e8bc"]
+[ext_resource type="Texture2D" uid="uid://bqsmsweoevkuq" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_bronze.png" id="13_uqn8k"]
+[ext_resource type="Texture2D" uid="uid://b15vosfj0kp8c" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_iron.png" id="14_ca43u"]
+[ext_resource type="Texture2D" uid="uid://dayltm0hab5sg" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_steel.png" id="15_er3oj"]
+[ext_resource type="Texture2D" uid="uid://0t54d4qgd6l5" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_gold.png" id="16_eflpc"]
+[ext_resource type="Texture2D" uid="uid://xx7coig11gsl" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_lead.png" id="17_m4tbb"]
+[ext_resource type="Texture2D" uid="uid://dom8yej5sa3ws" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_tungsten.png" id="18_ptsig"]
+[ext_resource type="Texture2D" uid="uid://qjbmj5hv60ok" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_electrum.png" id="19_cmpx1"]
 
 [node name="ShopView" type="PanelContainer"]
 anchors_preset = 15
@@ -20,11 +34,19 @@ layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("2_iv5vg")
+script = ExtResource("2_0m0ju")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="ProductBar1" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+[node name="Grease1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -38,13 +60,319 @@ price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
-[node name="ProductBar2" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+[node name="Grease2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 0
+id = 1
+image = ExtResource("3_6ia52")
+title = "Grease II"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 2
+image = ExtResource("3_6ia52")
+title = "Grease III"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 3
+image = ExtResource("3_6ia52")
+title = "Grease IV"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 4
+image = ExtResource("3_6ia52")
+title = "Grease V"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 5
+image = ExtResource("3_6ia52")
+title = "Grease VI"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 6
+image = ExtResource("3_6ia52")
+title = "Grease VII"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 7
+image = ExtResource("3_6ia52")
+title = "Grease VIII"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 8
+image = ExtResource("3_6ia52")
+title = "Grease IX"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 9
+image = ExtResource("3_6ia52")
+title = "Grease X"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Grease11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 10
+image = ExtResource("3_6ia52")
+title = "Grease XI"
+description = "Improves the conversion rate from the first gear to the rest."
+price1 = 100.0
+price2 = 100.0
+price3 = 100.0
+tier3 = 1
+premium_price = 50.0
+
+[node name="Overclock1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 11
+image = ExtResource("6_bchbm")
+title = "Overclock I"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 12
+image = ExtResource("6_bchbm")
+title = "Overclock II"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 13
+image = ExtResource("6_bchbm")
+title = "Overclock III"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 14
+image = ExtResource("6_bchbm")
+title = "Overclock IV"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 15
+image = ExtResource("6_bchbm")
+title = "Overclock V"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 16
+image = ExtResource("6_bchbm")
+title = "Overclock VI"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 17
+image = ExtResource("6_bchbm")
+title = "Overclock VII"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 18
+image = ExtResource("6_bchbm")
+title = "Overclock VIII"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 19
+image = ExtResource("6_bchbm")
+title = "Overclock IX"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 20
+image = ExtResource("6_bchbm")
+title = "Overclock X"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Overclock11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 21
+image = ExtResource("6_bchbm")
+title = "Overclock XI"
+description = "Increases rotation speed of the first gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="LSC1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 22
 image = ExtResource("3_sdxot")
-title = "Steam chamber I"
+title = "Steam 
+chamber I"
 description = "Increases the idling time."
 price1 = 1000.0
 resource1 = "brass"
@@ -56,14 +384,587 @@ price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
-[node name="ProductBar3" parent="VBoxContainer" instance=ExtResource("1_p34v5")]
+[node name="LSC2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 0
+id = 23
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber II"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 24
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber III"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 25
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber IV"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 26
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber V"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 27
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber VI"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 28
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber VII"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 29
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber VIII"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 30
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber IX"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="LSC10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 31
+image = ExtResource("3_sdxot")
+title = "Steam 
+chamber X"
+description = "Increases the idling time."
+price1 = 1000.0
+resource1 = "brass"
+tier1 = 3
+price2 = 100.0
+resource2 = "bronze"
+tier2 = 4
+price3 = 10.0
+tier3 = 5
+premium_price = 40.0
+
+[node name="Melting1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 32
 image = ExtResource("4_fc76t")
 title = "Melting I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 33
+image = ExtResource("4_fc76t")
+title = "Melting II"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 34
+image = ExtResource("4_fc76t")
+title = "Melting III"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 35
+image = ExtResource("4_fc76t")
+title = "Melting IV"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 36
+image = ExtResource("4_fc76t")
+title = "Melting V"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 37
+image = ExtResource("4_fc76t")
+title = "Melting VI"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 38
+image = ExtResource("4_fc76t")
+title = "Melting VII"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 39
+image = ExtResource("4_fc76t")
+title = "Melting VIII"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 40
+image = ExtResource("4_fc76t")
+title = "Melting IX"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Melting10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 41
+image = ExtResource("4_fc76t")
+title = "Melting X"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 42
+image = ExtResource("9_l1iwg")
+title = "Barter I"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 43
+image = ExtResource("9_l1iwg")
+title = "Barter II"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 44
+image = ExtResource("9_l1iwg")
+title = "Barter III"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 45
+image = ExtResource("9_l1iwg")
+title = "Barter IV"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 46
+image = ExtResource("9_l1iwg")
+title = "Barter V"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 47
+image = ExtResource("9_l1iwg")
+title = "Barter VI"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 48
+image = ExtResource("9_l1iwg")
+title = "Barter VII"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 49
+image = ExtResource("9_l1iwg")
+title = "Barter VIII"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="Barter9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 50
+image = ExtResource("9_l1iwg")
+title = "Barter IX"
+description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeTin" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 51
+image = ExtResource("10_k82gu")
+title = "Tin Forge"
+description = "Doubles the amount of tin generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeCopper" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 52
+image = ExtResource("11_ytw8p")
+title = "Copper Forge"
+description = "Doubles the amount of tin generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeBrass" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 53
+image = ExtResource("12_6e8bc")
+title = "Brass Forge"
+description = "Doubles the amount of tin generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeBronze" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 54
+image = ExtResource("13_uqn8k")
+title = "Bronze Forge"
+description = "Doubles the amount of tin generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeIron" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 55
+image = ExtResource("14_ca43u")
+title = "Iron Forge"
+description = "Doubles the amount of iron generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeSteel" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 56
+image = ExtResource("15_er3oj")
+title = "Steel Forge"
+description = "Doubles the amount of steel generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeGold" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 57
+image = ExtResource("16_eflpc")
+title = "Gold Forge"
+description = "Doubles the amount of gold generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeLead" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 58
+image = ExtResource("17_m4tbb")
+title = "Lead Forge"
+description = "Doubles the amount of lead generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeTungsten" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 59
+image = ExtResource("18_ptsig")
+title = "Tungsten Forge"
+description = "Doubles the amount of tungsten generated from each gear."
+price1 = 100.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 100.0
+
+[node name="ForgeElectrum" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+clip_contents = true
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+size_flags_vertical = 0
+id = 60
+image = ExtResource("19_cmpx1")
+title = "Electrum Forge"
+description = "Doubles the amount of electrum generated from each gear."
 price1 = 100.0
 resource1 = "electrum"
 tier1 = 8
