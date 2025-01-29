@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=16 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bdfmmoyt6estb" path="res://assets/art/icon/gear_icon.png" id="5_7il7n"]
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="5_f3sw0"]
 [ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
+[ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="5_ndhb7"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
 [ext_resource type="PackedScene" uid="uid://cabrjyf0hftbs" path="res://scenes/shop_view.tscn" id="7_a42nd"]
 [ext_resource type="PackedScene" uid="uid://da2twjw0p16g5" path="res://scenes/gears_view.tscn" id="7_y268q"]
@@ -833,12 +834,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -72.925
-offset_right = 334.0
-offset_bottom = 10.075
+offset_left = 54.0
+offset_top = -93.925
+offset_right = 293.0
+offset_bottom = -10.925
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "Add a gear"
 
@@ -846,12 +848,13 @@ text = "Add a gear"
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
-offset_left = 352.0
-offset_top = 50.0
-offset_right = 777.0
-offset_bottom = -113.15
+offset_left = 418.0
+offset_top = 30.15
+offset_right = 764.0
+offset_bottom = -133.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "Boost  for 5 sec."
 
@@ -860,12 +863,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 31.0
-offset_top = 24.925
-offset_right = 337.0
-offset_bottom = 107.925
+offset_left = 48.0
+offset_top = 22.075
+offset_right = 297.0
+offset_bottom = 105.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "Toggle idle"
 
@@ -874,12 +878,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 356.0
-offset_top = 25.075
+offset_left = 463.0
+offset_top = 16.075
 offset_right = 720.0
-offset_bottom = 108.075
+offset_bottom = 99.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "8h idle test"
 
@@ -1007,7 +1012,8 @@ texture = ExtResource("3_xmlx4")
 z_index = 7
 custom_minimum_size = Vector2(0, 56.38)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("4_uhjoh")
 expand_mode = 1
 
@@ -1026,7 +1032,8 @@ layout_mode = 2
 z_index = 7
 custom_minimum_size = Vector2(0, 56.38)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("5_f3sw0")
 expand_mode = 1
 

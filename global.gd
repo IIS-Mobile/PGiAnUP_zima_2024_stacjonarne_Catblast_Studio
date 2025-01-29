@@ -3,6 +3,7 @@ extends Node
 signal tap_performed()
 signal release_steam()
 signal begin_idling(idling_time)
+signal buy_button_clicked(ID)
 
 # gauge hand rotation: -135deg to 135deg
 
@@ -54,14 +55,14 @@ var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
 
 var current_top_resource = 0
 
-var upgrade_names = ["grease", "overclock", "lsc", "melting", "barter", "tin_forge", "copper_forge", "brass_forge", "bronze_forge", "iron_forge", "steel_forge", "gold_forge", "lead_forge", "tungsten_forge", "electrum_forhe"]
+var upgrade_names = ["grease", "overclock", "lsc", "melting", "barter", "tin_forge", "copper_forge", "brass_forge", "bronze_forge", "iron_forge", "steel_forge", "gold_forge", "lead_forge", "tungsten_forge", "electrum_forge"]
 
 var max_upgrade_values = {
 	str(upgrade_names[0]) : 11,
 	str(upgrade_names[1]) : 11,
 	str(upgrade_names[2]) : 10,
 	str(upgrade_names[3]) : resource_names.size(),
-	str(upgrade_names[4]) : resource_names.size() -1,
+	str(upgrade_names[4]) : resource_names.size()-1,
 	
 	#forge type upgrades
 	str(upgrade_names[5]) : 1,
@@ -77,7 +78,7 @@ var max_upgrade_values = {
 }
 
 var upgrades = { #current state of upgrades
-	str(upgrade_names[0]) : 0, #0 means not buyed, 1 means level 1 etc.
+	str(upgrade_names[0]) : 0, #0 means not bought, 1 means level 1 etc.
 	str(upgrade_names[1]) : 0,
 	str(upgrade_names[2]) : 0,
 	str(upgrade_names[3]) : 0,
