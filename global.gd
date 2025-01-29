@@ -8,6 +8,8 @@ signal reload_shop()
 
 # gauge hand rotation: -135deg to 135deg
 
+# some of those will be changed into variables
+const MAX_IDLE_TIME_HOURS = 8
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW * 2
@@ -31,9 +33,6 @@ var count := 0
 var idle_timer : Timer
 
 func _ready() -> void:
-	# init phases if no save state available
-	phases.resize(MAX_GEARS)
-	phases.fill(0.0)
 	idle_timer = Timer.new()
 	idle_timer.one_shot = true
 	add_child(idle_timer)

@@ -20,7 +20,6 @@ func add_gear() -> void:
 	gear.position = Vector2(percent_to_pixels(18.5) + x_pos * percent_to_pixels(21), y_pos)
 	gear.z_index = Global.count % 2
 	$Gears.add_child(gear)
-	$PlaceSound.play()
 	_on_resized()
 	Global.emit_signal("reload_shop")
 

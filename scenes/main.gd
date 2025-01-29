@@ -6,6 +6,7 @@ func _ready() -> void:
 	
 func _on_gear_button_pressed() -> void:
 	$UISound.play()
+	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
 func _on_boost_button_pressed() -> void:
@@ -19,9 +20,12 @@ func _on_idle_button_pressed() -> void:
 	else:
 		print("NIEEEE NIE MOZESZ JESZCZE IDLOWAC MUSISZ NAPOMPOWAC PARY DO KOMORY")
 
-func _on_test_idle_button_pressed() -> void:
-	$UISound.play()
-	Global.calc_idle_resources(8 * 3600)
+func _on_save_test_pressed() -> void:
+	save_game_data()
+	
+func _on_delete_save_test_pressed() -> void:
+	print("Save removed...")
+	DirAccess.remove_absolute("user://savegame.json")
 
 func _notification(what):
 	if what == NOTIFICATION_APPLICATION_PAUSED:
@@ -31,6 +35,7 @@ func save_game_data():
 	print("Saving game...")
 
 	var save_data = {
+		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
 		"resources" : Global.resources,
 		"current_top_tiers" : Global.current_top_tiers,
@@ -54,8 +59,10 @@ func load_game_data():
 
 	if not FileAccess.file_exists("user://savegame.json"):
 		print("No savegame found!")
+		# init phases if no save state available
+		Global.phases.resize(Global.MAX_GEARS)
+		Global.phases.fill(0.0)
 		return
-
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
 	var json = JSON.new()
@@ -66,7 +73,12 @@ func load_game_data():
 	if parse_err != OK:
 		print("Error parsing savegame!")
 		return
-
+	if json.data.has("phases"):
+		Global.phases = json.data.get("phases")
+	else:
+		# init phases if no save state available
+		Global.phases.resize(Global.MAX_GEARS)
+		Global.phases.fill(0.0)
 	if json.data.has("resources"):
 		Global.resources = json.data.get("resources")
 	if json.data.has("current_top_tiers"):
@@ -89,7 +101,9 @@ func load_game_data():
 		Global.is_barter_on = json.data.get("is_barter_on")
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
-
-		print("Game loaded!")
-	else:
-		print("No savegame found!")
+	# has to be at the end in order to avoid values being overwritten
+	if json.data.has("save_unix_time"):
+		var idle_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))
+		var bounded_idle_time = min(Global.MAX_IDLE_TIME_HOURS * 3600, idle_time)
+		Global.calc_idle_resources(bounded_idle_time)
+	print("Game loaded!")
