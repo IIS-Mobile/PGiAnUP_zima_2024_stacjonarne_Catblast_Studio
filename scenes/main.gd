@@ -35,6 +35,7 @@ func save_game_data():
 	print("Saving game...")
 
 	var save_data = {
+		"idle_time": Global.idle_time,
 		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
 		"resources" : Global.resources,
@@ -43,7 +44,6 @@ func save_game_data():
 		"gears_count" : Global.count,
 		"upgrades" : Global.upgrades,
 		"current_steam_chamber_value" : Global.current_steam_chamber_value,
-		"current_steam_gauge_value" : Global.current_steam_gauge_value,
 		"is_melting_on " : Global.is_melting_on,
 		"is_barter_on" : Global.is_barter_on,
 		"taps_count" : Global.taps_count
@@ -93,8 +93,6 @@ func load_game_data():
 		Global.upgrades = json.data.get("upgrades")
 	if json.data.has("current_steam_chamber_value"):
 		Global.current_steam_chamber_value = json.data.get("current_steam_chamber_value")
-	if json.data.has("current_steam_gauge_value"):
-		Global.current_steam_gauge_value = json.data.get("current_steam_gauge_value")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
 	if json.data.has("is_barter_on"):
@@ -103,7 +101,8 @@ func load_game_data():
 		Global.taps_count = json.data.get("taps_count")
 	# has to be at the end in order to avoid values being overwritten
 	if json.data.has("save_unix_time"):
-		var idle_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))
-		var bounded_idle_time = min(Global.MAX_IDLE_TIME_HOURS * 3600, idle_time)
-		Global.calc_idle_resources(bounded_idle_time)
+		var away_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))
+		var idle_time = min(json.data.get("idle_time"), away_time)
+		Global.calc_idle_resources(idle_time)
+		Global.idle_time = json.data.get("idle_time") - idle_time
 	print("Game loaded!")
