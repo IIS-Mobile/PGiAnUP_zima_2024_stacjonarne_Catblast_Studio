@@ -47,6 +47,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 15
 
 [node name="Grease1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -61,6 +62,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -76,6 +78,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -91,6 +94,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -106,6 +110,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -121,6 +126,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -136,6 +142,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -151,6 +158,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -166,6 +174,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -181,6 +190,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -196,6 +206,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Grease11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -211,6 +222,7 @@ tier3 = 1
 premium_price = 50.0
 
 [node name="Overclock1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -225,6 +237,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -239,6 +252,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -253,6 +267,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -267,6 +282,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -281,6 +297,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -295,6 +312,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -309,6 +327,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -323,6 +342,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -337,6 +357,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -351,6 +372,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -365,6 +387,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="LSC1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -385,6 +408,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -405,6 +429,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -425,6 +450,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -445,6 +471,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -465,6 +492,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -485,6 +513,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -505,6 +534,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -525,6 +555,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -545,6 +576,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="LSC10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -565,6 +597,7 @@ tier3 = 5
 premium_price = 40.0
 
 [node name="Melting1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -579,6 +612,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -593,6 +627,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -607,6 +642,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -621,6 +657,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -635,6 +672,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -649,6 +687,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -663,6 +702,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -677,6 +717,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -691,6 +732,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Melting10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -705,6 +747,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -719,6 +762,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -733,6 +777,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -747,6 +792,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -761,6 +807,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -775,6 +822,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -789,6 +837,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -803,6 +852,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -817,6 +867,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="Barter9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -831,6 +882,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeTin" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -845,6 +897,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeCopper" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -859,6 +912,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeBrass" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -873,6 +927,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeBronze" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -887,6 +942,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeIron" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -901,6 +957,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeSteel" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -915,6 +972,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeGold" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -929,6 +987,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeLead" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -943,6 +1002,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeTungsten" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -957,6 +1017,7 @@ tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeElectrum" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2

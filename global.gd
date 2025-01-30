@@ -55,7 +55,7 @@ var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
 
 var current_top_resource = 0
 
-var upgrade_names = ["grease", "overclock", "lsc", "melting", "barter", "tin_forge", "copper_forge", "brass_forge", "bronze_forge", "iron_forge", "steel_forge", "gold_forge", "lead_forge", "tungsten_forge", "electrum_forge"]
+var upgrade_names = ["Grease", "Overclock", "LSC", "Melting", "Barter", "ForgeTin", "ForgeCopper", "ForgeBrass", "ForgeBronze", "ForgeIron", "ForgeSteel", "ForgeGold", "ForgeLead", "ForgeTungsten", "ForgeElectrum"]
 
 var max_upgrade_values = {
 	str(upgrade_names[0]) : 11,

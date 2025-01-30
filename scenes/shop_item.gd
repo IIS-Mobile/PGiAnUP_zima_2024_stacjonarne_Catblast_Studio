@@ -130,7 +130,6 @@ func set_labels():
 
 func _on_buy_button_pressed() -> void:
 	Global.buy_button_clicked.emit(id)
-	print("emitting id: ", id)
 
 
 #|================================
