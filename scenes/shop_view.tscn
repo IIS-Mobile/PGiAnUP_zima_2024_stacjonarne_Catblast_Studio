@@ -47,6 +47,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 15
 
 [node name="Grease1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -55,12 +56,11 @@ image = ExtResource("3_6ia52")
 title = "Grease I"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -70,12 +70,11 @@ image = ExtResource("3_6ia52")
 title = "Grease II"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -85,12 +84,11 @@ image = ExtResource("3_6ia52")
 title = "Grease III"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -100,12 +98,11 @@ image = ExtResource("3_6ia52")
 title = "Grease IV"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -115,12 +112,11 @@ image = ExtResource("3_6ia52")
 title = "Grease V"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -130,12 +126,11 @@ image = ExtResource("3_6ia52")
 title = "Grease VI"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -145,12 +140,11 @@ image = ExtResource("3_6ia52")
 title = "Grease VII"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -160,12 +154,11 @@ image = ExtResource("3_6ia52")
 title = "Grease VIII"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -175,12 +168,11 @@ image = ExtResource("3_6ia52")
 title = "Grease IX"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -190,12 +182,11 @@ image = ExtResource("3_6ia52")
 title = "Grease X"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Grease11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -205,12 +196,11 @@ image = ExtResource("3_6ia52")
 title = "Grease XI"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
-price2 = 100.0
-price3 = 100.0
 tier3 = 1
 premium_price = 50.0
 
 [node name="Overclock1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -220,11 +210,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock I"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -234,11 +223,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock II"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -248,11 +236,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock III"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -262,11 +249,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock IV"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -276,11 +262,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock V"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -290,11 +275,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock VI"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -304,11 +288,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock VII"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -318,11 +301,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock VIII"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -332,11 +314,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock IX"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -346,11 +327,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock X"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Overclock11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -360,11 +340,10 @@ image = ExtResource("6_bchbm")
 title = "Overclock XI"
 description = "Increases rotation speed of the first gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="LSC1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -374,17 +353,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber I"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -394,17 +369,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber II"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -414,17 +385,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber III"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -434,17 +401,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber IV"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -454,17 +417,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber V"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -474,17 +433,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VI"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -494,17 +449,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VII"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -514,17 +465,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VIII"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -534,17 +481,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber IX"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="LSC10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -554,17 +497,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber X"
 description = "Increases the idling time."
-price1 = 1000.0
-resource1 = "brass"
-tier1 = 3
-price2 = 100.0
+price1 = 100.0
 resource2 = "bronze"
-tier2 = 4
-price3 = 10.0
 tier3 = 5
 premium_price = 40.0
 
 [node name="Melting1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -574,11 +513,10 @@ image = ExtResource("4_fc76t")
 title = "Melting I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -588,11 +526,10 @@ image = ExtResource("4_fc76t")
 title = "Melting II"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -602,11 +539,10 @@ image = ExtResource("4_fc76t")
 title = "Melting III"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -616,11 +552,10 @@ image = ExtResource("4_fc76t")
 title = "Melting IV"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -630,11 +565,10 @@ image = ExtResource("4_fc76t")
 title = "Melting V"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -644,11 +578,10 @@ image = ExtResource("4_fc76t")
 title = "Melting VI"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -658,11 +591,10 @@ image = ExtResource("4_fc76t")
 title = "Melting VII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -672,11 +604,10 @@ image = ExtResource("4_fc76t")
 title = "Melting VIII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -686,11 +617,10 @@ image = ExtResource("4_fc76t")
 title = "Melting IX"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Melting10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -700,11 +630,10 @@ image = ExtResource("4_fc76t")
 title = "Melting X"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -714,11 +643,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -728,11 +656,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter II"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -742,11 +669,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter III"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -756,11 +682,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter IV"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -770,11 +695,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter V"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -784,11 +708,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter VI"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -798,11 +721,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter VII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -812,11 +734,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter VIII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="Barter9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -826,11 +747,10 @@ image = ExtResource("9_l1iwg")
 title = "Barter IX"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeTin" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -840,11 +760,10 @@ image = ExtResource("10_k82gu")
 title = "Tin Forge"
 description = "Doubles the amount of tin generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeCopper" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -854,11 +773,10 @@ image = ExtResource("11_ytw8p")
 title = "Copper Forge"
 description = "Doubles the amount of tin generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeBrass" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -868,11 +786,10 @@ image = ExtResource("12_6e8bc")
 title = "Brass Forge"
 description = "Doubles the amount of tin generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeBronze" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -882,11 +799,10 @@ image = ExtResource("13_uqn8k")
 title = "Bronze Forge"
 description = "Doubles the amount of tin generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeIron" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -896,11 +812,10 @@ image = ExtResource("14_ca43u")
 title = "Iron Forge"
 description = "Doubles the amount of iron generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeSteel" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -910,11 +825,10 @@ image = ExtResource("15_er3oj")
 title = "Steel Forge"
 description = "Doubles the amount of steel generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeGold" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -924,11 +838,10 @@ image = ExtResource("16_eflpc")
 title = "Gold Forge"
 description = "Doubles the amount of gold generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeLead" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -938,11 +851,10 @@ image = ExtResource("17_m4tbb")
 title = "Lead Forge"
 description = "Doubles the amount of lead generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeTungsten" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -952,11 +864,10 @@ image = ExtResource("18_ptsig")
 title = "Tungsten Forge"
 description = "Doubles the amount of tungsten generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0
 
 [node name="ForgeElectrum" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -966,6 +877,4 @@ image = ExtResource("19_cmpx1")
 title = "Electrum Forge"
 description = "Doubles the amount of electrum generated from each gear."
 price1 = 100.0
-resource1 = "electrum"
-tier1 = 8
 premium_price = 100.0

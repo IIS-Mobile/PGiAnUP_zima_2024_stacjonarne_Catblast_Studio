@@ -4,6 +4,7 @@ signal tap_performed()
 signal release_steam()
 signal begin_idling(idling_time)
 signal buy_button_clicked(ID)
+signal reload_shop()
 
 # gauge hand rotation: -135deg to 135deg
 
@@ -18,6 +19,7 @@ const STEAM_LIMIT = 400.0
 var current_steam_chamber_value = 0
 var current_steam_gauge_value = 0
 
+var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
 var idle = false
 var phases := []
@@ -55,7 +57,7 @@ var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
 
 var current_top_resource = 0
 
-var upgrade_names = ["grease", "overclock", "lsc", "melting", "barter", "tin_forge", "copper_forge", "brass_forge", "bronze_forge", "iron_forge", "steel_forge", "gold_forge", "lead_forge", "tungsten_forge", "electrum_forge"]
+var upgrade_names = ["Grease", "Overclock", "LSC", "Melting", "Barter", "ForgeTin", "ForgeCopper", "ForgeBrass", "ForgeBronze", "ForgeIron", "ForgeSteel", "ForgeGold", "ForgeLead", "ForgeTungsten", "ForgeElectrum"]
 
 var max_upgrade_values = {
 	str(upgrade_names[0]) : 11,
