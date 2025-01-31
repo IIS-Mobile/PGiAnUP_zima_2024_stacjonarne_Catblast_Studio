@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://8q8ej6i3oglq"]
+
+[ext_resource type="Script" path="res://scenes/ad_view.gd" id="1_3ejay"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="1_o2hnj"]
+[ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="2_pm7k1"]
+[ext_resource type="Texture2D" uid="uid://gni83whcoogs" path="res://assets/icon.svg" id="4_3arpx"]
+
+[node name="AdView" type="CanvasLayer"]
+script = ExtResource("1_3ejay")
+
+[node name="Ad" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.133333, 0.156863, 0.282353, 1)
+
+[node name="SkipButton" type="Button" parent="Ad"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = 133.0
+grow_horizontal = 0
+theme = ExtResource("1_o2hnj")
+theme_override_fonts/font = ExtResource("2_pm7k1")
+theme_override_font_sizes/font_size = 50
+text = "Skip"
+
+[node name="PanelContainer" type="PanelContainer" parent="Ad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="Ad/PanelContainer"]
+scale = Vector2(4, 4)
+texture = ExtResource("4_3arpx")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Ad/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

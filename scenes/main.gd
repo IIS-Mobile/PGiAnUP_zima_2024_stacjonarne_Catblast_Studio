@@ -3,7 +3,19 @@ extends Node2D
 
 func _ready() -> void:
 	load_game_data()
-	
+
+#reward user after executing this function eg. $"/root/Node2D".trigger_ad(10)
+func trigger_ad(secs: int):
+	$AdView.start(secs)
+	$UI.visible = false
+	$AdView.visible = true
+	await Global.ad_skipped
+	$UI.visible = true
+	$AdView.visible = false
+
+func _on_ad_test_pressed() -> void:
+	trigger_ad(10)
+
 func _on_gear_button_pressed() -> void:
 	$UISound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()

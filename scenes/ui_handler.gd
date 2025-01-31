@@ -130,6 +130,8 @@ func _process(delta):
 		
 
 func _input(event):
+	if not $"/root/Node2D/UI".visible:
+		return
 	if event is InputEventMouseButton and event.pressed:
 		var clicked_on_top_resource_rect = false
 		var clicked_on_resource_rect = false
@@ -173,7 +175,7 @@ func _input(event):
 		elif clicked_on_buy_area_exit_button:
 			$"BuyPop-up".visible = false  
 		elif (resources_pop_up_area.get_global_rect().has_point(event.global_position) or (tier_pop_up_area.get_global_rect().has_point(event.global_position) and tier_pop_up.visible)):
-			pass  # Kliknięcie wewnątrz pop-upów, nic nie robimy
+			return  # Kliknięcie wewnątrz pop-upów, nic nie robimy
 		elif resources_pop_up.visible or tier_pop_up.visible:
 			$"/root/Node2D/UISound".play()
 			resources_pop_up.visible = false

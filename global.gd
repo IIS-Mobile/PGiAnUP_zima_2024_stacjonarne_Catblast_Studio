@@ -4,6 +4,7 @@ signal tap_performed()
 signal release_steam()
 signal buy_button_clicked(ID)
 signal reload_shop()
+signal ad_skipped()
 
 # gauge hand rotation: -135deg to 135deg
 
