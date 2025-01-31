@@ -4,6 +4,7 @@ signal tap_performed()
 signal release_steam()
 signal begin_idling(idling_time)
 signal buy_button_clicked(ID)
+signal reload_shop()
 
 # gauge hand rotation: -135deg to 135deg
 
@@ -18,6 +19,7 @@ const STEAM_LIMIT = 400.0
 var current_steam_chamber_value = 0
 var current_steam_gauge_value = 0
 
+var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
 var idle = false
 var phases := []

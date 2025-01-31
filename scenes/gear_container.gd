@@ -22,6 +22,7 @@ func add_gear() -> void:
 	$Gears.add_child(gear)
 	$PlaceSound.play()
 	_on_resized()
+	Global.emit_signal("reload_shop")
 
 func _on_pressed() -> void:
 	if Global.count:

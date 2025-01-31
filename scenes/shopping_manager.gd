@@ -26,26 +26,9 @@ var id_to_upgrade_map: Dictionary = {
 	51: 1, 52: 2, 53: 3, 54: 4, 55: 5, 56: 6, 57: 7, 58: 8, 59: 9, 60: 10
 }
 
-var string_to_id_map: Dictionary = {
-	"Grease1": 0, "Grease2": 1, "Grease3": 2, "Grease4": 3, "Grease5": 4,
-	"Grease6": 5, "Grease7": 6, "Grease8": 7, "Grease9": 8, "Grease10": 9, "Grease11": 10,
-	
-	"Overclock1": 11, "Overclock2": 12, "Overclock3": 13, "Overclock4": 14, "Overclock5": 15, 
-	"Overclock6": 16, "Overclock7": 17, "Overclock8": 18, "Overclock9": 19, "Overclock10": 20, "Overclock11": 21,
-	
-	"LSC1": 22, "LSC2": 23, "LSC3": 24, "LSC4": 25, "LSC5": 26, "LSC6": 27, "LSC7": 28, "LSC8": 29, "LSC9": 30, "LSC10": 31,
-	
-	"Melting1": 32, "Melting2": 33, "Melting3": 34, "Melting4": 35, "Melting5": 36,
-	"Melting6": 37, "Melting7": 38, "Melting8": 39, "Melting9": 40, "Melting10": 41,
-	
-	"Barter1": 42, "Barter2": 43, "Barter3": 44, "Barter4": 45, "Barter5": 46, "Barter6": 47, "Barter7": 48, "Barter8": 49, "Barter9": 50,
-	
-	"ForgeTin": 51, "ForgeCopper": 52, "ForgeBrass": 53, "ForgeBronze": 54, "ForgeIron": 55,
-	"ForgeSteel": 56, "ForgeGold": 57, "ForgeLead": 58, "ForgeTungsten": 59, "ForgeElectrum": 60
-}
-
 func _ready() -> void:
 	Global.connect("buy_button_clicked", handle_buy_button)
+	Global.connect("reload_shop", load_shop_items)
 	is_product_affordable.resize(61)
 	is_product_affordable.fill(false)
 	load_shop_items()
@@ -69,13 +52,6 @@ func check_product_affordability(product_index):
 		var resource = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
 																							   # ^NIE WIEM CZEMU TO -1 ALE INACZEJ NIEPOPRAWNIE DZIALA
 		var price = product_bar.get(price_key)
-		#print(resource)
-		#print("-----------------")
-		#print("PRODBAR: ", product_bar)
-		#print("CENA: ", price)
-		#print("ZASÓB: ", product_bar.get(resource_key))
-		#print("TIER: ", product_bar.get(tier_key))
-		
 		var price_label = product_bar.get_child(0).get_child(4).get_child(resource_index)
 		
 		if resource < price:
@@ -156,18 +132,30 @@ func successful_purchase(id):
 	#pass
 
 func load_shop_items():
-	for i in range(3):
+	# Grease, Overclock, Larger Steam Chamber, Melting
+	for i in range(4):
 		var upgrade_name = Global.upgrade_names[i]
 		var upgrade_level = Global.upgrades[upgrade_name]
 		var upgrade = upgrade_name + str(upgrade_level + 1)
 		var prodbar = $ScrollContainer/VBoxContainer.get_node(upgrade)
-		print(upgrade_name)
-		print(upgrade_level)
-		print(upgrade)
-		print(prodbar)
-		prodbar.visible = true
-		
-		
+		if prodbar != null:
+			prodbar.visible = true
+
+	# Barter
+	var barter_name = Global.upgrade_names[4]
+	var barter_level = Global.upgrades[barter_name]
+	var barter_perfect_being = barter_name + str(barter_level + 1)
+	var barbar = $ScrollContainer/VBoxContainer.get_node(barter_perfect_being)
+	if barbar != null and Global.count > (barter_level + 1) * 8:
+		barbar.visible = true
+
+	# Forges
+	for i in range(Global.very_specific_iterator_in_shopping_manager, 15):
+		var forge_name = Global.upgrade_names[i]
+		var forbar = $ScrollContainer/VBoxContainer.get_node(forge_name)
+		if forbar != null and Global.count > ((i - 4) * 8) - 1:
+			forbar.visible = true
+			Global.very_specific_iterator_in_shopping_manager += 1
 
 
 #|===============================|
