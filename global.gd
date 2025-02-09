@@ -38,7 +38,7 @@ func _ready() -> void:
 	idle_timer.one_shot = true
 	add_child(idle_timer)
 
-var premium_resource = 0;
+var premium_resource = 2;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
 	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers

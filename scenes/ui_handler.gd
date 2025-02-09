@@ -7,6 +7,7 @@ extends CanvasLayer
 	$VBoxContainer/ColorRect/ResourceTop0
 ]
 
+
 @onready var resource_areas = [
 	$ResourcePopUp/Resource0,
 	$ResourcePopUp/Resource1,
@@ -36,15 +37,25 @@ extends CanvasLayer
 @onready var tier_pop_up = $TierPopUp
 @onready var tier_pop_up_area = $TierPopUp/GoldenRect
 
+@onready var premium_resource_area = $VBoxContainer/ColorRect/ResourcePremium
+
+
 
 var selected_resource_type = -1;
 
 func update_top_resource_labels():
+	
+	var premium_resource_label = premium_resource_area.get_node("Label_resource")
+	var premium_resource_sprite = premium_resource_area.get_node("Sprite2D")
+	
+	premium_resource_label.text = str(Global.premium_resource)
+	premium_resource_sprite.texture = load("res://assets/art/resources/crystaline_bolts.png") 
+	
 	var local_current_top_resource = Global.current_top_resource
 	if (local_current_top_resource < 2):
 		local_current_top_resource = 2
 
-
+	
 	
 	for i in range(2, -1, -1):
 		if local_current_top_resource - i <= Global.current_top_resource:
@@ -63,6 +74,7 @@ func update_top_resource_labels():
 			sprite.texture = load("res://assets/art/resources/hidden_resource.png")
 
 func update_resource_labels():
+
 	for i in Global.current_top_resource+1:
 		if i <= Global.current_top_resource:
 			var top_tier = Global.current_top_tiers[i]
@@ -105,6 +117,7 @@ func update_tier_labels():
 
 func _ready():
 	resources_pop_up.visible = false
+	$"BuyPop-up".visible = false  
 	tier_pop_up.visible = false
 	set_process_input(true)
 	
@@ -120,7 +133,11 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var clicked_on_top_resource_rect = false
 		var clicked_on_resource_rect = false
-		
+		var y_of_clicked_on_resource_rect = -90
+		var clicked_on_premium_area = false 
+		var clicked_on_buy_area_exit_button = false 
+
+
 		if !resources_pop_up.visible:
 			for top_resource_area in top_resource_areas:
 				if top_resource_area.get_global_rect().has_point(event.global_position):
@@ -130,19 +147,33 @@ func _input(event):
 		else:
 			for resource_area in resource_areas:
 				if resource_area.get_global_rect().has_point(event.global_position):
+					y_of_clicked_on_resource_rect = resource_area.global_position.y
 					clicked_on_resource_rect = true
 					var node_name = resource_area.name 
 					selected_resource_type = int(node_name.substr(node_name.length() - 1, 1))
 					$"/root/Node2D/UISound".play()
 					break
-				
-		if clicked_on_resource_rect:
+
+		if premium_resource_area.get_global_rect().has_point(event.global_position):
+			clicked_on_premium_area = true
+			$"/root/Node2D/UISound".play()
+			
+		if $"BuyPop-up/TextureButton".get_global_rect().has_point(event.global_position):
+			clicked_on_buy_area_exit_button = true
+			$"/root/Node2D/UISound".play()
+
+		if clicked_on_resource_rect and $"BuyPop-up".visible == false:
 			if selected_resource_type <= Global.current_top_resource:
+				tier_pop_up.global_position.y = y_of_clicked_on_resource_rect
 				tier_pop_up.visible = true
-		if clicked_on_top_resource_rect:
-				resources_pop_up.visible = true
-		elif resources_pop_up_area.get_global_rect().has_point(event.global_position) || (tier_pop_up_area.get_global_rect().has_point(event.global_position) && tier_pop_up.visible):
-			pass
+		elif clicked_on_top_resource_rect:
+			resources_pop_up.visible = true
+		elif clicked_on_premium_area:
+			$"BuyPop-up".visible = true  
+		elif clicked_on_buy_area_exit_button:
+			$"BuyPop-up".visible = false  
+		elif (resources_pop_up_area.get_global_rect().has_point(event.global_position) or (tier_pop_up_area.get_global_rect().has_point(event.global_position) and tier_pop_up.visible)):
+			pass  # Kliknięcie wewnątrz pop-upów, nic nie robimy
 		elif resources_pop_up.visible or tier_pop_up.visible:
 			$"/root/Node2D/UISound".play()
 			resources_pop_up.visible = false

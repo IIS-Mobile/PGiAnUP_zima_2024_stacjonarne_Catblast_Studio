@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=17 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -16,25 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
 [ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
-[ext_resource type="Texture2D" uid="uid://xfri6n057yon" path="res://assets/art/icon/Close_icon.png" id="16_d8kiq"]
-[ext_resource type="Texture2D" uid="uid://cdv8fvejdb3gm" path="res://assets/art/icon/Store_options/Store_option1.png" id="16_javg6"]
-[ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="17_qfhtx"]
-[ext_resource type="Texture2D" uid="uid://bbp2tuedtlqh4" path="res://assets/art/icon/Store_options/Store_option2.png" id="18_o8eeo"]
-[ext_resource type="Texture2D" uid="uid://b4lkb0avrqikj" path="res://assets/art/icon/Store_options/Store_option3.png" id="19_udako"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au0sx"]
-content_margin_left = 50.0
-content_margin_top = 40.0
-content_margin_right = 50.0
-bg_color = Color(0.529412, 0.352941, 0.258824, 1)
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color(0.909804, 0.843137, 0.368627, 1)
-corner_detail = 10
-shadow_size = 35
-shadow_offset = Vector2(0, 43.97)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8ibr")
@@ -408,6 +389,7 @@ scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_xmlx4")
 
 [node name="ResourcePopUp" type="Control" parent="UI"]
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 10
@@ -1178,175 +1160,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="BuyPop-up" type="PanelContainer" parent="UI"]
-z_index = 90
-custom_minimum_size = Vector2(772.79, 0)
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -345.5
-offset_bottom = 345.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_au0sx")
-
-[node name="TextureButton" type="TextureButton" parent="UI/BuyPop-up"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture_normal = ExtResource("16_d8kiq")
-texture_pressed = ExtResource("16_d8kiq")
-texture_hover = ExtResource("16_d8kiq")
-texture_disabled = ExtResource("16_d8kiq")
-texture_focused = ExtResource("16_d8kiq")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/BuyPop-up"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/BuyPop-up/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 51
-text = "BUY MORE CRYSTALINE BOLTS!"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BuyPop-up/VBoxContainer"]
-custom_minimum_size = Vector2(0, 580.16)
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_javg6")
-expand_mode = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 36
-text = "25"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_qfhtx")
-expand_mode = 2
-
-[node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
-text = "11,99"
-horizontal_alignment = 1
-justification_flags = 162
-
-[node name="Button" type="Button" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
-layout_mode = 2
-size_flags_vertical = 8
-theme = ExtResource("3_0qc7x")
-text = "Buy Now!"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-texture = ExtResource("18_o8eeo")
-expand_mode = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 36
-text = "75"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_qfhtx")
-expand_mode = 2
-
-[node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
-text = "31, 99 zł"
-horizontal_alignment = 1
-justification_flags = 162
-
-[node name="Button" type="Button" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 75)
-layout_mode = 2
-theme = ExtResource("3_0qc7x")
-text = "Buy Now!"
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Sprite2D" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color(1, 1, 1, 0.980392)
-self_modulate = Color(0.933333, 1, 1, 1)
-layout_mode = 2
-texture = ExtResource("19_udako")
-expand_mode = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 36
-text = "125"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_qfhtx")
-expand_mode = 2
-
-[node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 55)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
-text = "49. 99 zł (Best offer!!!)"
-horizontal_alignment = 1
-justification_flags = 162
-
-[node name="Button" type="Button" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 75)
-layout_mode = 2
-theme = ExtResource("3_0qc7x")
-text = "Buy Now!"
 
 [node name="UISound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_p0dfd")
