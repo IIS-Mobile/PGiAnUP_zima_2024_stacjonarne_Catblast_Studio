@@ -111,7 +111,7 @@ func load_game_data():
 		Global.is_barter_on = json.data.get("is_barter_on")
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
-	# has to be at the end in order to avoid values being overwritten
+	# has to be at the end in order to avoid values being overwritten and upgrades being taken into account
 	if json.data.has("save_unix_time"):
 		var away_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))
 		var idle_time = min(json.data.get("idle_time"), away_time)
