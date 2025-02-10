@@ -2,7 +2,6 @@ extends Control
 class_name Gear
 
 const scene = preload("res://scenes/gear.tscn")
-#TODO: decouple from global
 @onready var index := Global.count
 
 static func create() -> Gear:

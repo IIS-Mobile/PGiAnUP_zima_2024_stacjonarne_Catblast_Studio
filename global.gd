@@ -2,12 +2,15 @@ extends Node
 
 signal tap_performed()
 signal release_steam()
-signal begin_idling(idling_time)
 signal buy_button_clicked(ID)
 signal reload_shop()
+signal ad_skipped()
 
 # gauge hand rotation: -135deg to 135deg
 
+# some of those will be changed into variables
+#const MAX_IDLE_TIME_HOURS = 0.005
+const MAX_IDLE_TIME_HOURS = 8
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW * 2
@@ -17,11 +20,10 @@ const IDLE_SPEED = 0.1
 const STEAM_LIMIT = 400.0
 
 var current_steam_chamber_value = 0
-var current_steam_gauge_value = 0
 
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
-var idle = false
+var idle_time = 0.0
 var phases := []
 var speed_multiplier := 1.0
 var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
@@ -31,9 +33,6 @@ var count := 0
 var idle_timer : Timer
 
 func _ready() -> void:
-	# init phases if no save state available
-	phases.resize(MAX_GEARS)
-	phases.fill(0.0)
 	idle_timer = Timer.new()
 	idle_timer.one_shot = true
 	add_child(idle_timer)
@@ -130,8 +129,9 @@ func _physics_process(_delta: float) -> void:
 		speed = min(speed + SLOWDOWN_FACTOR, 1.0)
 	else:
 		speed = max(speed - SLOWDOWN_FACTOR, 0.0)
-	if idle and speed < IDLE_SPEED:
+	if idle_time > 0 and speed < IDLE_SPEED:
 		buffer = min(buffer + SLOWDOWN_FACTOR, IDLE_SPEED)
+		idle_time = max(0.0, idle_time - 1.0 / Engine.physics_ticks_per_second)
 	var phase_inc = speed_multiplier * speed * speed * ROTATION_ANGLE
 	#TODO: should handle case when does not exist yet?
 	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Gears")
@@ -151,10 +151,3 @@ func _physics_process(_delta: float) -> void:
 					$"/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/SpinSound".play()
 		  			#not sure if they are not stacking (replace signal with function?)
 					emit_signal("rotation_completed", child.index)
-
-
-func handle_idling(idling_time):
-	Global.idle = true
-	await get_tree().create_timer(idling_time).timeout
-	print("NO CIEKAWE CZY FAKTYCZNIE TYLE MINIE (jak cos to mija bo sprawdzalem)")
-	Global.idle = false

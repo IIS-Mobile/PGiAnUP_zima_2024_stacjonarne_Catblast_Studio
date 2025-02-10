@@ -3,9 +3,22 @@ extends Node2D
 
 func _ready() -> void:
 	load_game_data()
-	
+
+#reward user after executing this function eg. $"/root/Node2D".trigger_ad(10)
+func trigger_ad(secs: int):
+	$AdView.start(secs)
+	$UI.visible = false
+	$AdView.visible = true
+	await Global.ad_skipped
+	$UI.visible = true
+	$AdView.visible = false
+
+func _on_ad_test_pressed() -> void:
+	trigger_ad(10)
+
 func _on_gear_button_pressed() -> void:
 	$UISound.play()
+	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
 func _on_boost_button_pressed() -> void:
@@ -19,9 +32,12 @@ func _on_idle_button_pressed() -> void:
 	else:
 		print("NIEEEE NIE MOZESZ JESZCZE IDLOWAC MUSISZ NAPOMPOWAC PARY DO KOMORY")
 
-func _on_test_idle_button_pressed() -> void:
-	$UISound.play()
-	Global.calc_idle_resources(8 * 3600)
+func _on_save_test_pressed() -> void:
+	save_game_data()
+	
+func _on_delete_save_test_pressed() -> void:
+	print("Save removed...")
+	DirAccess.remove_absolute("user://savegame.json")
 
 func _notification(what):
 	if what == NOTIFICATION_APPLICATION_PAUSED:
@@ -31,6 +47,8 @@ func save_game_data():
 	print("Saving game...")
 
 	var save_data = {
+		"idle_time": Global.idle_time,
+		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
 		"resources" : Global.resources,
 		"current_top_tiers" : Global.current_top_tiers,
@@ -38,7 +56,6 @@ func save_game_data():
 		"gears_count" : Global.count,
 		"upgrades" : Global.upgrades,
 		"current_steam_chamber_value" : Global.current_steam_chamber_value,
-		"current_steam_gauge_value" : Global.current_steam_gauge_value,
 		"is_melting_on " : Global.is_melting_on,
 		"is_barter_on" : Global.is_barter_on,
 		"taps_count" : Global.taps_count
@@ -54,8 +71,10 @@ func load_game_data():
 
 	if not FileAccess.file_exists("user://savegame.json"):
 		print("No savegame found!")
+		# init phases if no save state available
+		Global.phases.resize(Global.MAX_GEARS)
+		Global.phases.fill(0.0)
 		return
-
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
 	var json = JSON.new()
@@ -66,7 +85,12 @@ func load_game_data():
 	if parse_err != OK:
 		print("Error parsing savegame!")
 		return
-
+	if json.data.has("phases"):
+		Global.phases = json.data.get("phases")
+	else:
+		# init phases if no save state available
+		Global.phases.resize(Global.MAX_GEARS)
+		Global.phases.fill(0.0)
 	if json.data.has("resources"):
 		Global.resources = json.data.get("resources")
 	if json.data.has("current_top_tiers"):
@@ -81,15 +105,16 @@ func load_game_data():
 		Global.upgrades = json.data.get("upgrades")
 	if json.data.has("current_steam_chamber_value"):
 		Global.current_steam_chamber_value = json.data.get("current_steam_chamber_value")
-	if json.data.has("current_steam_gauge_value"):
-		Global.current_steam_gauge_value = json.data.get("current_steam_gauge_value")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
 	if json.data.has("is_barter_on"):
 		Global.is_barter_on = json.data.get("is_barter_on")
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
-
-		print("Game loaded!")
-	else:
-		print("No savegame found!")
+	# has to be at the end in order to avoid values being overwritten
+	if json.data.has("save_unix_time"):
+		var away_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))
+		var idle_time = min(json.data.get("idle_time"), away_time)
+		Global.calc_idle_resources(idle_time)
+		Global.idle_time = json.data.get("idle_time") - idle_time
+	print("Game loaded!")

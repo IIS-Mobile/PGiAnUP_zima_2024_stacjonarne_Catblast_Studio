@@ -2,6 +2,7 @@ extends Control
 
 var iterator = 0.01
 var index = 0
+var animation = false
 
 const MAX_GAUGE_ANGLE: float = 135.0
 const MIN_GAUGE_ANGLE: float = -135.0
@@ -20,8 +21,8 @@ func _process(delta: float) -> void:
 	if(index <= -0.1 or index >= 0.1):
 		iterator = -iterator
 	index += iterator
-	if Global.idle:
-		handle_gauge(GlobalTimer.get_remaining_idle_time(), GlobalTimer.IDLING_TIME)
+	if not animation:
+		handle_gauge(Global.idle_time, Global.MAX_IDLE_TIME_HOURS * 3600)
 
 func increment_taps():
 	if Global.taps_count < Global.STEAM_LIMIT:
@@ -35,6 +36,7 @@ func waving_steam():
 
 func release_steam():
 	$WhistleSound.play()
+	animation = true
 	#TODO: replace with fixed length animation to match sound
 	for i in range (Global.STEAM_LIMIT, 0, -1):
 		if i%2:
@@ -46,8 +48,9 @@ func release_steam():
 		
 		$Panel/Container/Whistle/CPUParticles2D.emitting = true
 		handle_gauge(Global.STEAM_LIMIT - Global.taps_count, Global.STEAM_LIMIT)
+	animation = false
 	$Panel/Container/Whistle/CPUParticles2D.emitting = false
-	Global.begin_idling.emit(GlobalTimer.IDLING_TIME)
+	Global.idle_time = Global.MAX_IDLE_TIME_HOURS * 3600
 
 func handle_gauge(remaining_time, total_time):
 	var progress = remaining_time / total_time

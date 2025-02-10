@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=24 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="5_ndhb7"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
+[ext_resource type="PackedScene" uid="uid://8q8ej6i3oglq" path="res://scenes/ad_view.tscn" id="7_62fey"]
 [ext_resource type="PackedScene" uid="uid://cabrjyf0hftbs" path="res://scenes/shop_view.tscn" id="7_a42nd"]
 [ext_resource type="PackedScene" uid="uid://da2twjw0p16g5" path="res://scenes/gears_view.tscn" id="7_y268q"]
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
@@ -896,20 +897,51 @@ theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "tgl"
 
-[node name="TestIdleButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
+[node name="SaveTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 585.0
-offset_top = -105.925
-offset_right = 639.0
-offset_bottom = -22.925
+offset_left = 427.0
+offset_top = 22.075
+offset_right = 535.0
+offset_bottom = 105.075
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
-text = "8hi"
+text = "Save"
+
+[node name="AdTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 23.075
+offset_right = 418.0
+offset_bottom = 106.075
+grow_vertical = 2
+theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
+text = "Ad
+"
+
+[node name="DeleteSaveTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 545.0
+offset_top = 20.075
+offset_right = 764.0
+offset_bottom = 103.075
+grow_vertical = 2
+theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
+text = "Delete SAVE"
 
 [node name="ResourceTop0" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
@@ -1352,7 +1384,12 @@ text = "Buy Now!"
 stream = ExtResource("15_p0dfd")
 volume_db = -10.0
 
+[node name="AdView" parent="." instance=ExtResource("7_62fey")]
+visible = false
+
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/IdleButton" to="." method="_on_idle_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/ColorRect/TestIdleButton" to="." method="_on_test_idle_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/ColorRect/AdTest" to="." method="_on_ad_test_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/ColorRect/DeleteSaveTest" to="." method="_on_delete_save_test_pressed"]
