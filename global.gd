@@ -104,7 +104,7 @@ func handle_rotation(index: int, rots: int):
 	var tier = index % TIERS_AMOUNT
 	if upgrades[upgrade_names[5 + resource_index]] == 1:
 		rots *= 2
-	resources[resource_names[resource_index]][tier].plusEquals(rots*3)
+	resources[resource_names[resource_index]][tier].plusEquals(rots)
 
 func _physics_process(_delta: float) -> void:
 	if not count:
