@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func handle_resource_popup():
 	$ResourcePopup/AnimationPlayer.stop()
+	# TODO: somehow avoid executing on every popup
+	if Global.upgrades[Global.upgrade_names[5 + index / (Global.TIERS_AMOUNT)]] == 1:
+		$ResourcePopup/ResourcePopupInner/Label.text = "+2"
 	$ResourcePopup/AnimationPlayer.play("popup")
 
 func handle_resource_indicator():
