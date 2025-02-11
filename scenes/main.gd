@@ -27,7 +27,7 @@ func _on_boost_button_pressed() -> void:
 
 func _on_idle_button_pressed() -> void:
 	$UISound.play()
-	if Global.taps_count >= Global.STEAM_LIMIT:
+	if Global.taps_count >= Global.lsc_tap_scaling():
 		Global.release_steam.emit()
 	else:
 		print("NIEEEE NIE MOZESZ JESZCZE IDLOWAC MUSISZ NAPOMPOWAC PARY DO KOMORY")
@@ -55,7 +55,6 @@ func save_game_data():
 		"current_top_resource" : Global.current_top_resource,
 		"gears_count" : Global.count,
 		"upgrades" : Global.upgrades,
-		"current_steam_chamber_value" : Global.current_steam_chamber_value,
 		"is_melting_on " : Global.is_melting_on,
 		"is_barter_on" : Global.is_barter_on,
 		"taps_count" : Global.taps_count
@@ -103,8 +102,6 @@ func load_game_data():
 			$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 	if json.data.has("upgrades"):
 		Global.upgrades = json.data.get("upgrades")
-	if json.data.has("current_steam_chamber_value"):
-		Global.current_steam_chamber_value = json.data.get("current_steam_chamber_value")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
 	if json.data.has("is_barter_on"):
