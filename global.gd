@@ -50,16 +50,16 @@ var count := 0
 var premium_resource = 2;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
-	str(resource_names[0]) : [0, 0, 0, 0, 0, 0, 0, 0], #indexes from 0 to 7 are the tiers
-	str(resource_names[1]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[2]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[3]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[4]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[5]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[6]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[7]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[8]) : [0, 0, 0, 0, 0, 0, 0, 0],
-	str(resource_names[9]) : [0, 0, 0, 0, 0, 0, 0, 0]
+	str(resource_names[0]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)], #indexes from 0 to 7 are the tiers
+	str(resource_names[1]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[2]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[3]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[4]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[5]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[6]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[7]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[8]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)],
+	str(resource_names[9]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)]
 }
 var current_top_tiers = [0,0,0,0,0,0,0,0,0,0]
 var current_top_resource = 0
@@ -117,7 +117,7 @@ func handle_rotation(index: int, rots: int):
 	var tier = index % TIERS_AMOUNT
 	if upgrades[upgrade_names[5 + resource_index]] == 1:
 		rots *= 2
-	resources[resource_names[resource_index]][tier] += rots
+	resources[resource_names[resource_index]][tier].plusEquals(rots)
 
 func _physics_process(_delta: float) -> void:
 	if not count:

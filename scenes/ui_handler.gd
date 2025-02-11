@@ -61,12 +61,12 @@ func update_top_resource_labels():
 		if local_current_top_resource - i <= Global.current_top_resource:
 			var top_tier = Global.current_top_tiers[local_current_top_resource - i]
 			var resource_name = Global.resource_names[local_current_top_resource - i]
-			var tier1_value = Global.resources[resource_name][top_tier]
+			var tier1_value :Big = Global.resources[resource_name][top_tier]
 			var label = top_resource_areas[i].get_node("Label_resource")
 			var sprite = top_resource_areas[i].get_node("Sprite2D")
 			
 			sprite.texture = load("res://assets/art/resources/" + str(local_current_top_resource - i +1) + "_" + str(resource_name) + "/" + str(resource_name) + "_T" + str(top_tier +1) + ".png")
-			label.text = str(tier1_value)
+			label.text = tier1_value.toAA(false,true,false)
 		else:
 			var label = top_resource_areas[i].get_node("Label_resource")
 			var sprite = top_resource_areas[i].get_node("Sprite2D")
@@ -79,12 +79,13 @@ func update_resource_labels():
 		if i <= Global.current_top_resource:
 			var top_tier = Global.current_top_tiers[i]
 			var resource_name = Global.resource_names[i]
-			var tier1_value = Global.resources[resource_name][top_tier]
+			var tier1_value : Big = Global.resources[resource_name][top_tier]
 			var label = resource_areas[i].get_node("Label_resource")
 			var sprite = resource_areas[i].get_node("Sprite2D")
 			
 			sprite.texture = load("res://assets/art/resources/" + str(i +1) + "_" + str(resource_name) + "/" + str(resource_name) + "_T" + str(top_tier +1) + ".png")
-			label.text = str(tier1_value)
+			label.text = tier1_value.toAA()
+
 		else:
 			var label = resource_areas[i].get_node("Label_resource")
 			var sprite = resource_areas[i].get_node("Sprite2D")
@@ -101,11 +102,11 @@ func update_tier_labels():
 	
 	for i in range(tier_areas.size()):
 		if i <= top_tier:
-			var tier_i_value = Global.resources[resource_name][i]
+			var tier_i_value : Big = Global.resources[resource_name][i]
 			var label = tier_areas[i].get_node("Label_resource")
 			var sprite = tier_areas[i].get_node("Sprite2D")
 			
-			label.text = str(tier_i_value)
+			label.text = tier_i_value.toAA()
 			sprite.texture = load("res://assets/art/resources/" + str(selected_resource_type +1) + "_" + str(resource_name) + "/" + str(resource_name) + "_T" + str(i +1) + ".png")
 		else:
 			var label = tier_areas[i].get_node("Label_resource")
