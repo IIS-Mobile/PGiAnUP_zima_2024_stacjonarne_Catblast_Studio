@@ -24,8 +24,8 @@ func overclock_scaling() -> float:
 func grease_scaling(i: int) -> float:
 	return 1. / pow(i + 1., 2. * (1. - ((upgrades["Grease"] + 1.) / (max_upgrade_values["Grease"] + 2.))))
 
-var is_melting_on = false;
-var is_barter_on = false;
+var is_melting_on = true;
+var is_barter_on = true;
 var current_steam_chamber_value = 0
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0

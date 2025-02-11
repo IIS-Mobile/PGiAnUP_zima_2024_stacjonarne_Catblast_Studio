@@ -1,0 +1,187 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1qqo5erp053i"]
+
+[ext_resource type="Script" path="res://scenes/shop_item.gd" id="1_3i66l"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
+[ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="3_gxjrw"]
+[ext_resource type="Texture2D" uid="uid://cm7rx7h1onhhr" path="res://assets/art/resources/hidden_resource.png" id="3_vnvx5"]
+[ext_resource type="FontFile" uid="uid://24xaofaf2ipf" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.ttf" id="4_gn262"]
+
+[sub_resource type="FontVariation" id="FontVariation_oe8v1"]
+base_font = ExtResource("4_gn262")
+spacing_glyph = 1
+spacing_top = 10
+
+[sub_resource type="FontVariation" id="FontVariation_m5fdh"]
+base_font = ExtResource("4_gn262")
+spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FontVariation_8wl8f"]
+base_font = ExtResource("4_gn262")
+spacing_glyph = 3
+
+[node name="ProductBar" type="Panel"]
+self_modulate = Color(0.282353, 0.176471, 0.117647, 0.698039)
+custom_minimum_size = Vector2(0, 222.08)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3i66l")
+tier1 = 1
+tier2 = 1
+
+[node name="Panel" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -140.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer4"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+texture = ExtResource("3_vnvx5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_oe8v1")
+theme_override_font_sizes/font_size = 50
+text = "Default
+"
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_m5fdh")
+theme_override_font_sizes/font_size = 36
+text = "Default default "
+autowrap_mode = 2
+
+[node name="Spacing" type="HBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ResourceIcon1" type="TextureRect" parent="Panel/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_vnvx5")
+expand_mode = 4
+
+[node name="ResourceIcon2" type="TextureRect" parent="Panel/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_vnvx5")
+expand_mode = 4
+
+[node name="ResourceIcon3" type="TextureRect" parent="Panel/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("3_vnvx5")
+expand_mode = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Price1" type="Label" parent="Panel/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_8wl8f")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="Price2" type="Label" parent="Panel/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("FontVariation_8wl8f")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="Price3" type="Label" parent="Panel/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("FontVariation_8wl8f")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button" type="Button" parent="Panel/MarginContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_b320b")
+theme_override_fonts/font = ExtResource("4_gn262")
+theme_override_font_sizes/font_size = 100
+text = "BUY
+"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="PremiumResourceIcon" type="TextureRect" parent="Panel/MarginContainer/Button/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_gxjrw")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="PremiumPrice" type="Label" parent="Panel/MarginContainer/Button/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_gn262")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/MarginContainer/Button" to="." method="_on_buy_button_pressed"]
