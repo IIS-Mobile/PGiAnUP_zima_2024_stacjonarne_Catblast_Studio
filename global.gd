@@ -6,27 +6,40 @@ signal buy_button_clicked(ID)
 signal reload_shop()
 signal ad_skipped()
 
-#const MAX_IDLE_TIME_HOURS = 0.005
-const MAX_IDLE_TIME_HOURS = 8
 const MAX_GEARS = 80
 const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW * 2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
-const IDLE_SPEED = 0.1
-const STEAM_LIMIT = 400.0
 
 #TODO: provide sane scaling function
+#base speed multiplier, unbounded
 func overclock_scaling() -> float:
 	return 4. * (upgrades["Overclock"] + 1.) / (max_upgrade_values["Overclock"] + 1.)
 
-# TODO: pretty sane function?, but could it be even better?🤔
+#TODO: pretty sane function?, but could it be even better?🤔
+#bounded 0-1
 func grease_scaling(i: int) -> float:
 	return 1. / pow(i + 1., 2. * (1. - ((upgrades["Grease"] + 1.) / (max_upgrade_values["Grease"] + 2.))))
 
+#TODO: provide sane scaling function
+#idle time in hours unbounded
+func lsc_time_scaling() -> float:
+	#return 0.005
+	return 8 * (upgrades["LSC"] + 1.) / (max_upgrade_values["LSC"] + 1.)
+	
+#TODO: provide sane scaling function
+#taps needed to activate idle
+func lsc_tap_scaling() -> int:
+	return 400. * (1. - (upgrades["LSC"] / (max_upgrade_values["LSC"] + 1.)))
+
+#TODO: provide sane scaling function
+#bounded 0-1
+func lsc_speed_scaling() -> float:
+	return 0.5 * (upgrades["LSC"] + 1.) / (max_upgrade_values["LSC"] + 1.)
+
 var is_melting_on = false;
 var is_barter_on = false;
-var current_steam_chamber_value = 0
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
 var idle_time = 0.0
@@ -93,7 +106,7 @@ var upgrades = { #current state of upgrades
 #TODO: numbers can get quite large, investigate accuracy
 func calc_idle_resources(secs: float):
 	var ticks = (secs * Engine.physics_ticks_per_second) as int
-	var phase_inc = overclock_scaling() * IDLE_SPEED * IDLE_SPEED * ROTATION_ANGLE
+	var phase_inc = overclock_scaling() * min(lsc_speed_scaling(), 1.) * min(lsc_speed_scaling(), 1.) * ROTATION_ANGLE
 	for gear in range(0, count):
 		var rots = (phases[gear] + phase_inc * ticks * min(grease_scaling(gear), 1.0)) / 360.0 as int
 		phases[gear] = fmod(phases[gear] + phase_inc * ticks * min(grease_scaling(gear), 1.0), 360.0)
@@ -114,11 +127,10 @@ func _physics_process(_delta: float) -> void:
 		speed = min(speed + SLOWDOWN_FACTOR, 1.0)
 	else:
 		speed = max(speed - SLOWDOWN_FACTOR, 0.0)
-	if idle_time > 0 and speed < IDLE_SPEED:
-		buffer = min(buffer + SLOWDOWN_FACTOR, IDLE_SPEED)
+	if idle_time > 0 and speed < min(lsc_speed_scaling(), 1.):
+		buffer = min(buffer + SLOWDOWN_FACTOR, min(lsc_speed_scaling(),1.))
 		idle_time = max(0.0, idle_time - 1.0 / Engine.physics_ticks_per_second)
 	var phase_inc = overclock_scaling() * speed * speed * ROTATION_ANGLE
-	#TODO: should handle case when does not exist yet?
 	var container = get_node("/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/Gears")
 	for child in container.get_children():
 		if child is Gear:
@@ -130,9 +142,6 @@ func _physics_process(_delta: float) -> void:
 				child.get_node("Sprite").rotation_degrees = -phases[child.index]
 			if rots > 0:
 				handle_rotation(child.index, rots)
-				#TODO: display +rots instead of +1
 				child.handle_resource_popup()
 				if child.index == 0:
 					$"/root/Node2D/UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/SpinSound".play()
-		  			#not sure if they are not stacking (replace signal with function?)
-					emit_signal("rotation_completed", child.index)
