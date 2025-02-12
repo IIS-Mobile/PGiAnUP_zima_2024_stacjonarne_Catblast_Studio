@@ -23,7 +23,7 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -175.0
+offset_left = -313.0
 offset_top = 50.0
 offset_right = -50.0
 offset_bottom = 133.0
@@ -31,7 +31,7 @@ grow_horizontal = 0
 theme = ExtResource("1_o2hnj")
 theme_override_fonts/font = ExtResource("2_pm7k1")
 theme_override_font_sizes/font_size = 50
-text = "Skip"
+text = "Get reward"
 
 [node name="PanelContainer" type="PanelContainer" parent="Ad"]
 layout_mode = 1

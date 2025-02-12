@@ -15,7 +15,7 @@ func _on_timer_timeout() -> void:
 		$Ad/SkipButton.text = str(seconds)
 	elif seconds == 1:
 		$Timer.stop()
-		$Ad/SkipButton.text = "Skip"
+		$Ad/SkipButton.text = "Get reward"
 		can_skip = true
 
 func _on_skip_button_pressed() -> void:

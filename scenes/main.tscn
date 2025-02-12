@@ -912,31 +912,15 @@ theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "Save"
 
-[node name="AdTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 524.0
-offset_top = -150.0
-offset_right = 566.0
-offset_bottom = -99.0
-grow_vertical = 2
-theme = ExtResource("3_0qc7x")
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 50
-text = "Ad
-"
-
 [node name="DeleteSaveTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 356.0
-offset_top = -100.0
-offset_right = 575.0
-offset_bottom = -49.0
+offset_left = 346.0
+offset_top = -147.0
+offset_right = 565.0
+offset_bottom = -96.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
@@ -1458,5 +1442,4 @@ script = ExtResource("23_5igbh")
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/ColorRect/AdTest" to="." method="_on_ad_test_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/DeleteSaveTest" to="." method="_on_delete_save_test_pressed"]
