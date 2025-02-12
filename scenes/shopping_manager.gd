@@ -52,6 +52,7 @@ func check_product_affordability(product_index):
 		var resource : Big = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
 																							   # ^NIE WIEM CZEMU TO -1 ALE INACZEJ NIEPOPRAWNIE DZIALA
 		var price = product_bar.get(price_key)
+		
 		var price_label = product_bar.get_child(0).get_child(4).get_child(resource_index)
 		
 		if resource.isLessThan(price):

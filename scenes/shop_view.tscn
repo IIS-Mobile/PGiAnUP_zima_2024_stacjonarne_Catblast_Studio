@@ -52,7 +52,7 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.0
 theme_override_constants/margin_top = 10
 
-[node name="AddBar" parent="ScrollContainer/VBoxContainerWhole/MarginContainer" instance=ExtResource("4_wx8xk")]
+[node name="AdBar" parent="ScrollContainer/VBoxContainerWhole/MarginContainer" instance=ExtResource("4_wx8xk")]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainerWhole"]
