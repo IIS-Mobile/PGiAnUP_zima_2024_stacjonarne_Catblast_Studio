@@ -96,10 +96,10 @@ func update_tier_labels():
 	if selected_resource_type > Global.current_top_resource:
 		tier_pop_up.visible = false
 		return
-	
+
 	var resource_name = Global.resource_names[selected_resource_type]
 	var top_tier = Global.current_top_tiers[selected_resource_type]
-	
+
 	for i in range(tier_areas.size()):
 		if i <= top_tier:
 			var tier_i_value : Big = Global.resources[resource_name][i]
@@ -121,6 +121,7 @@ func _ready():
 	$"BuyPop-up".visible = false  
 	tier_pop_up.visible = false
 	set_process_input(true)
+	Global.connect("not_enough_premium_currency", show_buy_popup)
 	
 func _process(delta):
 	update_top_resource_labels()
@@ -174,10 +175,13 @@ func _input(event):
 		elif clicked_on_premium_area:
 			$"BuyPop-up".visible = true  
 		elif clicked_on_buy_area_exit_button:
-			$"BuyPop-up".visible = false  
+			$"BuyPop-up".visible = false
 		elif (resources_pop_up_area.get_global_rect().has_point(event.global_position) or (tier_pop_up_area.get_global_rect().has_point(event.global_position) and tier_pop_up.visible)):
 			return  # Kliknięcie wewnątrz pop-upów, nic nie robimy
 		elif resources_pop_up.visible or tier_pop_up.visible:
 			$"/root/Node2D/UISound".play()
 			resources_pop_up.visible = false
 			tier_pop_up.visible = false
+
+func show_buy_popup():
+	$"BuyPop-up".visible = true
