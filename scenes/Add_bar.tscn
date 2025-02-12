@@ -62,7 +62,7 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_ltivv")
 theme_override_font_sizes/font_size = 36
-text = "Watch an add to get +5 crystaline bolts"
+text = "Watch an ad to get +5 crystaline bolts"
 autowrap_mode = 2
 
 [node name="Spacing" type="HBoxContainer" parent="MarginContainer/Panel"]

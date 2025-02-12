@@ -6,6 +6,7 @@ func percent_to_pixels(percent: float) -> int:
 
 #TODO: turn into "refresh" function
 func add_gear() -> void:
+	pay_for_gear(Global.count)
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
@@ -34,3 +35,6 @@ func _on_resized() -> void:
 	#TODO: find a better way to fix crashing
 	if container_height - get_parent().size.y > 1:
 		custom_minimum_size.y = container_height
+
+func pay_for_gear(id):
+	print(id)

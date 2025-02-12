@@ -51,7 +51,7 @@ var phases := []
 var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
 var buffer := 0.0
 var count := 0
-var premium_resource = 2;
+var premium_resource = 99999;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
 	str(resource_names[0]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)], #indexes from 0 to 7 are the tiers
