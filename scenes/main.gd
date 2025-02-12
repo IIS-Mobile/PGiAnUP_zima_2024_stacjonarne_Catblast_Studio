@@ -19,10 +19,6 @@ func _on_gear_button_pressed() -> void:
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 
-func _on_boost_button_pressed() -> void:
-	$UISound.play()
-	Global.buffer += 5 * Engine.physics_ticks_per_second * Global.SLOWDOWN_FACTOR
-
 func idle_button_clicked():
 	$UISound.play()
 	if Global.taps_count >= Global.lsc_tap_scaling():
@@ -50,6 +46,7 @@ func save_game_data():
 			res_copy_for_serialization[key][entry_idx] = res_copy_for_serialization[key][entry_idx].toScientific()
 	var save_data = {
 		"last_ad_use_time": Global.last_ad_use_time,
+		"last_boost_use_time": Global.last_boost_use_time,
 		"idle_time": Global.idle_time,
 		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
@@ -77,6 +74,7 @@ func load_game_data():
 		Global.phases.resize(Global.MAX_GEARS)
 		Global.phases.fill(0.0)
 		$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar.show()
+		$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton.show()
 		return
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
@@ -116,6 +114,12 @@ func load_game_data():
 		Global.is_barter_on = json.data.get("is_barter_on")
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
+	if json.data.has("last_boost_use_time"):
+		Global.last_boost_use_time = json.data.get("last_boost_use_time")
+		if Time.get_unix_time_from_system() - Global.last_boost_use_time > Global.BOOST_APPEARANCE_INTERVAL_MINUTES * 60:
+			$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton.show()
+		else:
+			$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton/AppearanceTimer.start(Global.BOOST_APPEARANCE_INTERVAL_MINUTES * 60 - (Time.get_unix_time_from_system() - Global.last_boost_use_time))
 	if json.data.has("last_ad_use_time"):
 		Global.last_ad_use_time = json.data.get("last_ad_use_time")
 		if Time.get_unix_time_from_system() - Global.last_ad_use_time > Global.SHOP_AD_APPEARANCE_INTERVAL_MINUTES * 60:
