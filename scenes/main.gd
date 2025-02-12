@@ -14,9 +14,6 @@ func trigger_ad(secs: int):
 	$UI.visible = true
 	$AdView.visible = false
 
-func _on_ad_test_pressed() -> void:
-	trigger_ad(10)
-
 func _on_gear_button_pressed() -> void:
 	$UISound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()
@@ -52,6 +49,7 @@ func save_game_data():
 		for entry_idx : int in res_copy_for_serialization[key].size():
 			res_copy_for_serialization[key][entry_idx] = res_copy_for_serialization[key][entry_idx].toScientific()
 	var save_data = {
+		"last_ad_use_time": Global.last_ad_use_time,
 		"idle_time": Global.idle_time,
 		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
@@ -78,6 +76,7 @@ func load_game_data():
 		# init phases if no save state available
 		Global.phases.resize(Global.MAX_GEARS)
 		Global.phases.fill(0.0)
+		$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar.show()
 		return
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
@@ -117,6 +116,12 @@ func load_game_data():
 		Global.is_barter_on = json.data.get("is_barter_on")
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
+	if json.data.has("last_ad_use_time"):
+		Global.last_ad_use_time = json.data.get("last_ad_use_time")
+		if Time.get_unix_time_from_system() - Global.last_ad_use_time > Global.SHOP_AD_APPEARANCE_INTERVAL_MINUTES * 60:
+			$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar.show()
+		else:
+			$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar/AppearanceTimer.start(Global.SHOP_AD_APPEARANCE_INTERVAL_MINUTES * 60 - (Time.get_unix_time_from_system() - Global.last_ad_use_time))
 	# has to be at the end in order to avoid values being overwritten and upgrades being taken into account
 	if json.data.has("save_unix_time"):
 		var away_time = max(0, Time.get_unix_time_from_system() - json.data.get("save_unix_time"))

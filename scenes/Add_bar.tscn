@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://fsoyqigex54a"]
+[gd_scene load_steps=7 format=3 uid="uid://fsoyqigex54a"]
 
+[ext_resource type="Script" path="res://scenes/ad_bar.gd" id="1_ci05l"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="3_gxjrw"]
 [ext_resource type="FontFile" uid="uid://24xaofaf2ipf" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.ttf" id="4_gn262"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ci05l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -85,3 +87,9 @@ theme = ExtResource("2_b320b")
 theme_override_fonts/font = ExtResource("4_gn262")
 theme_override_font_sizes/font_size = 100
 text = " Watch "
+
+[node name="AppearanceTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="AppearanceTimer" to="." method="_on_appearance_timer_timeout"]

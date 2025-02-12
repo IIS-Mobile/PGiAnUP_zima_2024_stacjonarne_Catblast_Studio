@@ -13,6 +13,7 @@ const GEARS_PER_ROW = 4
 const TIERS_AMOUNT = GEARS_PER_ROW * 2
 const SLOWDOWN_FACTOR = 0.005
 const ROTATION_ANGLE = 30
+const SHOP_AD_APPEARANCE_INTERVAL_MINUTES = 5
 
 #TODO: provide sane scaling function
 #base speed multiplier, unbounded
@@ -26,7 +27,6 @@ func grease_scaling(i: int) -> float:
 
 var is_melting_on = true;
 var is_barter_on = true;
-var current_steam_chamber_value = 0
 
 #TODO: provide sane scaling function
 #idle time in hours unbounded
@@ -44,6 +44,7 @@ func lsc_tap_scaling() -> int:
 func lsc_speed_scaling() -> float:
 	return 0.5 * (upgrades["LSC"] + 1.) / (max_upgrade_values["LSC"] + 1.)
 
+var last_ad_use_time = 0 
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
 var idle_time = 0.0
@@ -51,7 +52,7 @@ var phases := []
 var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
 var buffer := 0.0
 var count := 0
-var premium_resource = 99999;
+var premium_resource = 0;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
 	str(resource_names[0]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)], #indexes from 0 to 7 are the tiers
