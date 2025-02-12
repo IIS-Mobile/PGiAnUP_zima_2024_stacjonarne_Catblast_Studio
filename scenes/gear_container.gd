@@ -1,5 +1,6 @@
 extends TextureButton
 
+
 #TODO: delete
 func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
@@ -70,6 +71,8 @@ func get_gear_cost(count: int) -> Dictionary:
 
 func has_enough_resources(cost: Dictionary) -> bool:
 	for resource in cost.keys():
+		if resource is String:
+			continue
 		#this for is needed if we want different mix of tiers, for now its redundant
 		for tier in range(cost[resource].size()):
 			if Global.resources[Global.resource_names[resource]][tier].isLessThan(cost[resource][tier]):
@@ -87,8 +90,10 @@ func pay_for_gear() -> bool:
 	if has_enough_resources(cost):
 		# Deduct normal resources
 		for resource in cost.keys():
+			if resource is String:
+				continue
 			for tier in range(cost[resource].size()):
-				Global.resources[resource][tier].minusEquals(cost[resource][tier])
+				Global.resources[Global.resource_names[resource]][tier].minusEquals(cost[resource][tier])
 		return true  # Purchase successful
 
 	# If normal resources aren't enough, try using premium
@@ -102,4 +107,5 @@ func pay_for_gear() -> bool:
 
 
 func update_buy_button(enabled: bool) -> void:
-	pass
+	return
+	
