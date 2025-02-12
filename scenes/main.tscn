@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="17_qfhtx"]
 [ext_resource type="Texture2D" uid="uid://bbp2tuedtlqh4" path="res://assets/art/icon/Store_options/Store_option2.png" id="18_o8eeo"]
 [ext_resource type="Texture2D" uid="uid://b4lkb0avrqikj" path="res://assets/art/icon/Store_options/Store_option3.png" id="19_udako"]
+[ext_resource type="Script" path="res://scenes/melting&barter.gd" id="23_5igbh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au0sx"]
 content_margin_left = 50.0
@@ -45,8 +46,8 @@ script = ExtResource("1_j8ibr")
 script = ExtResource("2_4hckv")
 
 [node name="TierPopUp" type="Control" parent="UI"]
-visible = false
 z_index = 20
+custom_minimum_size = Vector2(0, -47.175)
 layout_mode = 3
 anchor_right = 0.72
 anchor_bottom = 0.127
@@ -410,7 +411,6 @@ scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_xmlx4")
 
 [node name="ResourcePopUp" type="Control" parent="UI"]
-visible = false
 z_index = 30
 layout_mode = 3
 anchors_preset = 10
@@ -1431,6 +1431,9 @@ volume_db = -10.0
 
 [node name="AdView" parent="." instance=ExtResource("7_62fey")]
 visible = false
+
+[node name="Melting&Barter" type="Node" parent="."]
+script = ExtResource("23_5igbh")
 
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]

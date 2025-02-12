@@ -28,7 +28,7 @@ func _on_boost_button_pressed() -> void:
 
 func idle_button_clicked():
 	$UISound.play()
-	if Global.taps_count >= Global.STEAM_LIMIT:
+	if Global.taps_count >= Global.lsc_tap_scaling():
 		Global.release_steam.emit()
 	else:
 		print("NIEEEE NIE MOZESZ JESZCZE IDLOWAC MUSISZ NAPOMPOWAC PARY DO KOMORY")
@@ -47,16 +47,19 @@ func _notification(what):
 func save_game_data():
 	print("Saving game...")
 
+	var res_copy_for_serialization = Global.resources.duplicate(true)
+	for key : String in res_copy_for_serialization:
+		for entry_idx : int in res_copy_for_serialization[key].size():
+			res_copy_for_serialization[key][entry_idx] = res_copy_for_serialization[key][entry_idx].toScientific()
 	var save_data = {
 		"idle_time": Global.idle_time,
 		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
-		"resources" : Global.resources,
+		"resources" : res_copy_for_serialization,
 		"current_top_tiers" : Global.current_top_tiers,
 		"current_top_resource" : Global.current_top_resource,
 		"gears_count" : Global.count,
 		"upgrades" : Global.upgrades,
-		"current_steam_chamber_value" : Global.current_steam_chamber_value,
 		"is_melting_on " : Global.is_melting_on,
 		"is_barter_on" : Global.is_barter_on,
 		"taps_count" : Global.taps_count
@@ -93,7 +96,11 @@ func load_game_data():
 		Global.phases.resize(Global.MAX_GEARS)
 		Global.phases.fill(0.0)
 	if json.data.has("resources"):
-		Global.resources = json.data.get("resources")
+		var json_resource_data = json.data.get("resources")
+		for key : String in json_resource_data:
+			for tier_idx : int in json_resource_data[key].size():
+				Global.resources[key][tier_idx] = Big.new(json_resource_data[key][tier_idx])
+		
 	if json.data.has("current_top_tiers"):
 		Global.current_top_tiers = json.data.get("current_top_tiers")
 	if json.data.has("current_top_resource"):
@@ -104,8 +111,6 @@ func load_game_data():
 			$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
 	if json.data.has("upgrades"):
 		Global.upgrades = json.data.get("upgrades")
-	if json.data.has("current_steam_chamber_value"):
-		Global.current_steam_chamber_value = json.data.get("current_steam_chamber_value")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
 	if json.data.has("is_barter_on"):

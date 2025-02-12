@@ -10,11 +10,10 @@ const MIN_GAUGE_ANGLE: float = -135.0
 func _ready() -> void:
 	Global.connect("release_steam", release_steam)
 	Global.connect("tap_performed", increment_taps)
-	$Panel/Container/ProgressBar.max_value = Global.STEAM_LIMIT
 	$Panel/Container/ProgressBar2.max_value = 1
 	$Panel/Container/Whistle/CPUParticles2D.emitting = false
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Panel/Container/ProgressBar2.value = Global.buffer
 	
 	waving_steam()
@@ -22,13 +21,14 @@ func _process(delta: float) -> void:
 		iterator = -iterator
 	index += iterator
 	if not animation:
-		handle_gauge(Global.idle_time, Global.MAX_IDLE_TIME_HOURS * 3600)
+		# TODO: avoid setting on each frame
+		$Panel/Container/ProgressBar.max_value = Global.lsc_tap_scaling()
+		$Panel/Container/ProgressBar.value = min(Global.taps_count, Global.lsc_tap_scaling()) 
+		handle_gauge(Global.idle_time, Global.lsc_time_scaling() * 3600)
 
 func increment_taps():
-	if Global.taps_count < Global.STEAM_LIMIT:
+	if not animation and Global.taps_count < Global.lsc_tap_scaling():
 		Global.taps_count += 1
-		$Panel/Container/ProgressBar.value = Global.taps_count
-		Global.current_steam_chamber_value = $Panel/Container/ProgressBar.value
 
 func waving_steam():
 	$Panel/Container/ProgressBar.get_theme_stylebox("fill").skew.y = pow(index, 2.0) + index - pow(index, 3.0)
@@ -37,27 +37,24 @@ func waving_steam():
 func release_steam():
 	$WhistleSound.play()
 	animation = true
-	#TODO: replace with fixed length animation to match sound
-	for i in range (Global.STEAM_LIMIT, 0, -1):
-		if i%2:
-			await get_tree().create_timer(0.0001).timeout
-			#handle_gauge(Global.taps_count, Global.STEAM_LIMIT)
-		Global.taps_count = i
-		$Panel/Container/ProgressBar.value = Global.taps_count
-		Global.current_steam_chamber_value = $Panel/Container/ProgressBar.value
-		
-		$Panel/Container/Whistle/CPUParticles2D.emitting = true
-		handle_gauge(Global.STEAM_LIMIT - Global.taps_count, Global.STEAM_LIMIT)
-	animation = false
+	$Panel/Container/ProgressBar.max_value = 100
+	$Panel/Container/Whistle/CPUParticles2D.emitting = true
+	for i in range(0, 100):
+		$Panel/Container/ProgressBar.value = 99 - i
+		handle_gauge(i, 99.)
+		await get_tree().create_timer(0.005).timeout
 	$Panel/Container/Whistle/CPUParticles2D.emitting = false
-	Global.idle_time = Global.MAX_IDLE_TIME_HOURS * 3600
+	$Panel/Container/ProgressBar.max_value = Global.lsc_tap_scaling()
+	animation = false
+	Global.taps_count = 0
+	Global.idle_time = Global.lsc_time_scaling() * 3600
+
 
 func handle_gauge(remaining_time, total_time):
 	var progress = remaining_time / total_time
 	var angle = lerp(MIN_GAUGE_ANGLE, MAX_GAUGE_ANGLE, progress)
 	$Panel/Container/SteamGauge/GaugeHand.rotation_degrees = angle
 	Global.current_steam_chamber_value = $Panel/Container/SteamGauge/GaugeHand.rotation_degrees
-
 
 func _on_idle_button_pressed():
 	Global.idle_button_clicked.emit()

@@ -35,13 +35,13 @@ func _ready() -> void:
 	
 func _process(delta):
 	#print($ScrollContainer/VBoxContainer.get_child_count())
-	for i in range($ScrollContainer/VBoxContainer.get_child_count()):
-		if $ScrollContainer/VBoxContainer.get_child(i).visible:
+	for i in range($ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child_count()):
+		if $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child(i).visible:
 			check_product_affordability(i)
 			visual_update(i)
 		
 func check_product_affordability(product_index):
-	var product_bar = $ScrollContainer/VBoxContainer.get_child(product_index)
+	var product_bar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child(product_index)
 	var is_affordable = true
 	
 	for resource_index in range(3):
@@ -49,12 +49,12 @@ func check_product_affordability(product_index):
 		var tier_key = "tier" + str(resource_index + 1)
 		var price_key = "price" + str(resource_index + 1)
 
-		var resource = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
+		var resource : Big = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
 																							   # ^NIE WIEM CZEMU TO -1 ALE INACZEJ NIEPOPRAWNIE DZIALA
 		var price = product_bar.get(price_key)
 		var price_label = product_bar.get_child(0).get_child(4).get_child(resource_index)
 		
-		if resource < price:
+		if resource.isLessThan(price):
 			price_label.add_theme_color_override("font_color", Color(1, 0, 0, 1))
 			is_affordable = false
 		else:
@@ -64,7 +64,7 @@ func check_product_affordability(product_index):
 	is_product_affordable[product_index] = is_affordable
 
 func visual_update(product_index):
-	var product_bar = $ScrollContainer/VBoxContainer.get_child(product_index)
+	var product_bar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child(product_index)
 	var buy_button = product_bar.get_child(0).get_child(5).get_child(0)
 	var premium_resource = buy_button.get_child(0).get_child(0)
 	var premium_label = buy_button.get_child(0).get_child(1)
@@ -84,7 +84,7 @@ func visual_update(product_index):
 			
 		
 func handle_buy_button(id):
-	var product_bar = $ScrollContainer/VBoxContainer.get_child(id)
+	var product_bar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child(id)
 	var buy_button = product_bar.get_child(0).get_child(5).get_child(0)
 	var premium_label = buy_button.get_child(0).get_child(1)
 	
@@ -95,7 +95,7 @@ func handle_buy_button(id):
 			var price_key = "price" + str(resource_index + 1)
 			var resource = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] #to ile mam surowca
 			
-			Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] -= product_bar.get(price_key)
+			Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1].minusEquals(Big.new( product_bar.get(price_key)))
 			
 		product_bar.visible = false
 		successful_purchase(id)
@@ -139,7 +139,7 @@ func load_shop_items():
 		var upgrade_name = Global.upgrade_names[i]
 		var upgrade_level = Global.upgrades[upgrade_name]
 		var upgrade = upgrade_name + str(upgrade_level + 1)
-		var prodbar = $ScrollContainer/VBoxContainer.get_node(upgrade)
+		var prodbar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_node(upgrade)
 		if prodbar != null:
 			prodbar.visible = true
 
@@ -147,14 +147,14 @@ func load_shop_items():
 	var barter_name = Global.upgrade_names[4]
 	var barter_level = Global.upgrades[barter_name]
 	var barter_perfect_being = barter_name + str(barter_level + 1)
-	var barbar = $ScrollContainer/VBoxContainer.get_node(barter_perfect_being)
+	var barbar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_node(barter_perfect_being)
 	if barbar != null and Global.count > (barter_level + 1) * 8:
 		barbar.visible = true
 
 	# Forges
 	for i in range(Global.very_specific_iterator_in_shopping_manager, 15):
 		var forge_name = Global.upgrade_names[i]
-		var forbar = $ScrollContainer/VBoxContainer.get_node(forge_name)
+		var forbar = $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_node(forge_name)
 		if forbar != null and Global.count > ((i - 4) * 8) - 1:
 			forbar.visible = true
 			Global.very_specific_iterator_in_shopping_manager += 1

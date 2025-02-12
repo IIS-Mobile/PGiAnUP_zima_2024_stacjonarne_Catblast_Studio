@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://fsoyqigex54a"]
+
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_b320b"]
+[ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="3_gxjrw"]
+[ext_resource type="FontFile" uid="uid://24xaofaf2ipf" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.ttf" id="4_gn262"]
+
+[sub_resource type="FontVariation" id="FontVariation_3l2wb"]
+base_font = ExtResource("4_gn262")
+spacing_glyph = 1
+spacing_top = 10
+
+[sub_resource type="FontVariation" id="FontVariation_ltivv"]
+base_font = ExtResource("4_gn262")
+spacing_glyph = 1
+
+[node name="ProductBar" type="Panel"]
+self_modulate = Color(0.597181, 0.00269571, 0.860414, 0.698039)
+custom_minimum_size = Vector2(0, 222.08)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/HBoxContainer4"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+texture = ExtResource("3_gxjrw")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_3l2wb")
+theme_override_font_sizes/font_size = 50
+text = "Get Free Crystaline Bolts"
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ltivv")
+theme_override_font_sizes/font_size = 36
+text = "Watch an add to get +5 crystaline bolts"
+autowrap_mode = 2
+
+[node name="Spacing" type="HBoxContainer" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_b320b")
+theme_override_fonts/font = ExtResource("4_gn262")
+theme_override_font_sizes/font_size = 100
+text = " Watch "
