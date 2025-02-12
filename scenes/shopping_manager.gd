@@ -49,12 +49,12 @@ func check_product_affordability(product_index):
 		var tier_key = "tier" + str(resource_index + 1)
 		var price_key = "price" + str(resource_index + 1)
 
-		var resource = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
+		var resource : Big = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] 
 																							   # ^NIE WIEM CZEMU TO -1 ALE INACZEJ NIEPOPRAWNIE DZIALA
 		var price = product_bar.get(price_key)
 		var price_label = product_bar.get_child(0).get_child(4).get_child(resource_index)
 		
-		if resource < price:
+		if resource.isLessThan(price):
 			price_label.add_theme_color_override("font_color", Color(1, 0, 0, 1))
 			is_affordable = false
 		else:
@@ -95,7 +95,7 @@ func handle_buy_button(id):
 			var price_key = "price" + str(resource_index + 1)
 			var resource = Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] #to ile mam surowca
 			
-			Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1] -= product_bar.get(price_key)
+			Global.resources[product_bar.get(resource_key)][product_bar.get(tier_key)-1].minusEquals(Big.new( product_bar.get(price_key)))
 			
 		product_bar.visible = false
 		successful_purchase(id)

@@ -95,9 +95,7 @@ offset_bottom = 1128.0
 scale = Vector2(1.04551, 1.23211)
 size_flags_horizontal = 4
 theme = SubResource("Theme_yvr33")
-max_value = 400.0
 step = 1.0
-value = 1.0
 fill_mode = 3
 show_percentage = false
 
