@@ -57,3 +57,7 @@ func handle_gauge(remaining_time, total_time):
 	var angle = lerp(MIN_GAUGE_ANGLE, MAX_GAUGE_ANGLE, progress)
 	$Panel/Container/SteamGauge/GaugeHand.rotation_degrees = angle
 	Global.current_steam_chamber_value = $Panel/Container/SteamGauge/GaugeHand.rotation_degrees
+
+
+func _on_idle_button_pressed():
+	Global.idle_button_clicked.emit()

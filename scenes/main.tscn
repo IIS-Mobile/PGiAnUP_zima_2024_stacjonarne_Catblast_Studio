@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=25 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bmun0fqln8ho7" path="res://assets/art/icon/shop_icon.png" id="5_ippsu"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="5_ndhb7"]
 [ext_resource type="Script" path="res://scenes/shop_button.gd" id="6_d7ejv"]
+[ext_resource type="Texture2D" uid="uid://css3qkmlgpdfp" path="res://assets/art/icon/upgrades/addgear_icon.png" id="6_hb7aq"]
 [ext_resource type="PackedScene" uid="uid://8q8ej6i3oglq" path="res://scenes/ad_view.tscn" id="7_62fey"]
 [ext_resource type="PackedScene" uid="uid://cabrjyf0hftbs" path="res://scenes/shop_view.tscn" id="7_a42nd"]
 [ext_resource type="PackedScene" uid="uid://da2twjw0p16g5" path="res://scenes/gears_view.tscn" id="7_y268q"]
@@ -45,7 +46,7 @@ script = ExtResource("2_4hckv")
 
 [node name="TierPopUp" type="Control" parent="UI"]
 visible = false
-z_index = 6
+z_index = 20
 layout_mode = 3
 anchor_right = 0.72
 anchor_bottom = 0.127
@@ -409,7 +410,8 @@ scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_xmlx4")
 
 [node name="ResourcePopUp" type="Control" parent="UI"]
-z_index = 10
+visible = false
+z_index = 30
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
@@ -844,7 +846,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="UI/VBoxContainer"]
-custom_minimum_size = Vector2(0, 246.15)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -852,16 +854,13 @@ color = Color(0.529412, 0.352941, 0.258824, 1)
 
 [node name="GearButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = 44.13
-offset_right = 137.57
-offset_bottom = 116.13
-grow_horizontal = 2
+offset_left = 574.0
+offset_top = 62.0
+offset_right = 781.0
+offset_bottom = 113.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
@@ -871,41 +870,27 @@ text = "Add a gear"
 [node name="BoostButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_bottom = 1.0
-offset_left = 481.0
-offset_top = 22.15
-offset_right = 522.0
-offset_bottom = -141.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 614.0
+offset_top = -117.0
+offset_right = 655.0
+offset_bottom = -66.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "(5)"
 
-[node name="IdleButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 389.0
-offset_top = -100.925
-offset_right = 445.0
-offset_bottom = -17.925
-grow_vertical = 2
-theme = ExtResource("3_0qc7x")
-theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 50
-text = "tgl"
-
 [node name="SaveTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 427.0
-offset_top = 22.075
-offset_right = 535.0
-offset_bottom = 105.075
+offset_left = 693.0
+offset_top = -124.0
+offset_right = 770.0
+offset_bottom = -73.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
@@ -917,10 +902,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 310.0
-offset_top = 23.075
-offset_right = 418.0
-offset_bottom = 106.075
+offset_left = 528.0
+offset_top = -116.0
+offset_right = 570.0
+offset_bottom = -65.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
@@ -933,10 +918,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 545.0
-offset_top = 20.075
-offset_right = 764.0
-offset_bottom = 103.075
+offset_left = 583.0
+offset_top = -17.0
+offset_right = 802.0
+offset_bottom = 34.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
@@ -945,13 +930,14 @@ text = "Delete SAVE"
 
 [node name="ResourceTop0" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 822.0
-offset_top = 34.15
+anchor_bottom = 0.993
+offset_left = -258.0
+offset_top = 50.0
 offset_right = -37.0
-offset_bottom = -151.0
+offset_bottom = -186.9
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -967,6 +953,7 @@ offset_top = -1.0
 offset_right = -0.030014
 offset_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -976,7 +963,6 @@ theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "0"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop0"]
 position = Vector2(33.5, 33.65)
@@ -985,13 +971,12 @@ texture = ExtResource("3_xmlx4")
 
 [node name="ResourcePremium" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 96.15
-offset_right = -832.0
-offset_bottom = -89.0
+anchors_preset = -1
+anchor_bottom = 0.993
+offset_left = 34.0
+offset_top = 34.0
+offset_right = 255.0
+offset_bottom = -193.9
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -1000,13 +985,16 @@ color = Color(0.384792, 0.247918, 0.17197, 1)
 z_index = 9
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.995611
-anchor_bottom = 1.0
+anchor_left = -0.00904977
+anchor_top = 0.0571429
+anchor_right = 0.950362
+anchor_bottom = 0.928571
 offset_left = 77.0
 offset_top = -1.0
 offset_right = -0.030014
 offset_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1025,13 +1013,14 @@ texture = ExtResource("3_xmlx4")
 
 [node name="ResourceTop1" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 822.0
-offset_top = 99.15
+anchor_bottom = 0.996
+offset_left = -258.0
+offset_top = 115.0
 offset_right = -37.0
-offset_bottom = -86.0
+offset_bottom = -122.8
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -1047,6 +1036,7 @@ offset_top = -1.0
 offset_right = -0.030014
 offset_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1065,15 +1055,15 @@ texture = ExtResource("3_xmlx4")
 
 [node name="ResourceTop2" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 822.0
-offset_top = 164.0
+anchor_bottom = 0.996
+offset_left = -258.0
+offset_top = 180.0
 offset_right = -37.0
-offset_bottom = -22.15
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = -57.8
+grow_horizontal = 0
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
 [node name="Label_resource" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop2"]
@@ -1087,6 +1077,7 @@ offset_top = -1.0
 offset_right = -0.030014
 offset_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1102,6 +1093,60 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(34, 34)
 scale = Vector2(0.134, 0.134)
 texture = ExtResource("3_xmlx4")
+
+[node name="ResourceTop3" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.985
+offset_left = 246.0
+offset_top = 160.0
+offset_right = 467.0
+offset_bottom = -74.5
+grow_horizontal = 0
+color = Color(0.384792, 0.247918, 0.17197, 1)
+
+[node name="Label_resource" type="Label" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995611
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -1.0
+offset_right = -0.030014
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/ColorRect/ResourceTop3"]
+z_index = 9
+position = Vector2(34, 34)
+scale = Vector2(0.134, 0.134)
+texture = ExtResource("3_xmlx4")
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/ColorRect"]
+z_index = 8
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.993
+offset_left = 40.0
+offset_top = 111.0
+offset_right = 552.0
+offset_bottom = 325.1
+grow_horizontal = 0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_hb7aq")
 
 [node name="GoldenBarUp" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
@@ -1389,7 +1434,6 @@ visible = false
 
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/BoostButton" to="." method="_on_boost_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/ColorRect/IdleButton" to="." method="_on_idle_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/AdTest" to="." method="_on_ad_test_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/DeleteSaveTest" to="." method="_on_delete_save_test_pressed"]

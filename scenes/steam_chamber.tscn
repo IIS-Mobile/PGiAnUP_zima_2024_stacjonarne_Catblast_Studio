@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://loqrm2srjm8e"]
+[gd_scene load_steps=14 format=3 uid="uid://loqrm2srjm8e"]
 
 [ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
 [ext_resource type="Texture2D" uid="uid://bfaue2yv7d3op" path="res://assets/art/ui/whistle.png" id="2_tdpj8"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bl2dhl487d5el" path="res://assets/art/ui/steam_gauge2.png" id="6_fcbwt"]
 [ext_resource type="Texture2D" uid="uid://covhfluqnllif" path="res://assets/art/ui/gauge_hand.png" id="7_8udgl"]
 [ext_resource type="AudioStream" uid="uid://j8kq5ar3x7dt" path="res://assets/audio/whistle.wav" id="8_6816p"]
+[ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="8_phayo"]
+[ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="9_adtvl"]
 
 [sub_resource type="Curve" id="Curve_wfnoe"]
 min_value = -360.0
@@ -32,7 +34,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.522419, 0.779128)
+scale = Vector2(0.522419, 0.752419)
 script = ExtResource("1_xqrmc")
 
 [node name="Panel" type="Panel" parent="."]
@@ -192,6 +194,20 @@ scale = Vector2(0.676819, 0.862968)
 texture = ExtResource("7_8udgl")
 offset = Vector2(0, -110)
 
+[node name="Button" type="Button" parent="Panel"]
+z_index = -1
+layout_mode = 0
+offset_left = 45.0
+offset_top = -814.0
+offset_right = 210.0
+offset_bottom = -696.0
+theme = ExtResource("8_phayo")
+theme_override_fonts/font = ExtResource("9_adtvl")
+theme_override_font_sizes/font_size = 60
+text = "IDLE"
+
 [node name="WhistleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6816p")
 volume_db = -10.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_idle_button_pressed"]

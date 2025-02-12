@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	Global.connect("idle_button_clicked", idle_button_clicked)
 	load_game_data()
 
 #reward user after executing this function eg. $"/root/Node2D".trigger_ad(10)
@@ -25,7 +26,7 @@ func _on_boost_button_pressed() -> void:
 	$UISound.play()
 	Global.buffer += 5 * Engine.physics_ticks_per_second * Global.SLOWDOWN_FACTOR
 
-func _on_idle_button_pressed() -> void:
+func idle_button_clicked():
 	$UISound.play()
 	if Global.taps_count >= Global.STEAM_LIMIT:
 		Global.release_steam.emit()

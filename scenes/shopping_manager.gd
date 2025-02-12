@@ -105,6 +105,8 @@ func handle_buy_button(id):
 		product_bar.visible = false
 		print("KOŁ?!")
 		successful_purchase(id)
+	else:
+		Global.not_enough_premium_currency.emit()
 
 func successful_purchase(id):
 	var index = -1
@@ -156,7 +158,6 @@ func load_shop_items():
 		if forbar != null and Global.count > ((i - 4) * 8) - 1:
 			forbar.visible = true
 			Global.very_specific_iterator_in_shopping_manager += 1
-
 
 #|===============================|
 #| Grease 1-11:			ID  0-10 |

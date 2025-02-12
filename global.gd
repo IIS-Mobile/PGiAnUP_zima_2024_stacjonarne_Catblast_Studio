@@ -5,6 +5,8 @@ signal release_steam()
 signal buy_button_clicked(ID)
 signal reload_shop()
 signal ad_skipped()
+signal idle_button_clicked()
+signal not_enough_premium_currency()
 
 #const MAX_IDLE_TIME_HOURS = 0.005
 const MAX_IDLE_TIME_HOURS = 8
