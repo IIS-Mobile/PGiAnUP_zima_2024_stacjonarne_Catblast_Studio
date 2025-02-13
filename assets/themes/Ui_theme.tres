@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://bj5ti8cjyws43"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://bj5ti8cjyws43"]
 
 [ext_resource type="Texture2D" uid="uid://c8464072q3ron" path="res://assets/art/ui/ten.png" id="1_cehnv"]
+[ext_resource type="Texture2D" uid="uid://bqbbx566euaqo" path="res://assets/art/ui/ten_gray.png" id="1_xi7bc"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihxls"]
-texture = ExtResource("1_cehnv")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf3cu"]
+texture = ExtResource("1_xi7bc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvylk"]
 texture = ExtResource("1_cehnv")
@@ -40,7 +41,7 @@ texture = ExtResource("1_cehnv")
 [resource]
 Button/constants/h_separation = 20
 Button/font_sizes/font_size = 15
-Button/styles/disabled = SubResource("StyleBoxTexture_ihxls")
+Button/styles/disabled = SubResource("StyleBoxTexture_bf3cu")
 Button/styles/focus = SubResource("StyleBoxTexture_jvylk")
 Button/styles/hover = SubResource("StyleBoxTexture_fs3by")
 Button/styles/normal = SubResource("StyleBoxTexture_mlgol")

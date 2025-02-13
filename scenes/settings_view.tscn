@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds5kbhdu4tfpc"]
+
+[ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="1_orfj1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0vhv"]
+bg_color = Color(0.368627, 0.262745, 0.203922, 1)
+border_width_left = 70
+border_width_top = 20
+border_width_right = 70
+border_color = Color(0.223529, 0.160784, 0.121569, 1)
+
+[node name="SettingsView" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0vhv")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.223529, 0.160784, 0.121569, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MusiVolumeRect" type="ColorRect" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 133.47)
+layout_mode = 2
+color = Color(0.368627, 0.262745, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/MusiVolumeRect"]
+layout_mode = 2
+offset_top = 36.0
+offset_right = 284.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_orfj1")
+theme_override_font_sizes/font_size = 60
+text = " Music Volume"
+
+[node name="MusiVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/MusiVolumeRect"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(330.495, 0)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+value = 31.0
+ticks_on_borders = true
+
+[node name="SoundVolumeRect" type="ColorRect" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 133.47)
+layout_mode = 2
+color = Color(0.368627, 0.262745, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/SoundVolumeRect"]
+layout_mode = 2
+offset_top = 36.0
+offset_right = 284.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_orfj1")
+theme_override_font_sizes/font_size = 60
+text = " Sounds Volume"
+
+[node name="SoundVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/SoundVolumeRect"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(330.495, 0)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+value = 31.0
+ticks_on_borders = true
+
+[node name="ToggleMelting" type="ColorRect" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 133.47)
+layout_mode = 2
+color = Color(0.368627, 0.262745, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/ToggleMelting"]
+layout_mode = 2
+offset_top = 36.0
+offset_right = 284.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_orfj1")
+theme_override_font_sizes/font_size = 60
+text = "Toggle Melting"
+
+[node name="ToggleMeltingButton" type="CheckButton" parent="Background/VBoxContainer/ToggleMelting"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(74.16, 13.22)
+
+[node name="ToggleBarter" type="ColorRect" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 133.47)
+layout_mode = 2
+color = Color(0.368627, 0.262745, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/ToggleBarter"]
+layout_mode = 2
+offset_top = 36.0
+offset_right = 284.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_orfj1")
+theme_override_font_sizes/font_size = 60
+text = "Toggle Barter"
+
+[node name="ToggleBarterButton" type="CheckButton" parent="Background/VBoxContainer/ToggleBarter"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(74.16, 13.22)

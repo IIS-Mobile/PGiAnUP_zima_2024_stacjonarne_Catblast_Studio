@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=31 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -18,12 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
+[ext_resource type="PackedScene" uid="uid://ds5kbhdu4tfpc" path="res://scenes/settings_view.tscn" id="11_kte6c"]
+[ext_resource type="Script" path="res://scenes/settings_view.gd" id="12_tgu02"]
 [ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
 [ext_resource type="Texture2D" uid="uid://xfri6n057yon" path="res://assets/art/icon/Close_icon.png" id="16_d8kiq"]
 [ext_resource type="Texture2D" uid="uid://cdv8fvejdb3gm" path="res://assets/art/icon/Store_options/Store_option1.png" id="16_javg6"]
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="17_qfhtx"]
 [ext_resource type="Texture2D" uid="uid://bbp2tuedtlqh4" path="res://assets/art/icon/Store_options/Store_option2.png" id="18_o8eeo"]
 [ext_resource type="Texture2D" uid="uid://b4lkb0avrqikj" path="res://assets/art/icon/Store_options/Store_option3.png" id="19_udako"]
+[ext_resource type="Script" path="res://scenes/settings_button.gd" id="20_0dl7y"]
 [ext_resource type="Script" path="res://scenes/melting&barter.gd" id="23_5igbh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17dpv"]
@@ -1172,6 +1175,11 @@ layout_mode = 2
 [node name="GearsView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("7_y268q")]
 layout_mode = 2
 
+[node name="SettingsView" parent="UI/VBoxContainer/CurrentView" instance=ExtResource("11_kte6c")]
+visible = false
+layout_mode = 2
+script = ExtResource("12_tgu02")
+
 [node name="GoldenBarDown" type="TextureRect" parent="UI/VBoxContainer"]
 z_index = 7
 custom_minimum_size = Vector2(0, 56.38)
@@ -1234,13 +1242,36 @@ script = ExtResource("6_d7ejv")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.219608)
 theme_override_font_sizes/font_size = 30
+disabled = true
 keep_pressed_outside = true
 text = "Buildings"
 icon = ExtResource("8_3q7uw")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer/BuildingsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -47.705
+offset_right = 67.5
+offset_bottom = 29.295
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.614757, 0.158895, 0.21189, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.403922)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 25
+theme_override_font_sizes/font_size = 56
+text = "Soon"
 
 [node name="SettingsButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
 custom_minimum_size = Vector2(220, 0)
@@ -1253,6 +1284,7 @@ icon = ExtResource("9_hpub3")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+script = ExtResource("20_0dl7y")
 
 [node name="Pop-ups" type="Control" parent="UI"]
 layout_mode = 3
