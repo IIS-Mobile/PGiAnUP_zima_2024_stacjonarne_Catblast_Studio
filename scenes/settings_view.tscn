@@ -42,7 +42,6 @@ theme_override_font_sizes/font_size = 60
 text = " Music Volume"
 
 [node name="MusiVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/MusiVolumeRect"]
-custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -51,11 +50,12 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -300.0
 offset_top = -8.0
+offset_right = -24.625
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(2, 2)
-pivot_offset = Vector2(330.495, 0)
+pivot_offset = Vector2(282.785, 0)
 size_flags_horizontal = 8
 size_flags_vertical = 4
 value = 31.0
@@ -76,7 +76,6 @@ theme_override_font_sizes/font_size = 60
 text = " Sounds Volume"
 
 [node name="SoundVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/SoundVolumeRect"]
-custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -85,11 +84,12 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -300.0
 offset_top = -8.0
+offset_right = -24.625
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(2, 2)
-pivot_offset = Vector2(330.495, 0)
+pivot_offset = Vector2(282.785, 0)
 size_flags_horizontal = 8
 size_flags_vertical = 4
 value = 31.0
