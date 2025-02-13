@@ -226,10 +226,12 @@ text = "IDLE"
 [node name="WhistleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6816p")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="DropletSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_qi1no")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="pressed" from="Panel/BoostButton" to="Panel/BoostButton" method="_on_pressed"]
 [connection signal="timeout" from="Panel/BoostButton/AppearanceTimer" to="Panel/BoostButton" method="_on_appearance_timer_timeout"]

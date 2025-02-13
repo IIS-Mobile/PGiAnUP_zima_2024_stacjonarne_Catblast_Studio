@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b4lkb0avrqikj" path="res://assets/art/icon/Store_options/Store_option3.png" id="19_udako"]
 [ext_resource type="Script" path="res://scenes/settings_button.gd" id="20_0dl7y"]
 [ext_resource type="Script" path="res://scenes/melting&barter.gd" id="23_5igbh"]
+[ext_resource type="AudioStream" uid="uid://bhdsavoqb387v" path="res://assets/audio/background.wav" id="26_lihf3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17dpv"]
 render_priority = 0
@@ -1449,12 +1450,19 @@ text = "Buy Now!"
 [node name="UISound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_p0dfd")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="AdView" parent="." instance=ExtResource("7_62fey")]
 visible = false
 
 [node name="Melting&Barter" type="Node" parent="."]
 script = ExtResource("23_5igbh")
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_lihf3")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]

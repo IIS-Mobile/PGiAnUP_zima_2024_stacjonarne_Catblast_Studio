@@ -23,10 +23,12 @@ script = ExtResource("1_ov4vb")
 [node name="SpinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jx61m")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="PlaceSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0u0m4")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="resized" from="." to="." method="_on_resized"]

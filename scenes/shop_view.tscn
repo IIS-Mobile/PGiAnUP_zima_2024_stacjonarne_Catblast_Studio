@@ -898,3 +898,4 @@ premium_price = 100.0
 [node name="PurchaseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_wk8us")
 volume_db = -10.0
+bus = &"Sounds"
