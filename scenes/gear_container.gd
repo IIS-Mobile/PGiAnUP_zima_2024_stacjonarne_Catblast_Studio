@@ -44,21 +44,21 @@ func _process(delta: float) -> void:
 
 func check_new_gear_affordability() -> void:
 	if Global.count >= Global.MAX_GEARS:
-		update_buy_button(false)
+		update_buy_button()
 		return  # No more gears can be bought
 
 	var cost = get_gear_cost(Global.count)
 	var can_afford = has_enough_resources(cost)
 
-	update_buy_button(can_afford)
+	update_buy_button()
 
 
 func get_gear_cost(count: int) -> Dictionary:
 	if count == 0:
 		return {}  # Gear 0 is free
 
-	var resource_index = (count - 1 if count <= 7 else 0 ) / 9  # Every 9 gears, switch resource
-	var tier = (count - 1 if count <= 7 else 0 ) % 9  # 0-8: normal tier progression, resets at 9
+	var resource_index = (count - 1 ) / 9  # Every 9 gears, switch resource
+	var tier = (count - 1  ) % 8  # 0-8: normal tier progression, resets at 9
 	var amount = Big.new(30)  # Constant for now
 
 	# Ensure the list has exactly 8 elements
@@ -88,7 +88,6 @@ func pay_for_gear() -> bool:
 	var cost = get_gear_cost(Global.count)
 
 	if has_enough_resources(cost):
-		# Deduct normal resources
 		for resource in cost.keys():
 			if resource is String:
 				continue
@@ -104,8 +103,54 @@ func pay_for_gear() -> bool:
 	
 	return false  # Can't afford it
 
+@onready var costText = $/root/Node2D/UI/VBoxContainer/ColorRect/ResourceTop3/Label_resource
+@onready var resource_sprite = $/root/Node2D/UI/VBoxContainer/ColorRect/ResourceTop3/Sprite2D
+@onready var buyButton = $/root/Node2D/UI/VBoxContainer/ColorRect/GearButton
 
+func update_buy_button() -> void:
+	# Get the cost for the next gear
+	if Global.count == 0:
+		resource_sprite.texture = null
+		costText.text = "free"
+		return
 
-func update_buy_button(enabled: bool) -> void:
-	return
+	var cost = get_gear_cost(Global.count)
+
+	# Check if the player can afford the gear
+	var can_afford = has_enough_resources(cost)
+
+	# Determine the required resource index and tier based on Global.count
+	var resource_index = (Global.count - 1) / 8  # Every 8 gears, switch resource
+	var tier = ((Global.count - 1) % 8) + 1  # Ensure tier goes from 1 to 8 (not 9)
+
+	# If the player can't afford it, update the sprite to show the required resource
 	
+	var resource_name = Global.resource_names[resource_index]
+	var image_path = "res://assets/art/resources/" + str(resource_index + 1) + "_" + resource_name + "/" + resource_name + "_T" + str(tier) + ".png"
+
+		# Load and assign the texture
+	if ResourceLoader.exists(image_path):
+		resource_sprite.texture = load(image_path)
+	else:
+		print("Warning: Texture not found at path:", image_path)
+	if can_afford:
+		buyButton.icon = null
+		buyButton.text = "GEAR"
+		costText.add_theme_color_override("font_color", Color.WHITE)
+
+		# Build the image path
+
+		
+		# Check if the tier exists in cost (avoid index 8 error)
+		if cost.has(resource_index) and cost[resource_index].size() > tier - 1:
+			costText.text = cost[resource_index][tier - 1].toAA()  # Adjust index for 0-based array
+		else:
+			print("Warning: Cost index out of bounds for resource:", resource_index, "Tier:", tier)
+
+	else:
+		buyButton.icon = load("res://assets/art/resources/crystaline_bolts.png")  # Default image if the resource is missing
+		buyButton.expand_icon = true
+		if cost.has(resource_index) and cost[resource_index].size() > tier - 1:
+			costText.text =  cost[resource_index][tier - 1].toAA()  # Adjust index for 0-based array
+		costText.add_theme_color_override("font_color", Color.RED)
+		buyButton.text = str(cost["premium"])
