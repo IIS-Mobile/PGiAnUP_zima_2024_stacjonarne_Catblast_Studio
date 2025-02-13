@@ -8,9 +8,13 @@ func _ready() -> void:
 #reward user after executing this function eg. $"/root/Node2D".trigger_ad(10)
 func trigger_ad(secs: int):
 	$AdView.start(secs)
+	for b in range(0, AudioServer.bus_count):
+		AudioServer.set_bus_mute(b, true)
 	$UI.visible = false
 	$AdView.visible = true
 	await Global.ad_skipped
+	for b in range(0, AudioServer.bus_count):
+		AudioServer.set_bus_mute(b, false)
 	$UI.visible = true
 	$AdView.visible = false
 
