@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=22 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
 [ext_resource type="Script" path="res://scenes/shopping_manager.gd" id="1_xnsdw"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://xx7coig11gsl" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_lead.png" id="17_m4tbb"]
 [ext_resource type="Texture2D" uid="uid://dom8yej5sa3ws" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_tungsten.png" id="18_ptsig"]
 [ext_resource type="Texture2D" uid="uid://qjbmj5hv60ok" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_electrum.png" id="19_cmpx1"]
+[ext_resource type="AudioStream" uid="uid://ciykneb38k41y" path="res://assets/audio/purchase_item.wav" id="21_wk8us"]
 
 [node name="ShopView" type="PanelContainer"]
 anchors_preset = 15
@@ -893,3 +894,7 @@ title = "Electrum Forge"
 description = "Doubles the amount of electrum generated from each gear."
 price1 = 100.0
 premium_price = 100.0
+
+[node name="PurchaseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_wk8us")
+volume_db = -10.0
