@@ -8,9 +8,13 @@ func _ready() -> void:
 #reward user after executing this function eg. $"/root/Node2D".trigger_ad(10)
 func trigger_ad(secs: int):
 	$AdView.start(secs)
+	for b in range(0, AudioServer.bus_count):
+		AudioServer.set_bus_mute(b, true)
 	$UI.visible = false
 	$AdView.visible = true
 	await Global.ad_skipped
+	for b in range(0, AudioServer.bus_count):
+		AudioServer.set_bus_mute(b, false)
 	$UI.visible = true
 	$AdView.visible = false
 
@@ -18,10 +22,6 @@ func _on_gear_button_pressed() -> void:
 	$UISound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer/PlaceSound.play()
 	$UI/VBoxContainer/CurrentView/GearsView/ScrollContainer/GearContainer.add_gear()
-
-func _on_boost_button_pressed() -> void:
-	$UISound.play()
-	Global.buffer += 5 * Engine.physics_ticks_per_second * Global.SLOWDOWN_FACTOR
 
 func idle_button_clicked():
 	$UISound.play()
@@ -49,7 +49,12 @@ func save_game_data():
 		for entry_idx : int in res_copy_for_serialization[key].size():
 			res_copy_for_serialization[key][entry_idx] = res_copy_for_serialization[key][entry_idx].toScientific()
 	var save_data = {
+		"music_volume": Global.music_volume,
+		"sound_volume": Global.sound_volume,
+		"very_specific_iterator_in_shopping_manager": Global.very_specific_iterator_in_shopping_manager,
+		"premium_resource": Global.premium_resource,
 		"last_ad_use_time": Global.last_ad_use_time,
+		"last_boost_use_time": Global.last_boost_use_time,
 		"idle_time": Global.idle_time,
 		"phases": Global.phases,
 		"save_unix_time" : Time.get_unix_time_from_system(),
@@ -77,6 +82,7 @@ func load_game_data():
 		Global.phases.resize(Global.MAX_GEARS)
 		Global.phases.fill(0.0)
 		$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar.show()
+		$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton.show()
 		return
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
@@ -99,7 +105,19 @@ func load_game_data():
 		for key : String in json_resource_data:
 			for tier_idx : int in json_resource_data[key].size():
 				Global.resources[key][tier_idx] = Big.new(json_resource_data[key][tier_idx])
-		
+
+	if json.data.has("music_volume"):
+		Global.music_volume = json.data.get("music_volume")
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(min(1., Global.music_volume)))
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/MusiVolumeRect/MusiVolumeRectSlider.value = Global.music_volume
+	if json.data.has("sound_volume"):
+		Global.sound_volume = json.data.get("sound_volume")
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sounds"), linear_to_db(min(1., Global.sound_volume)))
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/SoundVolumeRect/SoundVolumeRectSlider.value = Global.sound_volume
+	if json.data.has("very_specific_iterator_in_shopping_manager"):
+		Global.very_specific_iterator_in_shopping_manager = json.data.get("very_specific_iterator_in_shopping_manager")
+	if json.data.has("premium_resource"):
+		Global.premium_resource = json.data.get("premium_resource")
 	if json.data.has("current_top_tiers"):
 		Global.current_top_tiers = json.data.get("current_top_tiers")
 	if json.data.has("current_top_resource"):
@@ -112,10 +130,18 @@ func load_game_data():
 		Global.upgrades = json.data.get("upgrades")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/ToggleMelting/ToggleMeltingButton.button_pressed = Global.is_melting_on
 	if json.data.has("is_barter_on"):
 		Global.is_barter_on = json.data.get("is_barter_on")
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/ToggleBarter/ToggleBarterButton.button_pressed = Global.is_barter_on
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
+	if json.data.has("last_boost_use_time"):
+		Global.last_boost_use_time = json.data.get("last_boost_use_time")
+		if Time.get_unix_time_from_system() - Global.last_boost_use_time > Global.BOOST_APPEARANCE_INTERVAL_MINUTES * 60:
+			$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton.show()
+		else:
+			$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton/AppearanceTimer.start(Global.BOOST_APPEARANCE_INTERVAL_MINUTES * 60 - (Time.get_unix_time_from_system() - Global.last_boost_use_time))
 	if json.data.has("last_ad_use_time"):
 		Global.last_ad_use_time = json.data.get("last_ad_use_time")
 		if Time.get_unix_time_from_system() - Global.last_ad_use_time > Global.SHOP_AD_APPEARANCE_INTERVAL_MINUTES * 60:

@@ -1,15 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://loqrm2srjm8e"]
+[gd_scene load_steps=17 format=3 uid="uid://loqrm2srjm8e"]
 
 [ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
+[ext_resource type="Texture2D" uid="uid://bvmrgxf2lqq57" path="res://assets/art/gears/10_electrum/electrumgear_T8.png" id="2_mygfo"]
 [ext_resource type="Texture2D" uid="uid://bfaue2yv7d3op" path="res://assets/art/ui/whistle.png" id="2_tdpj8"]
 [ext_resource type="Texture2D" uid="uid://cnsteap44dgdy" path="res://assets/art/ui/golden_bar2.png" id="3_0f71r"]
 [ext_resource type="Texture2D" uid="uid://byckpqhprfxh1" path="res://assets/art/ui/glasspane.png" id="3_l1cx2"]
+[ext_resource type="Script" path="res://scenes/boost_button.gd" id="3_l4lny"]
 [ext_resource type="Texture2D" uid="uid://hpqsico8imbj" path="res://assets/art/ui/golden_bar1.png" id="4_fd6e0"]
 [ext_resource type="Texture2D" uid="uid://bl2dhl487d5el" path="res://assets/art/ui/steam_gauge2.png" id="6_fcbwt"]
 [ext_resource type="Texture2D" uid="uid://covhfluqnllif" path="res://assets/art/ui/gauge_hand.png" id="7_8udgl"]
 [ext_resource type="AudioStream" uid="uid://j8kq5ar3x7dt" path="res://assets/audio/whistle.wav" id="8_6816p"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="8_phayo"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="9_adtvl"]
+[ext_resource type="AudioStream" uid="uid://bmhfhxh1pe4wx" path="res://assets/audio/droplet.wav" id="13_qi1no"]
 
 [sub_resource type="Curve" id="Curve_wfnoe"]
 min_value = -360.0
@@ -39,6 +42,22 @@ script = ExtResource("1_xqrmc")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
+
+[node name="BoostButton" type="TextureButton" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 65.0819
+offset_top = -671.169
+offset_right = 465.082
+offset_bottom = -271.169
+scale = Vector2(0.617, 0.42)
+texture_normal = ExtResource("2_mygfo")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_l4lny")
+
+[node name="AppearanceTimer" type="Timer" parent="Panel/BoostButton"]
+one_shot = true
 
 [node name="Container" type="Control" parent="Panel"]
 layout_mode = 1
@@ -207,5 +226,13 @@ text = "IDLE"
 [node name="WhistleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6816p")
 volume_db = -10.0
+bus = &"Sounds"
 
+[node name="DropletSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qi1no")
+volume_db = -10.0
+bus = &"Sounds"
+
+[connection signal="pressed" from="Panel/BoostButton" to="Panel/BoostButton" method="_on_pressed"]
+[connection signal="timeout" from="Panel/BoostButton/AppearanceTimer" to="Panel/BoostButton" method="_on_appearance_timer_timeout"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_idle_button_pressed"]
