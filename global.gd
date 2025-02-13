@@ -28,6 +28,8 @@ func grease_scaling(i: int) -> float:
 
 var is_melting_on = true;
 var is_barter_on = true;
+var sound_volume = 0.5;
+var music_volume = 0.5;
 
 #TODO: provide sane scaling function
 #idle time in hours unbounded
@@ -46,7 +48,7 @@ func lsc_speed_scaling() -> float:
 	return 0.5 * (upgrades["LSC"] + 1.) / (max_upgrade_values["LSC"] + 1.)
 
 var last_boost_use_time = 0
-var last_ad_use_time = 0 
+var last_ad_use_time = 0
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
 var idle_time = 0.0
