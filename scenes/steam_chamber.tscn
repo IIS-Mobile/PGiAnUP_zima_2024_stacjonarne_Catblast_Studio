@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://loqrm2srjm8e"]
+[gd_scene load_steps=17 format=3 uid="uid://loqrm2srjm8e"]
 
 [ext_resource type="Script" path="res://scenes/steam_chamber.gd" id="1_xqrmc"]
 [ext_resource type="Texture2D" uid="uid://bvmrgxf2lqq57" path="res://assets/art/gears/10_electrum/electrumgear_T8.png" id="2_mygfo"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://j8kq5ar3x7dt" path="res://assets/audio/whistle.wav" id="8_6816p"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="8_phayo"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="9_adtvl"]
+[ext_resource type="AudioStream" uid="uid://bmhfhxh1pe4wx" path="res://assets/audio/droplet.wav" id="13_qi1no"]
 
 [sub_resource type="Curve" id="Curve_wfnoe"]
 min_value = -360.0
@@ -224,6 +225,10 @@ text = "IDLE"
 
 [node name="WhistleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6816p")
+volume_db = -10.0
+
+[node name="DropletSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qi1no")
 volume_db = -10.0
 
 [connection signal="pressed" from="Panel/BoostButton" to="Panel/BoostButton" method="_on_pressed"]

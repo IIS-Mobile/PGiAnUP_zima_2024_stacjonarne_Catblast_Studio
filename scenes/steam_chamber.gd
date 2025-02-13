@@ -27,6 +27,8 @@ func _process(_delta: float) -> void:
 		handle_gauge(Global.idle_time, Global.lsc_time_scaling() * 3600)
 
 func increment_taps():
+	$DropletSound.pitch_scale = max(0.1, Global.buffer)
+	$DropletSound.play()
 	if not animation and Global.taps_count < Global.lsc_tap_scaling():
 		Global.taps_count += 1
 
