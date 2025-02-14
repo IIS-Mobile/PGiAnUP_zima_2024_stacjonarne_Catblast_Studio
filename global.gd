@@ -44,6 +44,7 @@ func lsc_tap_scaling() -> int:
 func lsc_speed_scaling() -> float:
 	return 0.5 * (upgrades["LSC"] + 1.) / (max_upgrade_values["LSC"] + 1.)
 
+var stop_purchasing_gears = true
 var last_ad_use_time = 0 
 var very_specific_iterator_in_shopping_manager = 5 # ta zmienna jest na tyle szalona ze pewnie trzeba ja bedzie zapisywac.
 var taps_count = 0.0
@@ -52,7 +53,7 @@ var phases := []
 var speed := 0.0 # DO NOT CHANGE, SPEED DEPENDS ON speed_multiplier
 var buffer := 0.0
 var count := 0
-var premium_resource = 0;
+var premium_resource = 9999999;
 var resource_names = ["tin", "copper", "brass", "bronze", "iron", "steel", "gold", "lead", "tungsten", "electrum"]
 var resources = {
 	str(resource_names[0]) : [Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0), Big.new(0)], #indexes from 0 to 7 are the tiers

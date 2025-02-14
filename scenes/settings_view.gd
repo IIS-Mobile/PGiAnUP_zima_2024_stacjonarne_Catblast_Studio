@@ -2,8 +2,8 @@ extends PanelContainer
 
 
 func _ready():
-	$Background/VBoxContainer/ToggleMelting/ToggleMeltingButton.pressed.connect(_on_toggle_melting_pressed)
-	$Background/VBoxContainer/ToggleBarter/ToggleBarterButton.pressed.connect(_on_toggle_barter_pressed)
+	$Background/VBoxContainer/Panel3/ToggleMelting/ToggleMeltingButton.pressed.connect(_on_toggle_melting_pressed)
+	$Background/VBoxContainer/Panel4/ToggleBarter/ToggleBarterButton.pressed.connect(_on_toggle_barter_pressed)
 	update_buttons()
 
 func _on_toggle_melting_pressed():
@@ -17,5 +17,5 @@ func _on_toggle_barter_pressed():
 	update_buttons()
 
 func update_buttons():
-	$Background/VBoxContainer/ToggleMelting/ToggleMeltingButton.button_pressed = Global.is_melting_on
-	$Background/VBoxContainer/ToggleBarter/ToggleBarterButton.button_pressed = Global.is_barter_on
+	$Background/VBoxContainer/Panel3/ToggleMelting/ToggleMeltingButton.button_pressed = Global.is_melting_on
+	$Background/VBoxContainer/Panel4/ToggleBarter/ToggleBarterButton.button_pressed = Global.is_barter_on

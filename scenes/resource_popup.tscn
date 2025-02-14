@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq8mg61kyc58c"]
+[gd_scene load_steps=6 format=3 uid="uid://cq8mg61kyc58c"]
 
+[ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="2_j6cov"]
 [ext_resource type="Texture2D" uid="uid://cm7rx7h1onhhr" path="res://assets/art/resources/hidden_resource.png" id="2_qtqaf"]
 
 [sub_resource type="Animation" id="Animation_ntpec"]
@@ -89,7 +90,10 @@ offset_top = -44.0
 offset_right = 135.5
 offset_bottom = 44.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_j6cov")
+theme_override_font_sizes/font_size = 100
 text = "+1
 "
 vertical_alignment = 1

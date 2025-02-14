@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=23 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
 [ext_resource type="Script" path="res://scenes/shopping_manager.gd" id="1_xnsdw"]
 [ext_resource type="Script" path="res://scenes/scroll_container.gd" id="2_0m0ju"]
+[ext_resource type="Shader" path="res://scenes/woodgrain.gdshader" id="2_dmivp"]
 [ext_resource type="Theme" uid="uid://bj5ti8cjyws43" path="res://assets/themes/Ui_theme.tres" id="2_iv5vg"]
 [ext_resource type="Texture2D" uid="uid://dlq8v4av5m1ls" path="res://assets/art/icon/upgrades/grease_icon.png" id="3_6ia52"]
 [ext_resource type="Texture2D" uid="uid://cifmwrtytkdug" path="res://assets/art/icon/upgrades/lsc_icon.png" id="3_sdxot"]
@@ -21,6 +22,15 @@
 [ext_resource type="Texture2D" uid="uid://dom8yej5sa3ws" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_tungsten.png" id="18_ptsig"]
 [ext_resource type="Texture2D" uid="uid://qjbmj5hv60ok" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_electrum.png" id="19_cmpx1"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vovh3"]
+shader = ExtResource("2_dmivp")
+shader_parameter/light_color = Vector4(0.465, 0.31, 0.175, 1)
+shader_parameter/dark_color = Vector4(0.232, 0.124, 0, 1)
+shader_parameter/ring_scale = 7.7
+shader_parameter/wave_scale = 8.189
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.0
+
 [node name="ShopView" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +41,7 @@ size_flags_vertical = 3
 script = ExtResource("1_xnsdw")
 
 [node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vovh3")
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.368627, 0.262745, 0.203922, 1)
@@ -53,7 +64,7 @@ size_flags_stretch_ratio = 0.0
 theme_override_constants/margin_top = 10
 
 [node name="AdBar" parent="ScrollContainer/VBoxContainerWhole/MarginContainer" instance=ExtResource("4_wx8xk")]
-visible = false
+custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainerWhole"]
@@ -63,6 +74,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 15
 
 [node name="Grease1" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
@@ -71,6 +83,8 @@ image = ExtResource("3_6ia52")
 title = "Grease I"
 description = "Improves the conversion rate from the first gear to the rest."
 price1 = 100.0
+price2 = 50.0
+tier2 = 2
 tier3 = 1
 premium_price = 50.0
 
