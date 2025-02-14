@@ -58,9 +58,10 @@ func get_gear_cost(count: int) -> Dictionary:
 	if count == 0:
 		return {}  # Gear 0 is free
 
+
 	var resource_index = (count - 1 ) / 8  # Every 9 gears, switch resource
 	var tier = (count - 1  ) % 8  # 0-8: normal tier progression, resets at 9
-	var amount = Big.new((10*pow(1.06,count) + 5) as int)  # Constant for now
+	var amount = Big.new((10*pow(1.06,count) + 5) as int)
 
 	# Ensure the list has exactly 8 elements
 	var cost_list = [Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0)]
@@ -117,6 +118,15 @@ func update_buy_button() -> void:
 		resource_sprite.texture = load("res://assets/art/resources/hidden_resource.png")
 		costText.text = "FREE"
 		return
+	if Global.count == Global.MAX_GEARS:
+		costText.text = "MAX"
+		buyButton.visible = false
+		buyButton.set_process(false)
+		costText.add_theme_color_override("font_color", Color.GOLDENROD)
+
+		resource_sprite.texture = null
+		return
+
 
 	var cost = get_gear_cost(Global.count)
 
