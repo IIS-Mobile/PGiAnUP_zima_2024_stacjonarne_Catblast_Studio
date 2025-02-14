@@ -6,9 +6,9 @@ func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
 
 func add_gear() -> void:
-	#if Global.stop_purchasing_gears == false:
-	if not pay_for_gear():  # Ensure the player can afford it before proceeding
-		return
+	if Global.stop_purchasing_gears == false:
+		if not pay_for_gear():  # Ensure the player can afford it before proceeding
+			return
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()

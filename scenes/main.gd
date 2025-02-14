@@ -113,11 +113,11 @@ func load_game_data():
 	if json.data.has("music_volume"):
 		Global.music_volume = json.data.get("music_volume")
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(min(1., Global.music_volume)))
-		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/MusiVolumeRect/MusiVolumeRectSlider.value = Global.music_volume
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/Panel/MusiVolumeRect/MusiVolumeRectSlider.value = Global.music_volume
 	if json.data.has("sound_volume"):
 		Global.sound_volume = json.data.get("sound_volume")
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sounds"), linear_to_db(min(1., Global.sound_volume)))
-		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/SoundVolumeRect/SoundVolumeRectSlider.value = Global.sound_volume
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/Panel2/SoundVolumeRect/SoundVolumeRectSlider.value = Global.sound_volume
 	if json.data.has("very_specific_iterator_in_shopping_manager"):
 		Global.very_specific_iterator_in_shopping_manager = json.data.get("very_specific_iterator_in_shopping_manager")
 	if json.data.has("premium_resource"):

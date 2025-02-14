@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
-[ext_resource type="PackedScene" path="res://scenes/settings_view.tscn" id="11_kte6c"]
+[ext_resource type="PackedScene" uid="uid://dudht1ukmpkyv" path="res://scenes/settings_view.tscn" id="11_kte6c"]
 [ext_resource type="Script" path="res://scenes/settings_view.gd" id="12_tgu02"]
 [ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
 [ext_resource type="Texture2D" uid="uid://xfri6n057yon" path="res://assets/art/icon/Close_icon.png" id="16_d8kiq"]
