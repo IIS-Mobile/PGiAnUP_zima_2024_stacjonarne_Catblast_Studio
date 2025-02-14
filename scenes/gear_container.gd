@@ -58,9 +58,9 @@ func get_gear_cost(count: int) -> Dictionary:
 	if count == 0:
 		return {}  # Gear 0 is free
 
-	var resource_index = (count - 1 ) / 9  # Every 9 gears, switch resource
+	var resource_index = (count - 1 ) / 8  # Every 9 gears, switch resource
 	var tier = (count - 1  ) % 8  # 0-8: normal tier progression, resets at 9
-	var amount = Big.new(30)  # Constant for now
+	var amount = Big.new((10*pow(1.06,count) + 5) as int)  # Constant for now
 
 	# Ensure the list has exactly 8 elements
 	var cost_list = [Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0),Big.new(0)]
