@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cabrjyf0hftbs"]
+[gd_scene load_steps=24 format=3 uid="uid://cabrjyf0hftbs"]
 
 [ext_resource type="PackedScene" uid="uid://b1qqo5erp053i" path="res://scenes/product_bar.tscn" id="1_p34v5"]
 [ext_resource type="Script" path="res://scenes/shopping_manager.gd" id="1_xnsdw"]
@@ -99,9 +99,13 @@ id = 1
 image = ExtResource("3_6ia52")
 title = "Grease II"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
+price1 = 40.0
+resource1 = "copper"
+tier1 = 3
+price2 = 200.0
+tier2 = 8
 tier3 = 1
-premium_price = 50.0
+premium_price = 80.0
 
 [node name="Grease3" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -113,9 +117,15 @@ id = 2
 image = ExtResource("3_6ia52")
 title = "Grease III"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 150.0
+resource1 = "brass"
+tier1 = 2
+price2 = 100.0
+resource2 = "copper"
+tier2 = 4
+price3 = 400.0
+tier3 = 8
+premium_price = 110.0
 
 [node name="Grease4" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -127,9 +137,16 @@ id = 3
 image = ExtResource("3_6ia52")
 title = "Grease IV"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 200.0
+resource1 = "bronze"
+tier1 = 2
+price2 = 300.0
+resource2 = "brass"
+tier2 = 3
+price3 = 250.0
+resource3 = "copper"
+tier3 = 5
+premium_price = 140.0
 
 [node name="Grease5" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -141,9 +158,16 @@ id = 4
 image = ExtResource("3_6ia52")
 title = "Grease V"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 400.0
+resource1 = "bronze"
+tier1 = 3
+price2 = 700.0
+resource2 = "brass"
+tier2 = 4
+price3 = 600.0
+resource3 = "copper"
+tier3 = 6
+premium_price = 170.0
 
 [node name="Grease6" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -155,9 +179,16 @@ id = 5
 image = ExtResource("3_6ia52")
 title = "Grease VI"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 600.0
+resource1 = "iron"
+tier1 = 2
+price2 = 1400.0
+resource2 = "brass"
+tier2 = 5
+price3 = 1200.0
+resource3 = "copper"
+tier3 = 7
+premium_price = 200.0
 
 [node name="Grease7" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -169,9 +200,16 @@ id = 6
 image = ExtResource("3_6ia52")
 title = "Grease VII"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 800.0
+resource1 = "steel"
+tier1 = 2
+price2 = 1200.0
+resource2 = "iron"
+tier2 = 3
+price3 = 2000.0
+resource3 = "brass"
+tier3 = 6
+premium_price = 230.0
 
 [node name="Grease8" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -183,9 +221,16 @@ id = 7
 image = ExtResource("3_6ia52")
 title = "Grease VIII"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 1200.0
+resource1 = "gold"
+tier1 = 2
+price2 = 2500.0
+resource2 = "iron"
+tier2 = 4
+price3 = 3000.0
+resource3 = "bronze"
+tier3 = 5
+premium_price = 260.0
 
 [node name="Grease9" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -197,9 +242,16 @@ id = 8
 image = ExtResource("3_6ia52")
 title = "Grease IX"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 3000.0
+resource1 = "lead"
+tier1 = 2
+price2 = 5000.0
+resource2 = "iron"
+tier2 = 5
+price3 = 4500.0
+resource3 = "bronze"
+tier3 = 6
+premium_price = 290.0
 
 [node name="Grease10" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -211,9 +263,16 @@ id = 9
 image = ExtResource("3_6ia52")
 title = "Grease X"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 5000.0
+resource1 = "tungsten"
+tier1 = 2
+price2 = 7000.0
+resource2 = "steel"
+tier2 = 4
+price3 = 8000.0
+resource3 = "iron"
+tier3 = 6
+premium_price = 320.0
 
 [node name="Grease11" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -225,9 +284,15 @@ id = 10
 image = ExtResource("3_6ia52")
 title = "Grease XI"
 description = "Improves the conversion rate from the first gear to the rest."
-price1 = 100.0
-tier3 = 1
-premium_price = 50.0
+price1 = 8000.0
+resource1 = "electrum"
+tier1 = 3
+price2 = 10000.0
+resource2 = "tungsten"
+price3 = 6000.0
+resource3 = "gold"
+tier3 = 4
+premium_price = 350.0
 
 [node name="Overclock1" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -239,7 +304,9 @@ id = 11
 image = ExtResource("6_bchbm")
 title = "Overclock I"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
+price1 = 200.0
+price2 = 100.0
+tier2 = 2
 premium_price = 100.0
 
 [node name="Overclock2" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
@@ -252,8 +319,12 @@ id = 12
 image = ExtResource("6_bchbm")
 title = "Overclock II"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+tier1 = 8
+price2 = 80.0
+resource2 = "copper"
+tier2 = 3
+premium_price = 140.0
 
 [node name="Overclock3" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -265,8 +336,15 @@ id = 13
 image = ExtResource("6_bchbm")
 title = "Overclock III"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 300.0
+resource1 = "brass"
+tier1 = 2
+price2 = 200.0
+resource2 = "copper"
+tier2 = 4
+price3 = 800.0
+tier3 = 8
+premium_price = 180.0
 
 [node name="Overclock4" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -278,8 +356,16 @@ id = 14
 image = ExtResource("6_bchbm")
 title = "Overclock IV"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "bronze"
+tier1 = 2
+price2 = 600.0
+resource2 = "brass"
+tier2 = 3
+price3 = 500.0
+resource3 = "copper"
+tier3 = 5
+premium_price = 220.0
 
 [node name="Overclock5" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -291,8 +377,16 @@ id = 15
 image = ExtResource("6_bchbm")
 title = "Overclock V"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 800.0
+resource1 = "bronze"
+tier1 = 3
+price2 = 1400.0
+resource2 = "brass"
+tier2 = 4
+price3 = 1200.0
+resource3 = "copper"
+tier3 = 6
+premium_price = 260.0
 
 [node name="Overclock6" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -304,8 +398,16 @@ id = 16
 image = ExtResource("6_bchbm")
 title = "Overclock VI"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 1200.0
+resource1 = "iron"
+tier1 = 2
+price2 = 2800.0
+resource2 = "brass"
+tier2 = 5
+price3 = 2500.0
+resource3 = "copper"
+tier3 = 7
+premium_price = 300.0
 
 [node name="Overclock7" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -317,8 +419,16 @@ id = 17
 image = ExtResource("6_bchbm")
 title = "Overclock VII"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 1600.0
+resource1 = "steel"
+tier1 = 2
+price2 = 2400.0
+resource2 = "iron"
+tier2 = 3
+price3 = 400.0
+resource3 = "brass"
+tier3 = 6
+premium_price = 340.0
 
 [node name="Overclock8" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -330,8 +440,16 @@ id = 18
 image = ExtResource("6_bchbm")
 title = "Overclock VIII"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 2400.0
+resource1 = "gold"
+tier1 = 2
+price2 = 5000.0
+resource2 = "iron"
+tier2 = 4
+price3 = 6000.0
+resource3 = "bronze"
+tier3 = 5
+premium_price = 380.0
 
 [node name="Overclock9" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -343,8 +461,16 @@ id = 19
 image = ExtResource("6_bchbm")
 title = "Overclock IX"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 6000.0
+resource1 = "lead"
+tier1 = 2
+price2 = 10000.0
+resource2 = "iron"
+tier2 = 5
+price3 = 9000.0
+resource3 = "bronze"
+tier3 = 6
+premium_price = 420.0
 
 [node name="Overclock10" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -356,8 +482,16 @@ id = 20
 image = ExtResource("6_bchbm")
 title = "Overclock X"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 10000.0
+resource1 = "tungsten"
+tier1 = 2
+price2 = 14000.0
+resource2 = "steel"
+tier2 = 4
+price3 = 16000.0
+resource3 = "iron"
+tier3 = 6
+premium_price = 460.0
 
 [node name="Overclock11" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -369,8 +503,15 @@ id = 21
 image = ExtResource("6_bchbm")
 title = "Overclock XI"
 description = "Increases rotation speed of the first gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 16000.0
+resource1 = "electrum"
+tier1 = 3
+price2 = 20000.0
+resource2 = "tungsten"
+price3 = 12000.0
+resource3 = "gold"
+tier3 = 4
+premium_price = 500.0
 
 [node name="LSC1" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -383,8 +524,9 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber I"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
+price1 = 150.0
+price2 = 75.0
+tier2 = 2
 tier3 = 5
 premium_price = 40.0
 
@@ -399,10 +541,13 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber II"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
+price1 = 300.0
+tier1 = 8
+price2 = 60.0
+resource2 = "copper"
+tier2 = 3
 tier3 = 5
-premium_price = 40.0
+premium_price = 70.0
 
 [node name="LSC3" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -415,10 +560,15 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber III"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 200.0
+resource1 = "brass"
+tier1 = 2
+price2 = 150.0
+resource2 = "copper"
+tier2 = 4
+price3 = 500.0
+tier3 = 8
+premium_price = 100.0
 
 [node name="LSC4" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -431,10 +581,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber IV"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
+price1 = 250.0
+resource1 = "bronze"
+tier1 = 2
+price2 = 400.0
+resource2 = "brass"
+tier2 = 3
+price3 = 350.0
+resource3 = "copper"
 tier3 = 5
-premium_price = 40.0
+premium_price = 130.0
 
 [node name="LSC5" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -447,10 +603,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber V"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 3.0
+resource1 = "bronze"
+tier1 = 8
+price2 = 900.0
+resource2 = "brass"
+tier2 = 4
+price3 = 800.0
+resource3 = "copper"
+tier3 = 6
+premium_price = 160.0
 
 [node name="LSC6" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -463,10 +625,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VI"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 1000.0
+resource1 = "iron"
+tier1 = 2
+price2 = 2000.0
+resource2 = "brass"
+tier2 = 5
+price3 = 1800.0
+resource3 = "copper"
+tier3 = 7
+premium_price = 190.0
 
 [node name="LSC7" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -479,10 +647,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VII"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 1200.0
+resource1 = "steel"
+tier1 = 2
+price2 = 1600.0
+resource2 = "iron"
+tier2 = 3
+price3 = 3000.0
+resource3 = "brass"
+tier3 = 6
+premium_price = 220.0
 
 [node name="LSC8" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -495,10 +669,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber VIII"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
+price1 = 1500.0
+resource1 = "gold"
+tier1 = 2
+price2 = 3500.0
+resource2 = "iron"
+tier2 = 4
+price3 = 4500.0
+resource3 = "bronze"
 tier3 = 5
-premium_price = 40.0
+premium_price = 250.0
 
 [node name="LSC9" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -511,10 +691,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber IX"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 4000.0
+resource1 = "lead"
+tier1 = 2
+price2 = 7000.0
+resource2 = "iron"
+tier2 = 5
+price3 = 7000.0
+resource3 = "bronze"
+tier3 = 6
+premium_price = 280.0
 
 [node name="LSC10" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -527,10 +713,16 @@ image = ExtResource("3_sdxot")
 title = "Steam 
 chamber X"
 description = "Increases the idling time."
-price1 = 100.0
-resource2 = "bronze"
-tier3 = 5
-premium_price = 40.0
+price1 = 7000.0
+resource1 = "tungsten"
+tier1 = 2
+price2 = 10000.0
+resource2 = "steel"
+tier2 = 4
+price3 = 12000.0
+resource3 = "iron"
+tier3 = 6
+premium_price = 310.0
 
 [node name="Melting1" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -542,7 +734,10 @@ id = 32
 image = ExtResource("4_fc76t")
 title = "Melting I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
+price1 = 500.0
+tier1 = 8
+price2 = 250.0
+tier2 = 7
 premium_price = 100.0
 
 [node name="Melting2" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
@@ -555,8 +750,13 @@ id = 33
 image = ExtResource("4_fc76t")
 title = "Melting II"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "copper"
+tier1 = 8
+price2 = 250.0
+resource2 = "copper"
+tier2 = 7
+premium_price = 150.0
 
 [node name="Melting3" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -568,8 +768,13 @@ id = 34
 image = ExtResource("4_fc76t")
 title = "Melting III"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "brass"
+tier1 = 8
+price2 = 500.0
+resource2 = "brass"
+tier2 = 7
+premium_price = 200.0
 
 [node name="Melting4" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -581,8 +786,13 @@ id = 35
 image = ExtResource("4_fc76t")
 title = "Melting IV"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "bronze"
+tier1 = 8
+price2 = 250.0
+resource2 = "bronze"
+tier2 = 7
+premium_price = 250.0
 
 [node name="Melting5" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -594,8 +804,13 @@ id = 36
 image = ExtResource("4_fc76t")
 title = "Melting V"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "iron"
+tier1 = 8
+price2 = 250.0
+resource2 = "iron"
+tier2 = 7
+premium_price = 300.0
 
 [node name="Melting6" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -607,8 +822,13 @@ id = 37
 image = ExtResource("4_fc76t")
 title = "Melting VI"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "steel"
+tier1 = 8
+price2 = 250.0
+resource2 = "steel"
+tier2 = 7
+premium_price = 350.0
 
 [node name="Melting7" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -620,8 +840,13 @@ id = 38
 image = ExtResource("4_fc76t")
 title = "Melting VII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "gold"
+tier1 = 8
+price2 = 250.0
+resource2 = "gold"
+tier2 = 7
+premium_price = 400.0
 
 [node name="Melting8" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -633,8 +858,13 @@ id = 39
 image = ExtResource("4_fc76t")
 title = "Melting VIII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "lead"
+tier1 = 8
+price2 = 250.0
+resource2 = "lead"
+tier2 = 7
+premium_price = 450.0
 
 [node name="Melting9" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -646,8 +876,13 @@ id = 40
 image = ExtResource("4_fc76t")
 title = "Melting IX"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "tungsten"
+tier1 = 8
+price2 = 250.0
+resource2 = "tungsten"
+tier2 = 7
+premium_price = 500.0
 
 [node name="Melting10" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -659,8 +894,10 @@ id = 41
 image = ExtResource("4_fc76t")
 title = "Melting X"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 800.0
+resource1 = "electrum"
+tier1 = 8
+premium_price = 550.0
 
 [node name="Barter1" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -672,7 +909,10 @@ id = 42
 image = ExtResource("9_l1iwg")
 title = "Barter I"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
+price1 = 400.0
+tier1 = 8
+price2 = 200.0
+tier2 = 7
 premium_price = 100.0
 
 [node name="Barter2" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
@@ -685,8 +925,13 @@ id = 43
 image = ExtResource("9_l1iwg")
 title = "Barter II"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "copper"
+tier1 = 8
+price2 = 200.0
+resource2 = "copper"
+tier2 = 7
+premium_price = 140.0
 
 [node name="Barter3" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -698,8 +943,13 @@ id = 44
 image = ExtResource("9_l1iwg")
 title = "Barter III"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "brass"
+tier1 = 8
+price2 = 200.0
+resource2 = "brass"
+tier2 = 7
+premium_price = 180.0
 
 [node name="Barter4" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -711,8 +961,13 @@ id = 45
 image = ExtResource("9_l1iwg")
 title = "Barter IV"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "bronze"
+tier1 = 8
+price2 = 200.0
+resource2 = "bronze"
+tier2 = 7
+premium_price = 220.0
 
 [node name="Barter5" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -724,8 +979,13 @@ id = 46
 image = ExtResource("9_l1iwg")
 title = "Barter V"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "iron"
+tier1 = 8
+price2 = 200.0
+resource2 = "iron"
+tier2 = 7
+premium_price = 260.0
 
 [node name="Barter6" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -737,8 +997,13 @@ id = 47
 image = ExtResource("9_l1iwg")
 title = "Barter VI"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "steel"
+tier1 = 8
+price2 = 200.0
+resource2 = "steel"
+tier2 = 7
+premium_price = 300.0
 
 [node name="Barter7" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -750,8 +1015,13 @@ id = 48
 image = ExtResource("9_l1iwg")
 title = "Barter VII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "gold"
+tier1 = 8
+price2 = 200.0
+resource2 = "gold"
+tier2 = 7
+premium_price = 340.0
 
 [node name="Barter8" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -763,8 +1033,13 @@ id = 49
 image = ExtResource("9_l1iwg")
 title = "Barter VIII"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "lead"
+tier1 = 8
+price2 = 200.0
+resource2 = "lead"
+tier2 = 7
+premium_price = 380.0
 
 [node name="Barter9" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -776,8 +1051,13 @@ id = 50
 image = ExtResource("9_l1iwg")
 title = "Barter IX"
 description = "Allows to exchange resources of lower tiers for the same resources of higher tier at 20:1 rate."
-price1 = 100.0
-premium_price = 100.0
+price1 = 400.0
+resource1 = "tungsten"
+tier1 = 8
+price2 = 200.0
+resource2 = "tungsten"
+tier2 = 7
+premium_price = 420.0
 
 [node name="ForgeTin" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -790,6 +1070,11 @@ image = ExtResource("10_k82gu")
 title = "Tin Forge"
 description = "Doubles the amount of tin generated from each gear."
 price1 = 100.0
+resource1 = "copper"
+tier1 = 4
+price2 = 150.0
+resource2 = "copper"
+tier2 = 3
 premium_price = 100.0
 
 [node name="ForgeCopper" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
@@ -802,8 +1087,13 @@ id = 52
 image = ExtResource("11_ytw8p")
 title = "Copper Forge"
 description = "Doubles the amount of tin generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 150.0
+resource1 = "brass"
+tier1 = 4
+price2 = 200.0
+resource2 = "brass"
+tier2 = 3
+premium_price = 200.0
 
 [node name="ForgeBrass" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -815,8 +1105,13 @@ id = 53
 image = ExtResource("12_6e8bc")
 title = "Brass Forge"
 description = "Doubles the amount of tin generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 250.0
+resource1 = "bronze"
+tier1 = 4
+price2 = 400.0
+resource2 = "bronze"
+tier2 = 3
+premium_price = 300.0
 
 [node name="ForgeBronze" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -828,8 +1123,13 @@ id = 54
 image = ExtResource("13_uqn8k")
 title = "Bronze Forge"
 description = "Doubles the amount of tin generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 350.0
+resource1 = "iron"
+tier1 = 4
+price2 = 600.0
+resource2 = "iron"
+tier2 = 3
+premium_price = 400.0
 
 [node name="ForgeIron" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -841,8 +1141,13 @@ id = 55
 image = ExtResource("14_ca43u")
 title = "Iron Forge"
 description = "Doubles the amount of iron generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 500.0
+resource1 = "steel"
+tier1 = 4
+price2 = 900.0
+resource2 = "steel"
+tier2 = 3
+premium_price = 500.0
 
 [node name="ForgeSteel" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -854,8 +1159,13 @@ id = 56
 image = ExtResource("15_er3oj")
 title = "Steel Forge"
 description = "Doubles the amount of steel generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 800.0
+resource1 = "gold"
+tier1 = 4
+price2 = 1500.0
+resource2 = "gold"
+tier2 = 3
+premium_price = 600.0
 
 [node name="ForgeGold" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -867,8 +1177,13 @@ id = 57
 image = ExtResource("16_eflpc")
 title = "Gold Forge"
 description = "Doubles the amount of gold generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 1500.0
+resource1 = "lead"
+tier1 = 4
+price2 = 2500.0
+resource2 = "lead"
+tier2 = 3
+premium_price = 700.0
 
 [node name="ForgeLead" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -880,8 +1195,13 @@ id = 58
 image = ExtResource("17_m4tbb")
 title = "Lead Forge"
 description = "Doubles the amount of lead generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 2500.0
+resource1 = "tungsten"
+tier1 = 4
+price2 = 4000.0
+resource2 = "tungsten"
+tier2 = 3
+premium_price = 800.0
 
 [node name="ForgeTungsten" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -893,8 +1213,13 @@ id = 59
 image = ExtResource("18_ptsig")
 title = "Tungsten Forge"
 description = "Doubles the amount of tungsten generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 4000.0
+resource1 = "tungsten"
+tier1 = 8
+price2 = 6000.0
+resource2 = "electrum"
+tier2 = 3
+premium_price = 900.0
 
 [node name="ForgeElectrum" parent="ScrollContainer/VBoxContainerWhole/VBoxContainer" instance=ExtResource("1_p34v5")]
 visible = false
@@ -906,8 +1231,13 @@ id = 60
 image = ExtResource("19_cmpx1")
 title = "Electrum Forge"
 description = "Doubles the amount of electrum generated from each gear."
-price1 = 100.0
-premium_price = 100.0
+price1 = 12000.0
+resource1 = "electrum"
+tier1 = 8
+price2 = 9000.0
+resource2 = "electrum"
+tier2 = 7
+premium_price = 1000.0
 
 [node name="PurchaseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_wk8us")

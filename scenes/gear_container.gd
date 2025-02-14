@@ -6,9 +6,9 @@ func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
 
 func add_gear() -> void:
-	if Global.stop_purchasing_gears == false:
-		if not pay_for_gear():  # Ensure the player can afford it before proceeding
-			return
+	#if Global.stop_purchasing_gears == false:
+	if not pay_for_gear():  # Ensure the player can afford it before proceeding
+		return
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
@@ -114,8 +114,8 @@ func pay_for_gear() -> bool:
 func update_buy_button() -> void:
 	# Get the cost for the next gear
 	if Global.count == 0:
-		resource_sprite.texture = null
-		costText.text = "free"
+		resource_sprite.texture = load("res://assets/art/resources/hidden_resource.png")
+		costText.text = "FREE"
 		return
 
 	var cost = get_gear_cost(Global.count)
