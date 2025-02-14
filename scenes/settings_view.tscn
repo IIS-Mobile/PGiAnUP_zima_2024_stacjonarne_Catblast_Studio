@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqskksfish3c0"]
+[gd_scene load_steps=5 format=3 uid="uid://dudht1ukmpkyv"]
 
 [ext_resource type="Shader" path="res://scenes/woodgrain.gdshader" id="1_1lmnx"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="1_orfj1"]
@@ -170,6 +170,7 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(3, 3)
 pivot_offset = Vector2(74.16, 13.22)
+button_pressed = true
 
 [node name="Panel4" type="Panel" parent="Background/VBoxContainer"]
 self_modulate = Color(0, 0, 0, 1)
@@ -210,3 +211,4 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(3, 3)
 pivot_offset = Vector2(74.16, 13.22)
+button_pressed = true
