@@ -33,8 +33,8 @@ func process_barter():
 		var converted_amount = available_amount.dividedBy(Big.new(5))
 		
 		if converted_amount.isGreaterThanOrEqualTo(Big.new(1)):
-			Global.resources[lower_resource][Global.TIERS_AMOUNT - 1].minusEquals( converted_amount.times(Big.new(5)) )
-			Global.resources[higher_resource][0].plusEquals(converted_amount)
+			Global.resources[lower_resource][Global.TIERS_AMOUNT - 1].minusEquals( Big.new((converted_amount.toFloat() * 5) as int) )
+			Global.resources[higher_resource][0].plusEquals(Big.new(converted_amount.toFloat() as int))
 
 func _process(_delta: float) -> void:
 	process_melting()
