@@ -124,7 +124,7 @@ func update_buy_button() -> void:
 		buyButton.set_process(false)
 		costText.add_theme_color_override("font_color", Color.GOLDENROD)
 
-		resource_sprite.texture = null
+		resource_sprite.texture = load("res://assets/art/gears/10_electrum/electrumgear_T1.png")
 		return
 
 
