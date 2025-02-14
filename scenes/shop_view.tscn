@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://xx7coig11gsl" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_lead.png" id="17_m4tbb"]
 [ext_resource type="Texture2D" uid="uid://dom8yej5sa3ws" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_tungsten.png" id="18_ptsig"]
 [ext_resource type="Texture2D" uid="uid://qjbmj5hv60ok" path="res://assets/art/icon/upgrades/forge_upgrades/forge_icon_electrum.png" id="19_cmpx1"]
+[ext_resource type="AudioStream" uid="uid://ciykneb38k41y" path="res://assets/audio/purchase_item.wav" id="21_wk8us"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vovh3"]
 shader = ExtResource("2_dmivp")
@@ -907,3 +908,8 @@ title = "Electrum Forge"
 description = "Doubles the amount of electrum generated from each gear."
 price1 = 100.0
 premium_price = 100.0
+
+[node name="PurchaseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_wk8us")
+volume_db = -10.0
+bus = &"Sounds"

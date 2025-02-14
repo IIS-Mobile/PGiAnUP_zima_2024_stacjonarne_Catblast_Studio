@@ -126,6 +126,7 @@ func successful_purchase(id):
 	if index == -1:
 		print("ALARM - indeks wyniósł -1 zamiast od 0 do 60")
 	else:
+		$"/root/Node2D/UI/VBoxContainer/CurrentView/ShopView/PurchaseSound".play()
 		Global.upgrades[Global.upgrade_names[index]] = id_to_upgrade_map[id]
 		load_shop_items()
 
