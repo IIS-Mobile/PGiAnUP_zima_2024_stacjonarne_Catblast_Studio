@@ -11,10 +11,11 @@ func process_melting():
 		for tier in range(Global.TIERS_AMOUNT - 1): 
 			var available_amount : Big = Global.resources[resource][tier]
 			var converted_amount := available_amount.dividedBy(Big.new(5))
+			var amount_int := Big.new(converted_amount.toFloat() as int)
 			
 			if converted_amount.isGreaterThanOrEqualTo(Big.new(1)): 
-				Global.resources[resource][tier].minusEquals(converted_amount.times(Big.new(5)))
-				Global.resources[resource][tier + 1].plusEquals(converted_amount)
+				Global.resources[resource][tier].minusEquals(amount_int.times(Big.new(5)))
+				Global.resources[resource][tier + 1].plusEquals(amount_int)
 
 func process_barter():
 	if not Global.is_barter_on:
