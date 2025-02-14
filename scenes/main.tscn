@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://it1f3q7bl4le"]
+[gd_scene load_steps=35 format=3 uid="uid://it1f3q7bl4le"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j8ibr"]
 [ext_resource type="Script" path="res://scenes/ui_handler.gd" id="2_4hckv"]
@@ -18,16 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
-[ext_resource type="PackedScene" uid="uid://dudht1ukmpkyv" path="res://scenes/settings_view.tscn" id="11_kte6c"]
+[ext_resource type="PackedScene" path="res://scenes/settings_view.tscn" id="11_kte6c"]
 [ext_resource type="Script" path="res://scenes/settings_view.gd" id="12_tgu02"]
 [ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
 [ext_resource type="Texture2D" uid="uid://xfri6n057yon" path="res://assets/art/icon/Close_icon.png" id="16_d8kiq"]
 [ext_resource type="Texture2D" uid="uid://cdv8fvejdb3gm" path="res://assets/art/icon/Store_options/Store_option1.png" id="16_javg6"]
 [ext_resource type="Texture2D" uid="uid://cxqiwrwbw05ee" path="res://assets/art/resources/crystaline_bolts.png" id="17_qfhtx"]
 [ext_resource type="Texture2D" uid="uid://bbp2tuedtlqh4" path="res://assets/art/icon/Store_options/Store_option2.png" id="18_o8eeo"]
-[ext_resource type="Script" path="res://scenes/buy_pop_up.gd" id="18_wgrcm"]
 [ext_resource type="Texture2D" uid="uid://b4lkb0avrqikj" path="res://assets/art/icon/Store_options/Store_option3.png" id="19_udako"]
 [ext_resource type="Script" path="res://scenes/settings_button.gd" id="20_0dl7y"]
+[ext_resource type="Script" path="res://scenes/buy_pop_up.gd" id="21_0sn77"]
 [ext_resource type="Script" path="res://scenes/melting&barter.gd" id="23_5igbh"]
 [ext_resource type="Script" path="res://scenes/error_pop_up.gd" id="24_j2mch"]
 [ext_resource type="AudioStream" uid="uid://bhdsavoqb387v" path="res://assets/audio/background.wav" id="26_lihf3"]
@@ -1362,6 +1362,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_au0sx")
+script = ExtResource("21_0sn77")
 
 [node name="TextureButton" type="TextureButton" parent="UI/BuyPop-up"]
 custom_minimum_size = Vector2(50, 50)
@@ -1517,6 +1518,20 @@ layout_mode = 2
 theme = ExtResource("3_0qc7x")
 text = "Buy Now!"
 
+[node name="TextureButton2" type="TextureButton" parent="UI/BuyPop-up"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("16_d8kiq")
+texture_pressed = ExtResource("16_d8kiq")
+texture_hover = ExtResource("16_d8kiq")
+texture_disabled = ExtResource("16_d8kiq")
+texture_focused = ExtResource("16_d8kiq")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="ErrorPop-up" type="PanelContainer" parent="UI"]
 z_index = 90
 custom_minimum_size = Vector2(772.79, 0)
@@ -1554,19 +1569,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="TextureButton" type="TextureButton" parent="UI/BuyPop-up"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture_normal = ExtResource("16_d8kiq")
-texture_pressed = ExtResource("16_d8kiq")
-texture_hover = ExtResource("16_d8kiq")
-texture_disabled = ExtResource("16_d8kiq")
-texture_focused = ExtResource("16_d8kiq")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="UISound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_p0dfd")
 volume_db = -10.0
@@ -1587,7 +1589,7 @@ bus = &"Music"
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/DeleteSaveTest" to="." method="_on_delete_save_test_pressed"]
+[connection signal="button_down" from="UI/BuyPop-up/TextureButton" to="UI" method="_on_test_button_button_down"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_1_pressed"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_2_pressed"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_3_pressed"]
-[connection signal="button_down" from="UI/BuyPop-up/TextureButton" to="UI" method="_on_test_button_button_down"]
