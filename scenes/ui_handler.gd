@@ -139,7 +139,6 @@ func _input(event):
 		var clicked_on_resource_rect = false
 		var y_of_clicked_on_resource_rect = -90
 		var clicked_on_premium_area = false 
-		var clicked_on_buy_area_exit_button = false 
 
 
 		if !resources_pop_up.visible:
@@ -162,9 +161,7 @@ func _input(event):
 			clicked_on_premium_area = true
 			$"/root/Node2D/UISound".play()
 			
-		if $"BuyPop-up/TextureButton".get_global_rect().has_point(event.global_position):
-			clicked_on_buy_area_exit_button = true
-			$"/root/Node2D/UISound".play()
+
 
 		if clicked_on_resource_rect and $"BuyPop-up".visible == false:
 			if selected_resource_type <= Global.current_top_resource:
@@ -174,8 +171,8 @@ func _input(event):
 			resources_pop_up.visible = true
 		elif clicked_on_premium_area:
 			$"BuyPop-up".visible = true  
-		elif clicked_on_buy_area_exit_button:
-			$"BuyPop-up".visible = false
+
+
 		elif (resources_pop_up_area.get_global_rect().has_point(event.global_position) or (tier_pop_up_area.get_global_rect().has_point(event.global_position) and tier_pop_up.visible)):
 			return  # Kliknięcie wewnątrz pop-upów, nic nie robimy
 		elif resources_pop_up.visible or tier_pop_up.visible:
@@ -185,3 +182,9 @@ func _input(event):
 
 func show_buy_popup():
 	$"BuyPop-up".visible = true
+
+
+func _on_test_button_button_down():
+	$"/root/Node2D/UISound".play()
+	$"BuyPop-up".visible = false
+	pass # Replace with function body.
