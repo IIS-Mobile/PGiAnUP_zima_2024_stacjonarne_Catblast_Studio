@@ -1403,11 +1403,11 @@ texture = ExtResource("17_qfhtx")
 expand_mode = 2
 
 [node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
-text = "11,99"
+theme_override_font_sizes/font_size = 50
+text = "11,99 zł"
 horizontal_alignment = 1
 justification_flags = 162
 
@@ -1416,6 +1416,8 @@ custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
 text = "Buy Now!"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer"]
@@ -1445,10 +1447,10 @@ texture = ExtResource("17_qfhtx")
 expand_mode = 2
 
 [node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 50
 text = "31, 99 zł"
 horizontal_alignment = 1
 justification_flags = 162
@@ -1457,6 +1459,8 @@ justification_flags = 162
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
 text = "Buy Now!"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer"]
@@ -1488,11 +1492,11 @@ texture = ExtResource("17_qfhtx")
 expand_mode = 2
 
 [node name="Label2" type="Label" parent="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_ndhb7")
-theme_override_font_sizes/font_size = 21
-text = "49. 99 zł (Best offer!!!)"
+theme_override_font_sizes/font_size = 50
+text = "49. 99 zł (BEST)"
 horizontal_alignment = 1
 justification_flags = 162
 
@@ -1500,6 +1504,8 @@ justification_flags = 162
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
 text = "Buy Now!"
 
 [node name="TextureButton" type="TextureButton" parent="UI/BuyPop-up"]
