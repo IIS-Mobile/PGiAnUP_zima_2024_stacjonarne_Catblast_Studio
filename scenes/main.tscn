@@ -1364,19 +1364,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_au0sx")
 script = ExtResource("21_0sn77")
 
-[node name="TextureButton" type="TextureButton" parent="UI/BuyPop-up"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture_normal = ExtResource("16_d8kiq")
-texture_pressed = ExtResource("16_d8kiq")
-texture_hover = ExtResource("16_d8kiq")
-texture_disabled = ExtResource("16_d8kiq")
-texture_focused = ExtResource("16_d8kiq")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/BuyPop-up"]
 layout_mode = 2
 
@@ -1525,7 +1512,6 @@ theme_override_font_sizes/font_size = 50
 text = "Buy Now!"
 
 [node name="TextureButton2" type="TextureButton" parent="UI/BuyPop-up"]
-visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -1595,7 +1581,7 @@ bus = &"Music"
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/GearButton" to="." method="_on_gear_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/SaveTest" to="." method="_on_save_test_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ColorRect/DeleteSaveTest" to="." method="_on_delete_save_test_pressed"]
-[connection signal="button_down" from="UI/BuyPop-up/TextureButton" to="UI" method="_on_test_button_button_down"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_1_pressed"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_2_pressed"]
 [connection signal="pressed" from="UI/BuyPop-up/VBoxContainer/HBoxContainer/VBoxContainer3/Button" to="UI/BuyPop-up" method="_on_buy_bolts_button_3_pressed"]
+[connection signal="button_down" from="UI/BuyPop-up/TextureButton2" to="UI" method="_on_texture_button_2_button_down"]

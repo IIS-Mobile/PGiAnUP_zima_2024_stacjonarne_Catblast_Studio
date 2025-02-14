@@ -183,8 +183,7 @@ func _input(event):
 func show_buy_popup():
 	$"BuyPop-up".visible = true
 
-
-func _on_test_button_button_down():
+func _on_texture_button_2_button_down():
 	$"/root/Node2D/UISound".play()
 	$"BuyPop-up".visible = false
 	pass # Replace with function body.
