@@ -17,12 +17,12 @@ const CRYSTALINE_BOLSTS_1_SKU = "crystaline_bolts_1"
 const CRYSTALINE_BOLSTS_2_SKU = "crystaline_bolts_2"
 const CRYSTALINE_BOLSTS_3_SKU = "crystaline_bolts_3"
 
-@onready var buy_bolts_button_1: Button = $VBoxContainer/Button
-@onready var buy_bolts_button_2: Button = $VBoxContainer2/Button
-@onready var buy_bolts_button_3: Button = $VBoxContainer3/Button
+# @onready var buy_bolts_button_1: Button = $VBoxContainer/Button
+# @onready var buy_bolts_button_2: Button = $VBoxContainer2/Button
+# @onready var buy_bolts_button_3: Button = $VBoxContainer3/Button
 
 var payment = null
-var item_purchases = {}
+# var item_purchases = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -121,25 +121,29 @@ func _on_purchases_updated(purchases):
 
 func _on_purchase_error(response_id, error_message):
 	print("purchase_error id:", response_id, " message: ", error_message)
+	show_error("Please try again later")
 
 
 func _process_purchase(purchase):
 	if CRYSTALINE_BOLSTS_1_SKU in purchase.products and purchase.purchase_state == PurchaseState.PURCHASED:
 		# Add code to store payment so we can reconcile the purchase token
 		# in the completion callback against the original purchase
-		item_purchases.put(purchase.purchase_token, purchase.sku)
+		# item_purchases.put(purchase.purchase_token, purchase.sku)
+		Global.premium_resource += 25
 		payment.consumePurchase(purchase.purchase_token)
 	
 	if CRYSTALINE_BOLSTS_2_SKU in purchase.products and purchase.purchase_state == PurchaseState.PURCHASED:
 		# Add code to store payment so we can reconcile the purchase token
 		# in the completion callback against the original purchase
-		item_purchases.put(purchase.purchase_token, purchase.sku)
+		# item_purchases.put(purchase.purchase_token, purchase.sku)
+		Global.premium_resource += 75
 		payment.consumePurchase(purchase.purchase_token)
 	
 	if CRYSTALINE_BOLSTS_3_SKU in purchase.products and purchase.purchase_state == PurchaseState.PURCHASED:
 		# Add code to store payment so we can reconcile the purchase token
 		# in the completion callback against the original purchase
-		item_purchases.put(purchase.purchase_token, purchase.sku)
+		# item_purchases.put(purchase.purchase_token, purchase.sku)
+		Global.premium_resource += 125
 		payment.consumePurchase(purchase.purchase_token)
 
 func _on_purchase_consumed(purchase_token):
@@ -156,12 +160,12 @@ func _handle_purchase_token(purchase_token, purchase_successful):
 	# check/award logic, remove purchase from tracking list
 	if purchase_successful:
 		show_error("Purchase successful")
-		var sku = item_purchases.get(purchase_token)
-		if sku == CRYSTALINE_BOLSTS_1_SKU:
-			Global.premium_resource += 25
-		elif sku == CRYSTALINE_BOLSTS_2_SKU:
-			Global.premium_resource += 75
-		elif sku == CRYSTALINE_BOLSTS_3_SKU:
-			Global.premium_resource += 125
+		# var sku = item_purchases.get(purchase_token)
+		# if sku == CRYSTALINE_BOLSTS_1_SKU:
+		# 	Global.premium_resource += 25
+		# elif sku == CRYSTALINE_BOLSTS_2_SKU:
+		# 	Global.premium_resource += 75
+		# elif sku == CRYSTALINE_BOLSTS_3_SKU:
+		# 	Global.premium_resource += 125
 	else:
-		show_error("Purchase failed")
+		show_error("Please try again later")
