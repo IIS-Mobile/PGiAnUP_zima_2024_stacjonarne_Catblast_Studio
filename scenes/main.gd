@@ -134,10 +134,10 @@ func load_game_data():
 		Global.upgrades = json.data.get("upgrades")
 	if json.data.has("is_melting_on"):
 		Global.is_melting_on = json.data.get("is_melting_on")
-		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/ToggleMelting/ToggleMeltingButton.button_pressed = Global.is_melting_on
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/Panel3/ToggleMelting/ToggleMeltingButton.button_pressed = Global.is_melting_on
 	if json.data.has("is_barter_on"):
 		Global.is_barter_on = json.data.get("is_barter_on")
-		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/ToggleBarter/ToggleBarterButton.button_pressed = Global.is_barter_on
+		$/root/Node2D/UI/VBoxContainer/CurrentView/SettingsView/Background/VBoxContainer/Panel4/ToggleBarter/ToggleBarterButton.button_pressed = Global.is_barter_on
 	if json.data.has("taps_count"):
 		Global.taps_count = json.data.get("taps_count")
 	if json.data.has("last_boost_use_time"):
