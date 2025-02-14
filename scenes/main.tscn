@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d3kycq0xfeywc" path="res://assets/art/icon/buildings_icon.png" id="8_3q7uw"]
 [ext_resource type="Texture2D" uid="uid://su71b1283l87" path="res://assets/art/icon/settings_icon.png" id="9_hpub3"]
 [ext_resource type="Script" path="res://scenes/gear_button.gd" id="10_b848j"]
-[ext_resource type="PackedScene" uid="uid://ds5kbhdu4tfpc" path="res://scenes/settings_view.tscn" id="11_kte6c"]
+[ext_resource type="PackedScene" uid="uid://cqskksfish3c0" path="res://scenes/settings_view.tscn" id="11_kte6c"]
 [ext_resource type="Script" path="res://scenes/settings_view.gd" id="12_tgu02"]
 [ext_resource type="AudioStream" uid="uid://b25idhw4lm51u" path="res://assets/audio/ui_click.wav" id="15_p0dfd"]
 [ext_resource type="Texture2D" uid="uid://xfri6n057yon" path="res://assets/art/icon/Close_icon.png" id="16_d8kiq"]
@@ -31,14 +31,22 @@
 [ext_resource type="AudioStream" uid="uid://bhdsavoqb387v" path="res://assets/audio/background.wav" id="26_lihf3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17dpv"]
-render_priority = 0
 shader = ExtResource("6_47x74")
-shader_parameter/light_color = Vector4(0.952941, 0.858824, 0.74902, 1)
-shader_parameter/dark_color = Vector4(0.74902, 0.619608, 0.490196, 1)
-shader_parameter/ring_scale = 4.4
-shader_parameter/wave_scale = 8.454
+shader_parameter/light_color = Vector4(0.823, 0.685, 0.529, 1)
+shader_parameter/dark_color = Vector4(0.63, 0.462, 0.336, 1)
+shader_parameter/ring_scale = 1.955
+shader_parameter/wave_scale = 5.349
 shader_parameter/random_scale = 4.6
-shader_parameter/noise_scale = 0.03
+shader_parameter/noise_scale = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70yd8"]
+shader = ExtResource("6_47x74")
+shader_parameter/light_color = Vector4(0.823, 0.685, 0.529, 1)
+shader_parameter/dark_color = Vector4(0.63, 0.462, 0.336, 1)
+shader_parameter/ring_scale = 1.955
+shader_parameter/wave_scale = 5.349
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au0sx"]
 content_margin_left = 50.0
@@ -886,6 +894,21 @@ theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "GEAR"
 
+[node name="BoostButton" type="Button" parent="UI/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 704.0
+offset_top = -91.0
+offset_right = 745.0
+offset_bottom = -40.0
+grow_vertical = 2
+theme = ExtResource("3_0qc7x")
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 50
+text = "(5)"
+
 [node name="SaveTest" type="Button" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 4
@@ -906,15 +929,51 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 346.0
-offset_top = -147.0
-offset_right = 565.0
-offset_bottom = -96.0
+offset_left = 444.0
+offset_top = -136.0
+offset_right = 663.0
+offset_bottom = -85.0
 grow_vertical = 2
 theme = ExtResource("3_0qc7x")
 theme_override_fonts/font = ExtResource("5_ndhb7")
 theme_override_font_sizes/font_size = 50
 text = "Delete SAVE"
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/ColorRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = -283.0
+offset_top = 50.0
+offset_right = -27.0
+offset_bottom = -42.1
+
+[node name="Panel2" type="Panel" parent="UI/VBoxContainer/ColorRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = -1051.0
+offset_top = 29.0
+offset_right = -719.0
+offset_bottom = -166.1
+
+[node name="Panel3" type="Panel" parent="UI/VBoxContainer/ColorRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = -520.0
+offset_top = 114.0
+offset_right = -295.0
+offset_bottom = -100.1
 
 [node name="ResourceTop0" type="ColorRect" parent="UI/VBoxContainer/ColorRect"]
 layout_mode = 1
@@ -922,10 +981,10 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 0.993
-offset_left = -258.0
-offset_top = 50.0
-offset_right = -37.0
-offset_bottom = -186.9
+offset_left = -278.0
+offset_top = 55.0
+offset_right = -32.0
+offset_bottom = -181.9
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -963,7 +1022,7 @@ anchors_preset = -1
 anchor_bottom = 0.993
 offset_left = 34.0
 offset_top = 34.0
-offset_right = 255.0
+offset_right = 289.0
 offset_bottom = -193.9
 grow_horizontal = 2
 grow_vertical = 2
@@ -1006,10 +1065,10 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 0.996
-offset_left = -258.0
-offset_top = 115.0
-offset_right = -37.0
-offset_bottom = -122.8
+offset_left = -278.0
+offset_top = 120.0
+offset_right = -32.0
+offset_bottom = -117.8
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.384792, 0.247918, 0.17197, 1)
@@ -1048,10 +1107,10 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 0.996
-offset_left = -258.0
-offset_top = 180.0
-offset_right = -37.0
-offset_bottom = -57.8
+offset_left = -278.0
+offset_top = 185.0
+offset_right = -32.0
+offset_bottom = -52.8
 grow_horizontal = 0
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
@@ -1090,10 +1149,10 @@ anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.985
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 237.0
-offset_bottom = -112.5
+offset_left = 26.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = -107.5
 grow_horizontal = 0
 color = Color(0.384792, 0.247918, 0.17197, 1)
 
@@ -1176,6 +1235,7 @@ texture = ExtResource("5_f3sw0")
 expand_mode = 1
 
 [node name="ColorRectDown" type="ColorRect" parent="UI/VBoxContainer"]
+material = SubResource("ShaderMaterial_70yd8")
 custom_minimum_size = Vector2(0, 230.295)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1202,7 +1262,8 @@ alignment = 1
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 45
 keep_pressed_outside = true
 text = "Gears"
 icon = ExtResource("5_7il7n")
@@ -1215,7 +1276,8 @@ script = ExtResource("10_b848j")
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 45
 keep_pressed_outside = true
 text = "Shop"
 icon = ExtResource("5_ippsu")
@@ -1227,9 +1289,11 @@ script = ExtResource("6_d7ejv")
 [node name="BuildingsButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("3_0qc7x")
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.219608)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 45
 disabled = true
 keep_pressed_outside = true
 text = "Buildings"
@@ -1245,10 +1309,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -47.705
-offset_right = 67.5
-offset_bottom = 29.295
+offset_left = -42.0
+offset_top = -28.0
+offset_right = 42.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.614757, 0.158895, 0.21189, 1)
@@ -1256,14 +1320,16 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.403922)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 25
-theme_override_font_sizes/font_size = 56
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 100
 text = "Soon"
 
 [node name="SettingsButton" type="Button" parent="UI/VBoxContainer/ColorRectDown/HBoxButtonContainer"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme = ExtResource("3_0qc7x")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_ndhb7")
+theme_override_font_sizes/font_size = 45
 keep_pressed_outside = true
 text = "Settings"
 icon = ExtResource("9_hpub3")

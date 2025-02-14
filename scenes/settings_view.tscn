@@ -1,6 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds5kbhdu4tfpc"]
+[gd_scene load_steps=5 format=3 uid="uid://cqskksfish3c0"]
 
+[ext_resource type="Shader" path="res://scenes/woodgrain.gdshader" id="1_1lmnx"]
 [ext_resource type="FontFile" uid="uid://dae48sfw3pn8d" path="res://assets/font/elements-starship-typeface-WPY95T-2017-11-01/StarshipGrunge.otf" id="1_orfj1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4quw8"]
+shader = ExtResource("1_1lmnx")
+shader_parameter/light_color = Vector4(0.465, 0.31, 0.175, 1)
+shader_parameter/dark_color = Vector4(0.232, 0.124, 0, 1)
+shader_parameter/ring_scale = 7.7
+shader_parameter/wave_scale = 8.189
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0vhv"]
 bg_color = Color(0.368627, 0.262745, 0.203922, 1)
@@ -10,13 +20,16 @@ border_width_right = 70
 border_color = Color(0.223529, 0.160784, 0.121569, 1)
 
 [node name="SettingsView" type="PanelContainer"]
+material = SubResource("ShaderMaterial_4quw8")
+offset_right = 1080.0
+offset_bottom = 1920.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_u0vhv")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.223529, 0.160784, 0.121569, 1)
+color = Color(1, 1, 1, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 layout_mode = 1
@@ -27,33 +40,41 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="MusiVolumeRect" type="ColorRect" parent="Background/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Background/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+
+[node name="MusiVolumeRect" type="ColorRect" parent="Background/VBoxContainer/Panel"]
 custom_minimum_size = Vector2(0, 133.47)
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -15.995
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label" type="Label" parent="Background/VBoxContainer/MusiVolumeRect"]
+[node name="Label" type="Label" parent="Background/VBoxContainer/Panel/MusiVolumeRect"]
 layout_mode = 2
 offset_top = 36.0
-offset_right = 284.0
+offset_right = 940.0
 offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("1_orfj1")
 theme_override_font_sizes/font_size = 60
 text = " Music Volume"
 
-[node name="MusiVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/MusiVolumeRect"]
-layout_mode = 1
-anchors_preset = 6
+[node name="MusiVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/Panel/MusiVolumeRect"]
+layout_mode = 2
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 0.532
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -8.0
-offset_right = -24.625
-offset_bottom = 8.0
-grow_horizontal = 0
-grow_vertical = 2
+anchor_bottom = 0.532
+offset_left = -301.0
+offset_top = -16.006
+offset_right = -25.0
+offset_bottom = -0.00604248
 scale = Vector2(2, 2)
 pivot_offset = Vector2(282.785, 0)
 size_flags_horizontal = 8
@@ -63,12 +84,23 @@ step = 0.01
 value = 0.5
 ticks_on_borders = true
 
-[node name="SoundVolumeRect" type="ColorRect" parent="Background/VBoxContainer"]
+[node name="Panel2" type="Panel" parent="Background/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+
+[node name="SoundVolumeRect" type="ColorRect" parent="Background/VBoxContainer/Panel2"]
 custom_minimum_size = Vector2(0, 133.47)
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -16.53
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label" type="Label" parent="Background/VBoxContainer/SoundVolumeRect"]
+[node name="Label" type="Label" parent="Background/VBoxContainer/Panel2/SoundVolumeRect"]
 layout_mode = 2
 offset_top = 36.0
 offset_right = 284.0
@@ -77,7 +109,7 @@ theme_override_fonts/font = ExtResource("1_orfj1")
 theme_override_font_sizes/font_size = 60
 text = " Sounds Volume"
 
-[node name="SoundVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/SoundVolumeRect"]
+[node name="SoundVolumeRectSlider" type="HSlider" parent="Background/VBoxContainer/Panel2/SoundVolumeRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -99,21 +131,32 @@ step = 0.01
 value = 0.5
 ticks_on_borders = true
 
-[node name="ToggleMelting" type="ColorRect" parent="Background/VBoxContainer"]
+[node name="Panel3" type="Panel" parent="Background/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+
+[node name="ToggleMelting" type="ColorRect" parent="Background/VBoxContainer/Panel3"]
 custom_minimum_size = Vector2(0, 133.47)
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -16.53
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label" type="Label" parent="Background/VBoxContainer/ToggleMelting"]
+[node name="Label" type="Label" parent="Background/VBoxContainer/Panel3/ToggleMelting"]
 layout_mode = 2
 offset_top = 36.0
 offset_right = 284.0
 offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("1_orfj1")
 theme_override_font_sizes/font_size = 60
-text = "Toggle Melting"
+text = " Toggle Melting"
 
-[node name="ToggleMeltingButton" type="CheckButton" parent="Background/VBoxContainer/ToggleMelting"]
+[node name="ToggleMeltingButton" type="CheckButton" parent="Background/VBoxContainer/Panel3/ToggleMelting"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -128,21 +171,32 @@ grow_vertical = 2
 scale = Vector2(3, 3)
 pivot_offset = Vector2(74.16, 13.22)
 
-[node name="ToggleBarter" type="ColorRect" parent="Background/VBoxContainer"]
+[node name="Panel4" type="Panel" parent="Background/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+
+[node name="ToggleBarter" type="ColorRect" parent="Background/VBoxContainer/Panel4"]
 custom_minimum_size = Vector2(0, 133.47)
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -16.53
 color = Color(0.368627, 0.262745, 0.203922, 1)
 
-[node name="Label" type="Label" parent="Background/VBoxContainer/ToggleBarter"]
+[node name="Label" type="Label" parent="Background/VBoxContainer/Panel4/ToggleBarter"]
 layout_mode = 2
 offset_top = 36.0
 offset_right = 284.0
 offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("1_orfj1")
 theme_override_font_sizes/font_size = 60
-text = "Toggle Barter"
+text = " Toggle Barter"
 
-[node name="ToggleBarterButton" type="CheckButton" parent="Background/VBoxContainer/ToggleBarter"]
+[node name="ToggleBarterButton" type="CheckButton" parent="Background/VBoxContainer/Panel4/ToggleBarter"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

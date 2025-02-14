@@ -74,6 +74,7 @@ func save_game_data():
 	print("Game saved!")
 
 func load_game_data():
+	Global.stop_purchasing_gears = true
 	print("Loading game...")
 
 	if not FileAccess.file_exists("user://savegame.json"):
@@ -82,7 +83,10 @@ func load_game_data():
 		Global.phases.resize(Global.MAX_GEARS)
 		Global.phases.fill(0.0)
 		$UI/VBoxContainer/CurrentView/ShopView/ScrollContainer/VBoxContainerWhole/MarginContainer/AdBar.show()
+		Global.emit_signal("reload_shop")
+		Global.stop_purchasing_gears = false
 		$UI/VBoxContainer/CurrentView/GearsView/Panel/ColorRect/SteamChamber/Panel/BoostButton.show()
+
 		return
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.READ)
 	
@@ -155,3 +159,4 @@ func load_game_data():
 		Global.calc_idle_resources(idle_time)
 		Global.idle_time = json.data.get("idle_time") - idle_time
 	print("Game loaded!")
+	Global.emit_signal("reload_shop")

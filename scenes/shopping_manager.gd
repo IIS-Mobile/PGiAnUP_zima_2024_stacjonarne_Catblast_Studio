@@ -31,10 +31,8 @@ func _ready() -> void:
 	Global.connect("reload_shop", load_shop_items)
 	is_product_affordable.resize(61)
 	is_product_affordable.fill(false)
-	load_shop_items()
-	
+
 func _process(delta):
-	#print($ScrollContainer/VBoxContainer.get_child_count())
 	for i in range($ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child_count()):
 		if $ScrollContainer/VBoxContainerWhole/VBoxContainer.get_child(i).visible:
 			check_product_affordability(i)
@@ -131,9 +129,6 @@ func successful_purchase(id):
 		$"/root/Node2D/UI/VBoxContainer/CurrentView/ShopView/PurchaseSound".play()
 		Global.upgrades[Global.upgrade_names[index]] = id_to_upgrade_map[id]
 		load_shop_items()
-
-#func load_shop_items():
-	#pass
 
 func load_shop_items():
 	# Grease, Overclock, Larger Steam Chamber, Melting

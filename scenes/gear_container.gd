@@ -4,9 +4,11 @@ extends TextureButton
 #TODO: delete
 func percent_to_pixels(percent: float) -> int:
 	return (percent * 0.01 * 2000) as int
+
 func add_gear() -> void:
-	if not pay_for_gear():  # Ensure the player can afford it before proceeding
-		return
+	if Global.stop_purchasing_gears == false:
+		if not pay_for_gear():  # Ensure the player can afford it before proceeding
+			return
 	if Global.count >= Global.MAX_GEARS:
 		return
 	var gear = Gear.create()
@@ -22,7 +24,6 @@ func add_gear() -> void:
 	gear.z_index = Global.count % 2
 	$Gears.add_child(gear)
 	_on_resized()
-	Global.emit_signal("reload_shop")
 
 
 func _on_pressed() -> void:
@@ -79,10 +80,11 @@ func has_enough_resources(cost: Dictionary) -> bool:
 				return false
 	return true
 
-
+# HEJ MIŁOSZ JAK ZWRACASZ TRUE TO WYWOLAJ PRZED Global.emit_signal("reload_shop")
 func pay_for_gear() -> bool:
 	# Free first gear
 	if Global.count == 0:
+		Global.emit_signal("reload_shop")
 		return true
 	
 	var cost = get_gear_cost(Global.count)
@@ -93,12 +95,14 @@ func pay_for_gear() -> bool:
 				continue
 			for tier in range(cost[resource].size()):
 				Global.resources[Global.resource_names[resource]][tier].minusEquals(cost[resource][tier])
+		Global.emit_signal("reload_shop")
 		return true  # Purchase successful
 
 	# If normal resources aren't enough, try using premium
 	print("Not enough resources, gear_container.gd@81, falling back to premium res")
 	if Global.premium_resource >= cost["premium"]:
 		Global.premium_resource -= cost["premium"]
+		Global.emit_signal("reload_shop")
 		return true
 	
 	return false  # Can't afford it

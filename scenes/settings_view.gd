@@ -2,9 +2,9 @@ extends PanelContainer
 
 
 func _ready():
-	$Background/VBoxContainer/ToggleMelting/ToggleMeltingButton.pressed.connect(_on_toggle_melting_pressed)
-	$Background/VBoxContainer/ToggleBarter/ToggleBarterButton.pressed.connect(_on_toggle_barter_pressed)
-	$Background/VBoxContainer/MusiVolumeRect/MusiVolumeRectSlider.value_changed.connect(_on_music_volume_changed)
+	$Background/VBoxContainer/Panel3/ToggleMelting/ToggleMeltingButton.pressed.connect(_on_toggle_melting_pressed)
+	$Background/VBoxContainer/Panel4/ToggleBarter/ToggleBarterButton.pressed.connect(_on_toggle_barter_pressed)
+  $Background/VBoxContainer/MusiVolumeRect/MusiVolumeRectSlider.value_changed.connect(_on_music_volume_changed)
 	$Background/VBoxContainer/SoundVolumeRect/SoundVolumeRectSlider.value_changed.connect(_on_sound_volume_changed)
 
 func _on_toggle_melting_pressed():
@@ -24,6 +24,3 @@ func _on_music_volume_changed(value: float):
 func _on_sound_volume_changed(value: float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sounds"), linear_to_db(value))
 	Global.sound_volume = value
-
-	
-	
